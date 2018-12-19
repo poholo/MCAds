@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '8.0'
+
+target 'MCAds' do
+ pod 'GDTAd'
+ pod 'MCBaiduAds'
+ pod 'SDWebImage'
+ pod 'MCPlayerKit'
+ pod 'HWWeakTimer'
+end
