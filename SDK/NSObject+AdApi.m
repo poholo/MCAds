@@ -9,12 +9,12 @@
 @implementation NSObject (AdApi)
 
 - (void)apiAdConfigMaterial:(void (^)(BOOL success, NSDictionary *dict))callBack {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"adInfos" ofType:@"json"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     if (callBack) {
-        callBack(error ? YES : NO, dictionary);
+        callBack(error ? NO : YES, dictionary);
     }
 }
 

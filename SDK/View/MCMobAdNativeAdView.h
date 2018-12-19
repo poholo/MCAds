@@ -7,7 +7,7 @@
 //
 
 
-#import <BaiduMobAdSDK/BaiduMobAdNativeAdView.h>
+#import "../../Example/Pods/MCBaiduAds/SDK/BaiduMobAdSDK.framework/Headers/BaiduMobAdNativeAdView.h"
 
 @interface MCMobAdNativeAdView : BaiduMobAdNativeAdView
 @property(nonatomic, copy) NSString * referId;

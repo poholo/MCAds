@@ -28,4 +28,5 @@
         self.screenshotsURL = value[@"url"];
     }
 }
+
 @end

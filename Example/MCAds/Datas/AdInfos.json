@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "adConfig": {
+    "splash": {
+      "id": "3070920757333187",
+      "source": "gdt",
+      "appId": "1106180396",
+      "duration": 5,
+      "refer": "launch",
+      "loop": false,
+      "start": 0,
+      "interval": 0,
+      "cardBlow": true,
+      "adId": "3070920757333187",
+      "skip": false
+    },
+    "dataFlow": {
+      "id": "6000525757834221",
+      "source": "gdt",
+      "appId": "1106180396"
+    },
+    "dataPre": {
+      "id": "2030021727039283",
+      "source": "gdt",
+      "appId": "1106180396"
+    }
+  }
+}

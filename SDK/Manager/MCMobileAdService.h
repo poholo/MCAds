@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 
 @protocol MobileAdServiceDelegate <NSObject>
 

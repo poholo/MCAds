@@ -8,7 +8,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "MCMobAdNativeAdView.h"
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "MCAdDto.h"
 #import "MCInmobiDto.h"
 #import "MCMobileAdService.h"
@@ -180,7 +180,7 @@
             if (self.adDto.nativeAdDto.inmobiDto && !self.adDto.nativeAdDto.inmobiDto.clicked) {
                 NSArray *pingURL = self.adDto.nativeAdDto.inmobiDto.eventTracking[@"8"][@"urls"];
                 for (NSString *url in pingURL) {
-//                    [[MCMobileSSP sharedInstance] pingURL:url];
+//                    [[MCAdsManager share] pingURL:url];
                     self.adDto.nativeAdDto.inmobiDto.clicked = YES;
                 }
             }
@@ -200,13 +200,13 @@
 - (void)trackImpression {
     switch (self.adDto.adSourceType) {
         case AdSourceBaidu: {
-//            if ([[NetConfig sharedInstance] isAdTrackImpression]) {
+//            if ([[NetConfig share] isAdTrackImpression]) {
             [self.adBaiduView trackImpression];
 //            }
         }
             break;
         case AdSourceTencent: {
-//            if ([[NetConfig sharedInstance] isAdTrackImpression]) {
+//            if ([[NetConfig share] isAdTrackImpression]) {
             [self.adDto.adService log2ThridPlatform:self.adDto attachView:self];
 //            }
         }

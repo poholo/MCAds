@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  RootController.m
 //  MCAds
 //
 //  Created by majiancheng on 2018/12/18.
 //  Copyright © 2018 majiancheng. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootController.h"
 
-@interface ViewController ()
+@interface RootController ()
 
 @end
 
-@implementation ViewController
+@implementation RootController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

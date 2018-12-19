@@ -3,15 +3,14 @@
 // Copyright (c) 2016 poholo. All rights reserved.
 //
 
-#import "MCSplashManager.h"
+#import "MCSplashService.h"
 
 #import <GDTAd/GDTAd.h>
 #import <MCPlayerKit/PlayerKit.h>
 #import <HWWeakTimer/HWWeakTimer.h>
 
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "MCAdConfig.h"
-#import "MCLiveAdDto.h"
 #import "MCSplashDto.h"
 #import "MCAdSplashView.h"
 #import "AppDelegate.h"
@@ -19,7 +18,7 @@
 
 #define SplashDefaultTime 10
 
-@interface MCSplashManager () <AdSplashViewDelegate>
+@interface MCSplashService () <AdSplashViewDelegate>
 
 @property(nonatomic, strong) UIWindow *window;
 @property(nonatomic, strong) MCAdSplashView *adSplashView;
@@ -33,28 +32,15 @@
 
 @end
 
-@implementation MCSplashManager
+@implementation MCSplashService
 
 - (void)dealloc {
     [self.timer invalidate];
     self.timer = nil;
 }
 
-+ (void)load {
-    [self shareInstance];
-}
-
-+ (instancetype)shareInstance {
-    static id instance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[self alloc] init];
-    });
-    return instance;
-}
-
 - (NSString *)publisherId {
-    return [MCMobileSSP sharedInstance].splashConfig.appId;
+    return [MCAdsManager share].splashConfig.appId;
 }
 
 - (instancetype)init {
@@ -81,24 +67,24 @@
 }
 
 - (void)showSplash {
-    MCAdConfig *adconfig = [MCMobileSSP sharedInstance].splashConfig;
+    MCAdConfig *adconfig = [MCAdsManager share].splashConfig;
     if (!adconfig.entityId && ![adconfig.source isEqualToString:@"waqu"]) {
         return;
     }
     [self resetEnv];
     [self showLoading];
 
-    if ([[MCMobileSSP sharedInstance].splashConfig.source isEqualToString:@"waqu"]) {
+    if ([[MCAdsManager share].splashConfig.source isEqualToString:@"waqu"]) {
         [self loadWaquAd];
     } else {
-        self.currentSplashDto = [MCSplashDto convertByAdConfig:[MCMobileSSP sharedInstance].splashConfig];
+        self.currentSplashDto = [MCSplashDto convertByAdConfig:[MCAdsManager share].splashConfig];
         [self show];
     }
 }
 
 - (void)resetEnv {
-    if ([MCMobileSSP sharedInstance].splashConfig.duration) {
-        self.duration = [MCMobileSSP sharedInstance].splashConfig.duration;
+    if ([MCAdsManager share].splashConfig.duration) {
+        self.duration = [MCAdsManager share].splashConfig.duration;
     } else {
         self.duration = SplashDefaultTime;
     }
@@ -111,7 +97,7 @@
 //    [racSignal subscribeNext:^(NSDictionary *result) {
 //        @strongify(self);
 //        self.currentSplashDto = [MCSplashDto createDto:result];
-//        self.currentSplashDto.source = [MCMobileSSP sharedInstance].splashConfig.source;
+//        self.currentSplashDto.source = [MCAdsManager share].splashConfig.source;
 //        [self show];
 //    }                  error:^(NSError *error) {
 //        @strongify(self);
@@ -159,7 +145,7 @@
 - (void)adSplashViewJumpSplash:(MCSplashDto *)dto {
     switch (dto.splashType) {
         case SplashTypeBaidu: {
-//            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_splash"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:[MCMobileSSP sharedInstance].splashConfig.entityId]];
+//            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_splash"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:[MCAdsManager share].splashConfig.entityId]];
         }
             break;
         case SplashTypeWaQuImage: {
@@ -171,7 +157,7 @@
         }
             break;
         case SPlashTypeTencent: {
-//            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_gdt"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:[MCMobileSSP sharedInstance].splashConfig.entityId]];
+//            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_gdt"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:[MCAdsManager share].splashConfig.entityId]];
         }
             break;
         default: {
@@ -182,7 +168,7 @@
 }
 
 - (void)adSplashViewJumpContent:(MCSplashDto *)dto {
-    MCAdConfig *currentConfig = [MCMobileSSP sharedInstance].splashConfig;
+    MCAdConfig *currentConfig = [MCAdsManager share].splashConfig;
     switch (dto.splashType) {
         case SplashTypeBaidu: {
 //            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] changeEventType:@"0"] advertisment:currentConfig.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]] advertismentPic:@(AdDisplayStyleLittle)]];
@@ -344,7 +330,7 @@
 }
 
 - (void)adSplashSuccessPresentScreen:(MCSplashDto *)dto {
-    MCAdConfig *currentConfig = [MCMobileSSP sharedInstance].splashConfig;
+    MCAdConfig *currentConfig = [MCAdsManager share].splashConfig;
 //    LogParam *logParam = [[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] advertisment:currentConfig.entityId] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]];
 //    [LogService createShowAD:logParam];
     switch (dto.splashType) {
@@ -419,7 +405,7 @@
 }
 
 - (NSString *)jumpBtnStr {
-    if (![MCMobileSSP sharedInstance].splashConfig.skip) {
+    if (![MCAdsManager share].splashConfig.skip) {
         return [NSString stringWithFormat:@"推广 | 剩余 %zd秒", self.duration];
     } else {
         return [NSString stringWithFormat:@"跳过广告 %zd秒", self.duration];

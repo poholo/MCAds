@@ -6,7 +6,7 @@
 #import "MCPlayerPauseView.h"
 
 #import "MCAdBaseView.h"
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 
 @interface MCPlayerPauseView ()
 
@@ -56,7 +56,7 @@
             baseView;
         });
 
-        MCAdDto *adDto = [[MCMobileSSP sharedInstance] takeOneAd:SSPDataPause];
+        MCAdDto *adDto = [[MCAdsManager share] takeOneAd:SSPDataPause];
         [_adBaseView setAdModel:adDto];
         _adBaseView.referId = nil;
 

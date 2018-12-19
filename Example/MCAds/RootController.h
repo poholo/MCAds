@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RootController.h
 //  MCAds
 //
 //  Created by majiancheng on 2018/12/18.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RootController : UIViewController
 
 
 @end

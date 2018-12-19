@@ -222,7 +222,7 @@
 
         NSString *refer = ({
             NSString *r = @"";
-            UIViewController *controller = nil;//[AppDelegate sharedInstance].currentNavController.topViewController;
+            UIViewController *controller = nil;//[AppDelegate share].currentNavController.topViewController;
             if ([controller isKindOfClass:[UIViewController class]]) {
 //                r = ((MMController *) controller).logParam.refer;
             }

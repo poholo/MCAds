@@ -10,16 +10,17 @@
 @class MCLiveAdDto;
 @class MCAdDto;
 @class MCMobileAdService;
+@class MCSplashService;
 
-@interface MCMobileSSP : NSObject
+@interface MCAdsManager : NSObject
 
 @property(nonatomic, readonly) MCAdConfig *preConfig;
 @property(nonatomic, readonly) MCAdConfig *splashConfig;
-
 @property(nonatomic, readonly) MCMobileAdService *flowAdService;
 @property(nonatomic, readonly) MCMobileAdService *playerPauseAdService;
+@property(nonatomic, readonly) MCSplashService *splashService;
 
-+ (MCMobileSSP *)sharedInstance;
++ (MCAdsManager *)share;
 
 - (void)activateApp;
 

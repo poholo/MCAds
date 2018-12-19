@@ -5,7 +5,7 @@
 
 #import "MCAdContinuePlayCollectionCell.h"
 
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "UIView+AdCorner.h"
 #import "MCColor.h"
 #import "MCFont.h"
@@ -42,7 +42,7 @@
 }
 
 - (NSString *)apId {
-    return [[MCMobileSSP sharedInstance] apIdAdType:SSPDataFlow];
+    return [[MCAdsManager share] apIdAdType:SSPDataFlow];
 }
 
 

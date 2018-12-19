@@ -6,7 +6,7 @@
 #import "MCAdCollectionBaseCell.h"
 
 #import "MCAdBaseView.h"
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 
 @interface MCAdCollectionBaseCell ()
 
@@ -56,7 +56,7 @@
 }
 
 - (NSString *)apId {
-    return [[MCMobileSSP sharedInstance] apIdAdType:SSPDataFlow];
+    return [[MCAdsManager share] apIdAdType:SSPDataFlow];
 }
 
 

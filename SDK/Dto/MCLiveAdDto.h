@@ -3,7 +3,6 @@
 // Copyright (c) 2017 poholo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MCDto.h"
 
 

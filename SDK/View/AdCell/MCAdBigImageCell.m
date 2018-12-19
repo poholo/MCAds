@@ -8,7 +8,7 @@
 
 #import "MCAdBigImageCell.h"
 
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "UIView+AdCorner.h"
 #import "NSString+Extend.h"
 
@@ -48,7 +48,7 @@
 }
 
 - (NSString *)apId {
-    return [[MCMobileSSP sharedInstance] apIdAdType:SSPDataFlow];
+    return [[MCAdsManager share] apIdAdType:SSPDataFlow];
 }
 
 

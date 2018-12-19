@@ -9,7 +9,7 @@
 
 
 #import "MCAdDto.h"
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "HWWeakTimer.h"
 #import "UIView+AdCorner.h"
 #import "MCColor.h"
@@ -144,7 +144,7 @@
 #pragma mark - AdBaseDelegate
 
 - (NSString *)apId {
-    return [[MCMobileSSP sharedInstance] apIdAdType:SSPDataPre];
+    return [[MCAdsManager share] apIdAdType:SSPDataPre];
 }
 
 

@@ -13,10 +13,8 @@
 蛙趣视频ios信息流广告：6000525757834221
 蛙趣视频ios前贴广告：2030021727039283
  */
-@interface MCSplashManager : NSObject
+@interface MCSplashService : NSObject
 
 - (void)showSplash;
-
-+ (instancetype)shareInstance;
 
 @end

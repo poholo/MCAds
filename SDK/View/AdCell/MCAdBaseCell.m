@@ -10,7 +10,7 @@
 #import "MCAdBaseCell.h"
 
 #import "MCMobAdNativeAdView.h"
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "MCAdBaseView.h"
 #import "MCAdDto.h"
 #import "MCInmobiDto.h"
@@ -45,7 +45,7 @@
 }
 
 - (NSString *)apId {
-    return [[MCMobileSSP sharedInstance] apIdAdType:SSPDataFlow];
+    return [[MCAdsManager share] apIdAdType:SSPDataFlow];
 }
 
 - (void)updateStyle {

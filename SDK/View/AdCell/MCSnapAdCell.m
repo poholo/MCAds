@@ -10,7 +10,7 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "MCAdDto.h"
 #import "UIView+AdCorner.h"
 #import "MCColor.h"
@@ -80,7 +80,7 @@
 }
 
 - (NSString *)apId {
-    return [[MCMobileSSP sharedInstance] apIdAdType:SSPDataFlow];
+    return [[MCAdsManager share] apIdAdType:SSPDataFlow];
 }
 
 + (CGSize)size {

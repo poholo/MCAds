@@ -12,7 +12,7 @@
 
 #import "MCSplashDto.h"
 #import "MCAdPlayerView.h"
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "MCAdConfig.h"
 #import "MCLiveAdDto.h"
 #import "UIImageView+WebCache.h"
@@ -107,7 +107,7 @@
 #pragma mark - SPlashBaidu Delegate
 
 - (NSString *)publisherId {
-    return [MCMobileSSP sharedInstance].splashConfig.appId;
+    return [MCAdsManager share].splashConfig.appId;
 }
 
 //百度广告代理
@@ -320,8 +320,8 @@
 - (BaiduMobAdSplash *)baiduMobAdSplash {
     if (!_baiduMobAdSplash) {
         _baiduMobAdSplash = [[BaiduMobAdSplash alloc] init];
-        if ([MCMobileSSP sharedInstance].splashConfig.entityId) {
-            _baiduMobAdSplash.AdUnitTag = [MCMobileSSP sharedInstance].splashConfig.entityId;
+        if ([MCAdsManager share].splashConfig.entityId) {
+            _baiduMobAdSplash.AdUnitTag = [MCAdsManager share].splashConfig.entityId;
         }
         _baiduMobAdSplash.canSplashClick = YES;
         _baiduMobAdSplash.delegate = self;
@@ -331,7 +331,7 @@
 
 - (GDTSplashAd *)tencentMobAdSplash {
     if (!_tencentMobAdSplash) {
-        _tencentMobAdSplash = [[GDTSplashAd alloc] initWithAppkey:[MCMobileSSP sharedInstance].splashConfig.appId placementId:[MCMobileSSP sharedInstance].splashConfig.entityId];
+        _tencentMobAdSplash = [[GDTSplashAd alloc] initWithAppkey:[MCAdsManager share].splashConfig.appId placementId:[MCAdsManager share].splashConfig.entityId];
         _tencentMobAdSplash.backgroundColor = [MCColor randomImageColor];
     }
     return _tencentMobAdSplash;

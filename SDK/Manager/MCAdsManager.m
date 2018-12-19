@@ -4,18 +4,18 @@
 //
 
 
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 
 #import <GDTAd/GDTTrack.h>
 
 #import "MCAdDto.h"
 #import "MCMobileAdService.h"
 #import "MCAdConfig.h"
-#import "MCPreVideoSSP.h"
 #import "NSObject+AdApi.h"
+#import "MCSplashService.h"
 
 
-@interface MCMobileSSP ()
+@interface MCAdsManager ()
 
 @property(nonatomic, strong) MCAdConfig *preConfig;
 @property(nonatomic, strong) MCAdConfig *splashConfig;
@@ -23,13 +23,14 @@
 @property(nonatomic, strong) MCMobileAdService *preAdService;
 @property(nonatomic, strong) MCMobileAdService *flowAdService;
 @property(nonatomic, strong) MCMobileAdService *playerPauseAdService;
+@property(nonatomic, strong) MCSplashService *splashService;
 
 @end
 
-@implementation MCMobileSSP
+@implementation MCAdsManager
 
-+ (MCMobileSSP *)sharedInstance {
-    static MCMobileSSP *_instance = nil;
++ (MCAdsManager *)share {
+    static MCAdsManager *_instance = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         _instance = [[self alloc] init];
@@ -132,7 +133,7 @@
     __weak typeof(self) weakSelf = self;
     [self apiAdConfigMaterial:^(BOOL success, NSDictionary *dict) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        if(success) {
+        if (success) {
             NSDictionary *config = dict[@"adConfig"];
             [self __loadCommenFactory:config];
             [dict writeToFile:fileName atomically:YES];
@@ -170,13 +171,16 @@
     NSDictionary *dataPause = dict[@"dataPause"];
 
     self.preConfig = [self findSuitConfigFromData:pre sspAdType:SSPDataPre];
-    [[MCPreVideoSSP sharedInstance] updateAdConfig:self.preConfig];
-
     self.splashConfig = [self findSuitConfigFromData:splash sspAdType:SSPSplash];
+
+    self.preAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:pre sspAdType:SSPDataPre]
+                                                           adType:SSPDataPre delegate:nil];
+
     self.flowAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:flow sspAdType:SSPDataFlow]
-                                                          adType:SSPDataFlow delegate:nil];
+                                                            adType:SSPDataFlow delegate:nil];
+
     self.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:dataPause sspAdType:SSPDataPause]
-                                                                 adType:SSPDataPause delegate:nil];
+                                                                   adType:SSPDataPause delegate:nil];
 }
 
 - (void)requestAllData {
@@ -236,7 +240,7 @@
         }
             break;
         case SSPDataPre : {
-            return [[MCPreVideoSSP sharedInstance] apId];
+            return [self.preAdService apId];
         }
             break;
         case SSPDataPause : {
@@ -286,6 +290,15 @@
         }
             break;
     }
+}
+
+#pragma mark - getter
+
+- (MCSplashService *)splashService {
+    if (!_splashService) {
+        _splashService = [MCSplashService new];
+    }
+    return _splashService;
 }
 
 @end

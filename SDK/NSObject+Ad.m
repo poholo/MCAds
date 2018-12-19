@@ -12,7 +12,7 @@
 #import "MCAdMutipleImageCell.h"
 #import "MCAdContinuePlayCollectionCell.h"
 #import "MCAdCollectionBaseCell.h"
-#import "MCMobileSSP.h"
+#import "MCAdsManager.h"
 #import "MCDto.h"
 #import "MCOpAdCell.h"
 #import "MCAdvertisementDto.h"
