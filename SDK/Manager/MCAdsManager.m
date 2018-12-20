@@ -120,9 +120,8 @@
     if (config) {
         [self __loadCommenFactory:config];
         [self requestAllData];
-    } else {
-        [self loadNextConfig];
     }
+    [self loadNextConfig];
 }
 
 - (void)loadNextConfig {

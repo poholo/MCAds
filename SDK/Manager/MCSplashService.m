@@ -113,7 +113,7 @@
 - (void)show {
     MCLog(@"[SPlashManager]show");
     [self.adSplashView loadData:self.currentSplashDto];
-    if (self.currentSplashDto.splashType != SPlashTypeTencent) {
+    if (self.currentSplashDto.splashType != MCSplashTypeTencent) {
         [self timer];
     }
 }
@@ -144,19 +144,19 @@
 
 - (void)adSplashViewJumpSplash:(MCSplashDto *)dto {
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
+        case MCSplashTypeBaidu: {
 //            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_splash"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:[MCAdsManager share].splashConfig.entityId]];
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 //            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_splash"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:dto.entityId]];
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 //            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_vad"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:dto.entityId]];
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
 //            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_gdt"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:[MCAdsManager share].splashConfig.entityId]];
         }
             break;
@@ -170,23 +170,23 @@
 - (void)adSplashViewJumpContent:(MCSplashDto *)dto {
     MCAdConfig *currentConfig = [MCAdsManager share].splashConfig;
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
+        case MCSplashTypeBaidu: {
 //            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] changeEventType:@"0"] advertisment:currentConfig.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]] advertismentPic:@(AdDisplayStyleLittle)]];
             [self hide];
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
             //TODO::
             [self hide];
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 //            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:@"plaunch"]] changeEventType:@"0"] advertisment:dto.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", dto.resq]] advertismentPic:@(AdDisplayStyleBig)]];
 //            [dto.advertisementDto startAction:self.logADService logParam:nil videoId:nil adId:dto.entityId];
             [self hide];
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
 //            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] changeEventType:@"0"] advertisment:currentConfig.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]] advertismentPic:@(AdDisplayStyleLittle)]];
         }
             break;
@@ -198,19 +198,19 @@
 
 - (void)adSplashViewJumpResonEnd:(MCSplashDto *)dto {
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
+        case MCSplashTypeBaidu: {
 
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
 
         }
             break;
@@ -223,20 +223,20 @@
 
 - (void)adSplashViewJumpResonError:(MCSplashDto *)dto {
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
+        case MCSplashTypeBaidu: {
             [self resetEnv];
             [self loadWaquAd];
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
             [self resetEnv];
             [self loadWaquAd];
         }
@@ -250,18 +250,18 @@
 
 - (void)adSplashViewEnterbackGroundEnd:(MCSplashDto *)dto {
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
+        case MCSplashTypeBaidu: {
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
 
         }
             break;
@@ -274,15 +274,15 @@
 
 - (void)adSplashViewShowUsingPlayerKit:(MCSplashDto *)dto {
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
+        case MCSplashTypeBaidu: {
 
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
             if (dto.advertisementDto.videoUrl) {
                 [self.playerKit playUrls:@[dto.advertisementDto.videoUrl]];
             } else {
@@ -294,7 +294,7 @@
             }
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
 
         }
             break;
@@ -306,19 +306,19 @@
 
 - (void)adSplashViewShowUsingWindow:(MCSplashDto *)dto {
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
+        case MCSplashTypeBaidu: {
 
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
             [self.adSplashView.tencentMobAdSplash loadAdAndShowInWindow:self.window];
             [self.window sendSubviewToBack:self.adSplashView];
         }
@@ -334,19 +334,19 @@
 //    LogParam *logParam = [[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] advertisment:currentConfig.entityId] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]];
 //    [LogService createShowAD:logParam];
     switch (dto.splashType) {
-        case SplashTypeBaidu: {
-            [self hide];
+        case MCSplashTypeBaidu: {
+//            [self hide];
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
         }
             break;
         default: {

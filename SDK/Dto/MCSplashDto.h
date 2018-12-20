@@ -12,16 +12,16 @@
 @class MCAdConfig;
 @class MCAdvertisementDto;
 
-typedef NS_ENUM(NSInteger, SplashType) {
-    SplashTypeBaidu,
-    SplashTypeWaQuImage,
-    SplashTypeWaQuVideo,
-    SPlashTypeTencent
+typedef NS_ENUM(NSInteger, MCSplashType) {
+    MCSplashTypeBaidu,
+    MCSplashTypeWaQuImage,
+    MCSplashTypeWaQuVideo,
+    MCSplashTypeTencent
 };
 
 @interface MCSplashDto : MCDto
 
-@property(nonatomic, assign) SplashType splashType;
+@property(nonatomic, assign) MCSplashType splashType;
 
 @property(nonatomic, strong) MCAdvertisementDto *advertisementDto;
 

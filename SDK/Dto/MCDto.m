@@ -14,4 +14,10 @@
     return dto;
 }
 
+- (void)setValue:(nullable id)value forUndefinedKey:(NSString *)key {
+    if ([key isEqualToString:@"id"]) {
+        self.entityId = value;
+    }
+}
+
 @end

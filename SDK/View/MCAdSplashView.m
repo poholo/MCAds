@@ -56,20 +56,20 @@
 - (void)loadData:(MCSplashDto *)dto {
     self.dto = dto;
     switch (dto.splashType) {
-        case SplashTypeBaidu : {
+        case MCSplashTypeBaidu : {
             self.baiduMobAdSplash.delegate = self;
 //            [LogService createRequestAD:[[[LogParam createWithRefer:@"plaunch_splash"] advertisment:_baiduMobAdSplash.AdUnitTag] num:@"1"]];
             [self.baiduMobAdSplash loadAndDisplayUsingContainerView:self.adContainer];
         }
             break;
-        case SplashTypeWaQuImage: {
+        case MCSplashTypeWaQuImage: {
 //            [LogService createShowAD:[[[LogParam createWithRefer:@"plaunch_wqlive"] advertisment:dto.entityId] time:[NSString stringWithFormat:@"%@", dto.resq]]];
 
             [self.adContainer sd_setImageWithURL:[NSURL URLWithString:dto.liveAdDto.picUrl] placeholderImage:nil];
 //                [LogService createShowAD:[[[[LogParam createWithRefer:@"plaunch_wqlive"] advertisment:dto.entityId] time:[NSString stringWithFormat:@"%@", dto.resq]] ctag:dto.liveAdDto.liveInfo.ctag]];
         }
             break;
-        case SplashTypeWaQuVideo: {
+        case MCSplashTypeWaQuVideo: {
 //            [LogService createShowAD:[[[LogParam createWithRefer:@"plaunch_vad"] advertisment:dto.entityId] time:[NSString stringWithFormat:@"%@", dto.resq]]];
 
             if (dto.advertisementDto.imageUrl) {
@@ -85,7 +85,7 @@
             }
         }
             break;
-        case SPlashTypeTencent: {
+        case MCSplashTypeTencent: {
             self.tencentMobAdSplash.fetchDelay = 3;
             self.tencentMobAdSplash.delegate = self;
             if ([self.delegate respondsToSelector:@selector(adSplashViewShowUsingWindow:)]) {
@@ -112,6 +112,7 @@
 
 //百度广告代理
 - (void)splashSuccessPresentScreen:(BaiduMobAdSplash *)splash {
+    MCLog(@"splashlFailPresentScreen success");
     __weak typeof(self) weakSelf = self;
     [self mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;

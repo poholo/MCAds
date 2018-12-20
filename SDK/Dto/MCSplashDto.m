@@ -43,17 +43,17 @@
     return self.advertisementDto.entityId;
 }
 
-- (SplashType)splashType {
+-  (MCSplashType)splashType {
     if (self.liveAdDto.entityId) {
-        return SplashTypeWaQuImage;
+        return MCSplashTypeWaQuImage;
     } else if (self.advertisementDto.entityId) {
-        return SplashTypeWaQuVideo;
+        return MCSplashTypeWaQuVideo;
     } else if ([self.source isEqualToString:@"baidu"]) {
-        return SplashTypeBaidu;
+        return MCSplashTypeBaidu;
     } else if ([self.source isEqualToString:@"gdt"]) {
-        return SPlashTypeTencent;
+        return MCSplashTypeTencent;
     } else {
-        return SPlashTypeTencent;
+        return MCSplashTypeTencent;
     }
 }
 

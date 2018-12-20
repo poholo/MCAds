@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A66605D3665557D6F2EF5AF /* MCTapTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6661C8C032073CA81828D2 /* MCTapTableCell.m */; };
 		1A666096038E76A9D82625AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A666F3ECC21FD6BD268BA51 /* LaunchScreen.storyboard */; };
+		1A66617DC7DE499527BB56CC /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6665C351E16C3EFF9711DE /* RootController.m */; };
 		1A6661ECA533F2B9866AB2CA /* MCMobAdNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6668802804039F46B79B28 /* MCMobAdNativeAdView.m */; };
 		1A66620B3DBE0A4068A6E83B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A666B7F1AEE873B1D6B08F2 /* Main.storyboard */; };
 		1A66626F997C1946C078BB5F /* MCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66636742683F72F369789E /* MCColor.m */; };
@@ -19,6 +20,7 @@
 		1A6663D684CDB1D56A2FB707 /* MCFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666B659908077422D19135 /* MCFont.m */; };
 		1A6663F1E8F31B8A40588251 /* MCAdPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666A5295FC0343404891DD /* MCAdPlayerView.m */; };
 		1A6664ADD263ADCC9EF40AF6 /* MCAdBigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C20236E717A2967FF7A /* MCAdBigImageCell.m */; };
+		1A66650D0FE00C28DFB661DD /* AdInfos_baidu.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6665BFC47AC1B252463D08 /* AdInfos_baidu.json */; };
 		1A6665AF29C80F1CE0DF7FF3 /* MCPlayerPreAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666A52FA334BB6FC58E080 /* MCPlayerPreAdView.m */; };
 		1A66667E6344B63FF8B15178 /* NSObject+AdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666D8672C6EC0DA57B8138 /* NSObject+AdApi.m */; };
 		1A66671F5343166560F53585 /* MCMobileBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666ED7ACC06FAEEF71AE40 /* MCMobileBase.m */; };
@@ -27,17 +29,20 @@
 		1A6668020084CD8E38F6352C /* MCSnapAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6663CC56E39C3DCCFB4D1D /* MCSnapAdCell.m */; };
 		1A666898D97918AD0E296C19 /* MCAdDef.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666FDF958729ED42EDCAF6 /* MCAdDef.m */; };
 		1A6668E1DA2820E6520B9F4A /* MCAdCollectionBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6662FFE5C4A0EFFFB639FD /* MCAdCollectionBaseCell.m */; };
+		1A666936DAC8E491DB11048E /* RootCateDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6668B44B76A07A86038DF0 /* RootCateDto.m */; };
 		1A666986DCFE6BE63DDF5F03 /* MCAdBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6663B2C784CF7136EB7E35 /* MCAdBaseCell.m */; };
 		1A666A02EC0C47D396E9A298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A66623F8E19496458C98F51 /* Assets.xcassets */; };
 		1A666A109C2B6768DB8AFD67 /* MCCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C2EF03CFEA17A8ED487 /* MCCollectionCell.m */; };
 		1A666A32CBCD64A627ED2712 /* MCAdLittleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666A2C83673B5406A92216 /* MCAdLittleImageCell.m */; };
+		1A666A9205B0768EE19C0CA9 /* RootDataVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6662398695C8608D38EEEE /* RootDataVM.m */; };
 		1A666B3D787AACBB37503D13 /* AdInfos.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666934FBBCBB88FA65C9D2 /* AdInfos.json */; };
 		1A666C356CBA254C789F804A /* MCAdBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666651888DE7D6B85F61B9 /* MCAdBaseView.m */; };
+		1A666D8F00C6BECB5AA2DA7B /* RootData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666C1F74AE7973B0F6F102 /* RootData.json */; };
 		1A666DE94C5B190236DCCA77 /* UIView+AdCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C740A28F8C545C7A378 /* UIView+AdCorner.m */; };
 		1A666E0567B623E45E1A0E2C /* MCAdContinuePlayCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666094DAC7473527AB58AE /* MCAdContinuePlayCollectionCell.m */; };
 		1A666ED96A4726934D559D05 /* MCDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66692727E492FA5E8CEACA /* MCDto.m */; };
+		1A666F958750BDA07E3C548A /* RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666ED788A3357A979C824E /* RootCell.m */; };
 		25CC36AC21C8FAAD0010BC25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36AB21C8FAAD0010BC25 /* AppDelegate.m */; };
-		25CC36AF21C8FAAD0010BC25 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36AE21C8FAAD0010BC25 /* RootController.m */; };
 		25CC36BA21C8FAAF0010BC25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36B921C8FAAF0010BC25 /* main.m */; };
 		25CC370F21C8FC230010BC25 /* MCH5AdDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36C821C8FC230010BC25 /* MCH5AdDto.m */; };
 		25CC371021C8FC230010BC25 /* MCAdConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36C921C8FC230010BC25 /* MCAdConfig.m */; };
@@ -63,11 +68,13 @@
 		1A6661C425A445A3B0BE0EA4 /* MCAdSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdSplashView.m; sourceTree = "<group>"; };
 		1A6661C8C032073CA81828D2 /* MCTapTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTapTableCell.m; sourceTree = "<group>"; };
 		1A666223C041D6993101CE7B /* NSObject+AdApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AdApi.h"; sourceTree = "<group>"; };
+		1A6662398695C8608D38EEEE /* RootDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootDataVM.m; sourceTree = "<group>"; };
 		1A66623F8E19496458C98F51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A6662CEE95A5EB2D8FA7316 /* MCAdCollectionBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdCollectionBaseCell.h; sourceTree = "<group>"; };
 		1A6662FFE5C4A0EFFFB639FD /* MCAdCollectionBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdCollectionBaseCell.m; sourceTree = "<group>"; };
 		1A66636742683F72F369789E /* MCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCColor.m; sourceTree = "<group>"; };
 		1A66638BCB334A78C074A878 /* MCAdOrientionImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdOrientionImageCell.h; sourceTree = "<group>"; };
+		1A666391A2393A28BEA31F7B /* RootDataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootDataVM.h; sourceTree = "<group>"; };
 		1A6663B2C784CF7136EB7E35 /* MCAdBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdBaseCell.m; sourceTree = "<group>"; };
 		1A6663CC56E39C3DCCFB4D1D /* MCSnapAdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSnapAdCell.m; sourceTree = "<group>"; };
 		1A66640D67829DA820B2670B /* MCDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDto.h; sourceTree = "<group>"; };
@@ -76,12 +83,18 @@
 		1A666505BA8A5CA0DC2CDE11 /* MCPlayerPreAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPlayerPreAdView.h; sourceTree = "<group>"; };
 		1A666508DC6024F34841F426 /* UIView+AdCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AdCorner.h"; sourceTree = "<group>"; };
 		1A6665556DA9E0D4A508E21F /* MCAdOrientionImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdOrientionImageCell.m; sourceTree = "<group>"; };
+		1A6665957746F0E60BBAE285 /* RootCateDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCateDto.h; sourceTree = "<group>"; };
+		1A6665BFC47AC1B252463D08 /* AdInfos_baidu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_baidu.json; sourceTree = "<group>"; };
+		1A6665C351E16C3EFF9711DE /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
 		1A6665E2D56A0EEACBFB88F8 /* MCAdPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdPlayerView.h; sourceTree = "<group>"; };
 		1A666646DBCFED338DF6D801 /* MCFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFont.h; sourceTree = "<group>"; };
 		1A666651888DE7D6B85F61B9 /* MCAdBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdBaseView.m; sourceTree = "<group>"; };
 		1A6666D92C680D342A819EFD /* MCMobAdNativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMobAdNativeAdView.h; sourceTree = "<group>"; };
 		1A666739D42B0566733B7811 /* MCOpAdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOpAdCell.h; sourceTree = "<group>"; };
+		1A666780B0BAB594573E120C /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
 		1A6668802804039F46B79B28 /* MCMobAdNativeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMobAdNativeAdView.m; sourceTree = "<group>"; };
+		1A6668B44B76A07A86038DF0 /* RootCateDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCateDto.m; sourceTree = "<group>"; };
+		1A6668FB0B617005DABEC11D /* RootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCell.h; sourceTree = "<group>"; };
 		1A66692727E492FA5E8CEACA /* MCDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDto.m; sourceTree = "<group>"; };
 		1A666934FBBCBB88FA65C9D2 /* AdInfos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos.json; sourceTree = "<group>"; };
 		1A66695350963F2BB1D5D15D /* MCPlayerPauseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPlayerPauseView.h; sourceTree = "<group>"; };
@@ -97,6 +110,7 @@
 		1A666B2FE06215A152701C9C /* MCAdMutipleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdMutipleImageCell.m; sourceTree = "<group>"; };
 		1A666B659908077422D19135 /* MCFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFont.m; sourceTree = "<group>"; };
 		1A666B71F0734EC51106634D /* MCAdLittleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdLittleImageCell.h; sourceTree = "<group>"; };
+		1A666C1F74AE7973B0F6F102 /* RootData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData.json; sourceTree = "<group>"; };
 		1A666C20236E717A2967FF7A /* MCAdBigImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdBigImageCell.m; sourceTree = "<group>"; };
 		1A666C2EF03CFEA17A8ED487 /* MCCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCollectionCell.m; sourceTree = "<group>"; };
 		1A666C3566D1FA9645CF427C /* MCAdBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdBaseView.h; sourceTree = "<group>"; };
@@ -107,6 +121,7 @@
 		1A666E21F22CEF8F18AAD7FB /* MCPlayerPauseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPlayerPauseView.m; sourceTree = "<group>"; };
 		1A666E4B946E168D1C7F95CC /* MCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCColor.h; sourceTree = "<group>"; };
 		1A666E963826E0531326B76D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		1A666ED788A3357A979C824E /* RootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCell.m; sourceTree = "<group>"; };
 		1A666ED7ACC06FAEEF71AE40 /* MCMobileBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMobileBase.m; sourceTree = "<group>"; };
 		1A666EEB97D82D811EE19D03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MCAds/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		1A666FD1E337A6BBAD818F52 /* MCAdDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdDef.h; sourceTree = "<group>"; };
@@ -116,8 +131,6 @@
 		25CC36A721C8FAAD0010BC25 /* MCAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CC36AA21C8FAAD0010BC25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25CC36AB21C8FAAD0010BC25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		25CC36AD21C8FAAD0010BC25 /* RootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
-		25CC36AE21C8FAAD0010BC25 /* RootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
 		25CC36B921C8FAAF0010BC25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		25CC36C421C8FC230010BC25 /* MCInmobiDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCInmobiDto.h; sourceTree = "<group>"; };
 		25CC36C521C8FC230010BC25 /* MCAdDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdDto.h; sourceTree = "<group>"; };
@@ -193,8 +206,25 @@
 			isa = PBXGroup;
 			children = (
 				1A666934FBBCBB88FA65C9D2 /* AdInfos.json */,
+				1A6665BFC47AC1B252463D08 /* AdInfos_baidu.json */,
+				1A666C1F74AE7973B0F6F102 /* RootData.json */,
 			);
 			path = Datas;
+			sourceTree = "<group>";
+		};
+		1A666806E95D2B7409089305 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1A6665C351E16C3EFF9711DE /* RootController.m */,
+				1A666780B0BAB594573E120C /* RootController.h */,
+				1A6662398695C8608D38EEEE /* RootDataVM.m */,
+				1A666391A2393A28BEA31F7B /* RootDataVM.h */,
+				1A6668B44B76A07A86038DF0 /* RootCateDto.m */,
+				1A6665957746F0E60BBAE285 /* RootCateDto.h */,
+				1A666ED788A3357A979C824E /* RootCell.m */,
+				1A6668FB0B617005DABEC11D /* RootCell.h */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		1A6668D36D9221331F39A4BE /* AdCell */ = {
@@ -241,6 +271,7 @@
 		1A666DE8D7577497A777736A /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				1A666806E95D2B7409089305 /* Root */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -291,8 +322,6 @@
 			children = (
 				25CC36AA21C8FAAD0010BC25 /* AppDelegate.h */,
 				25CC36AB21C8FAAD0010BC25 /* AppDelegate.m */,
-				25CC36AD21C8FAAD0010BC25 /* RootController.h */,
-				25CC36AE21C8FAAD0010BC25 /* RootController.m */,
 				25CC36B921C8FAAF0010BC25 /* main.m */,
 				1A66661BA9AF4E97194491AB /* Datas */,
 				1A6668E223EE46D762DCCDCB /* Resources */,
@@ -442,6 +471,8 @@
 				1A666A02EC0C47D396E9A298 /* Assets.xcassets in Resources */,
 				1A66620B3DBE0A4068A6E83B /* Main.storyboard in Resources */,
 				1A666B3D787AACBB37503D13 /* AdInfos.json in Resources */,
+				1A66650D0FE00C28DFB661DD /* AdInfos_baidu.json in Resources */,
+				1A666D8F00C6BECB5AA2DA7B /* RootData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +523,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CC371421C8FC230010BC25 /* MCAdvertisementDto.m in Sources */,
-				25CC36AF21C8FAAD0010BC25 /* RootController.m in Sources */,
 				25CC371C21C8FC230010BC25 /* NSObject+Ad.m in Sources */,
 				25CC371521C8FC230010BC25 /* MCAdDto.m in Sources */,
 				25CC371021C8FC230010BC25 /* MCAdConfig.m in Sources */,
@@ -532,6 +562,10 @@
 				1A666898D97918AD0E296C19 /* MCAdDef.m in Sources */,
 				1A6661ECA533F2B9866AB2CA /* MCMobAdNativeAdView.m in Sources */,
 				1A66671F5343166560F53585 /* MCMobileBase.m in Sources */,
+				1A66617DC7DE499527BB56CC /* RootController.m in Sources */,
+				1A666A9205B0768EE19C0CA9 /* RootDataVM.m in Sources */,
+				1A666936DAC8E491DB11048E /* RootCateDto.m in Sources */,
+				1A666F958750BDA07E3C548A /* RootCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waqu.video;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.mobads.BaiduMobAdSdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -699,7 +733,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waqu.video;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.mobads.BaiduMobAdSdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

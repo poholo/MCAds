@@ -5,7 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
-
+/**
+ * 实体基类
+ */
 @interface MCDto : NSObject
 
 @property(nonatomic, strong) NSString *entityId;
