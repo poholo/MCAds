@@ -62,6 +62,7 @@ NSString *const kAdJointKey = @"flowPage";
                 } else {
                     MCAdDto *adDto = [[MCAdsManager share].flowAdService takeOneAd];
                     if (adDto) {
+                        adDto.styleId = self.adJointDto.styleId;
                         [destArray addObject:adDto];
                     }
                     strongSelf.adJointDto.cursor += strongSelf.adJointDto.interval;

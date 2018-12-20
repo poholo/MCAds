@@ -199,9 +199,9 @@
     [nativeAds enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         MCNativeAdDto *adDto = [MCNativeAdDto creatWithAdNative:obj];
-        MCAdDto *dto = [[MCAdDto alloc] initWithNativeAdDto:adDto styleId:self.adConfig.styleId];
-        dto.adService = self;
-        [self.adContainers insertObject:dto atIndex:0];
+        MCAdDto *dto = [[MCAdDto alloc] initWithNativeAdDto:adDto styleId:AdDisplayStyleLittle];
+        dto.adService = strongSelf;
+        [strongSelf.adContainers insertObject:dto atIndex:0];
     }];
 
     if (self.adContainers.count > 0) {

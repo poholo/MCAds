@@ -81,7 +81,6 @@
 + (MCAdConfig *)createSplashDefault {
     MCAdConfig *obj = [MCAdConfig new];
     obj.entityId = @"2390225";
-    obj.styleId = AdDisplayStyleLittle;
     obj.cardBlow = 0;
     obj.duration = 5;
     obj.interval = 5;
@@ -96,7 +95,6 @@
 + (MCAdConfig *)createDataFlow {
     MCAdConfig *obj = [MCAdConfig new];
     obj.entityId = @"2390227";
-    obj.styleId = AdDisplayStyleLittle;
     obj.cardBlow = 0;
     obj.duration = 3;
     obj.interval = 5;
@@ -111,7 +109,6 @@
 + (MCAdConfig *)createPreConfig {
     MCAdConfig *obj = [MCAdConfig new];
     obj.entityId = @"4260942";
-    obj.styleId = AdDisplayStyleLittle;
     obj.cardBlow = 0;
     obj.duration = 3;
     obj.interval = 5;
@@ -127,7 +124,6 @@
 + (MCAdConfig *)createPauseConfig {
     MCAdConfig *obj = [MCAdConfig new];
     obj.entityId = @"4260939";
-    obj.styleId = AdDisplayStyleLittle;
     obj.cardBlow = 0;
     obj.duration = 3;
     obj.interval = 5;

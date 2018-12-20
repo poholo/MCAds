@@ -30,8 +30,6 @@
 
 @property(nonatomic, assign) NSInteger interval;
 
-@property(nonatomic, assign) AdDisplayStyleType styleId;
-
 @property(nonatomic, readonly) AdSourceType adSourceType;
 
 @property(nonatomic, strong) NSString *appId;

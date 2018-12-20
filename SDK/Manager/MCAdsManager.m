@@ -134,29 +134,29 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (success) {
             NSDictionary *config = dict[@"adConfig"];
-            [self __loadCommenFactory:config];
+            [strongSelf __loadCommenFactory:config];
             [dict writeToFile:fileName atomically:YES];
-            [self requestAllData];
+            [strongSelf requestAllData];
         } else {
-            if (self.preConfig == nil) {
-                self.preConfig = [self localConfig:SSPDataPre];
+            if (strongSelf.preConfig == nil) {
+                strongSelf.preConfig = [strongSelf localConfig:SSPDataPre];
             }
 
-            if (self.splashConfig == nil) {
-                self.splashConfig = [self localConfig:SSPSplash];
+            if (strongSelf.splashConfig == nil) {
+                strongSelf.splashConfig = [strongSelf localConfig:SSPSplash];
             }
 
-            if (self.flowAdService == nil || self.flowAdService.adConfig == nil) {
-                self.flowAdService = [[MCMobileAdService alloc] initWithConfig:[self localConfig:SSPDataFlow]
+            if (strongSelf.flowAdService == nil || strongSelf.flowAdService.adConfig == nil) {
+                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataFlow]
                                                                         adType:SSPDataFlow delegate:nil];
             }
 
-            if (self.playerPauseAdService == nil || self.playerPauseAdService.adConfig == nil) {
-                self.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[self localConfig:SSPDataPause]
+            if (strongSelf.playerPauseAdService == nil || strongSelf.playerPauseAdService.adConfig == nil) {
+                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataPause]
                                                                                adType:SSPDataPause delegate:nil];
             }
 
-            [self requestAllData];
+            [strongSelf requestAllData];
         }
     }];
 
@@ -249,28 +249,6 @@
     }
     return nil;
 }
-
-- (AdDisplayStyleType)styleId:(SSPAdType)adType {
-    switch (adType) {
-        case SSPSplash : {
-
-        }
-            break;
-        case SSPDataFlow : {
-            return [self.flowAdService adConfig].styleId;
-        }
-            break;
-        case SSPDataPre : {
-        }
-            break;
-        case SSPDataPause : {
-            return [self.playerPauseAdService adConfig].styleId;
-        }
-            break;
-    }
-    return AdDisplayStyleLittle;
-}
-
 
 - (void)updoateRefer:(SSPAdType)adType refer:(NSString *)refer {
     switch (adType) {

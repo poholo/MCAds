@@ -34,8 +34,6 @@
 
 - (NSString *)apIdAdType:(SSPAdType)adType;
 
-- (AdDisplayStyleType)styleId:(SSPAdType)adType;
-
 - (void)updoateRefer:(SSPAdType)adType refer:(NSString *)refer;
 
 
