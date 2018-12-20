@@ -1146,7 +1146,7 @@
   "flowPage": {
     "start": 1,
     "interval": 3,
-    "styleId": 1,
+    "styleId": 2,
     "loop": true
   }
 }
