@@ -169,7 +169,7 @@
 }
 
 - (void)splashDidDismissLp:(BaiduMobAdSplash *)splash {
-    NSLog(@"splashDidDismissLp");
+    MCLog(@"splashDidDismissLp");
 }
 
 #pragma mark - SplashTencent Delegate

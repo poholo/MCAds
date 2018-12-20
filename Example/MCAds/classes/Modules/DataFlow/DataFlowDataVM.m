@@ -34,11 +34,11 @@
 - (NSString *)jsonPath {
     NSString *jsonPath;
     if ([self.cateDto.entityId isEqualToString:@"1"]) {
-        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_big" ofType:@"json"];
+        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_Big" ofType:@"json"];
     } else if ([self.cateDto.entityId isEqualToString:@"2"]) {
-        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_small" ofType:@"json"];
+        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_Little" ofType:@"json"];
     } else if ([self.cateDto.entityId isEqualToString:@"3"]) {
-        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_mix" ofType:@"json"];
+        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_Oriention" ofType:@"json"];
     } else if ([self.cateDto.entityId isEqualToString:@"4"]) {
         jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_video" ofType:@"json"];
     }

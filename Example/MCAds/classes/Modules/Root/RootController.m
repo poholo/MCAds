@@ -58,7 +58,8 @@
         [[MCAdsManager share].splashService showSplash];
     } else if ([cateDto.entityId isEqualToString:@"1"]
             || [cateDto.entityId isEqualToString:@"2"]
-            || [cateDto.entityId isEqualToString:@"3"]) {
+            || [cateDto.entityId isEqualToString:@"3"]
+            || [cateDto.entityId isEqualToString:@"4"]) {
         DataFlowController *dataFlowController = [[DataFlowController alloc] initWithCate:cateDto];
         [self.navigationController pushViewController:dataFlowController animated:YES];
     }

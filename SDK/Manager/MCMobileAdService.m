@@ -205,7 +205,6 @@
     }];
 
     if (self.adContainers.count > 0) {
-        __weak typeof(self) weakSelf = self;
         [self mainExecute:^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if ([strongSelf.delegate respondsToSelector:@selector(mobileAdServiceRequestSuccess:)]) {
@@ -286,7 +285,7 @@
 
 //广告返回失败
 - (void)nativeAdsFailLoad:(BaiduMobFailReason)reason {
-    NSLog(@"nativeAdsFailLoad,reason = %d", reason);
+    MCLog(@"nativeAdsFailLoad,reason = %d", reason);
     NSError *error = [NSError errorWithDomain:ERROR_DOMAIM code:-2 userInfo:@{ERROR_MESSAGE: [NSString stringWithFormat:@"This baidu ads request failed %zd", reason]}];
     [self nativeAdFailedLoadUnion:error];
 }
@@ -317,7 +316,7 @@
 }
 
 - (void)nativeAdFailToLoad:(NSError *)error {
-    NSLog(@"nativeAdsFailLoad,reason = %@", error);
+    MCLog(@"nativeAdsFailLoad,reason = %@", error);
     NSError *err = [NSError errorWithDomain:error.domain code:-3 userInfo:error.userInfo];
     [self nativeAdFailedLoadUnion:err];
 }

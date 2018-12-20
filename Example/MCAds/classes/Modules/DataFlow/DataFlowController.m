@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = self.dataVM.cateDto.name;
     [self registerCommenAdCell:self.tableView];
     [self.tableView registerClass:[VideoCell class] forCellReuseIdentifier:[VideoCell identifier]];
     [self pullToRefresh];
