@@ -6,7 +6,13 @@
 #import "VideoDto.h"
 
 
-@implementation VideoDto {
+@implementation VideoDto
 
+- (void)setValue:(nullable id)value forUndefinedKey:(NSString *)key {
+    [super setValue:value forUndefinedKey:key];
+    if ([key isEqualToString:@"bigImgUrl"]) {
+        self.img = value;
+    }
 }
+
 @end

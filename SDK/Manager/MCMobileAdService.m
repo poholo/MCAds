@@ -70,10 +70,10 @@
             [self mainExecute:^{
                 __strong typeof(weakSelf) strongSelf = weakSelf;
 
-                if ([self.delegate respondsToSelector:@selector(mobileAdServiceRequestSuccess:)]) {
-                    [self.delegate mobileAdServiceRequestSuccess:[self.adContainers subarrayWithRange:range]];
-                    [self.adContainers removeObjectsInRange:range];
-                    self.delegate = nil;
+                if ([strongSelf.delegate respondsToSelector:@selector(mobileAdServiceRequestSuccess:)]) {
+                    [strongSelf.delegate mobileAdServiceRequestSuccess:[strongSelf.adContainers subarrayWithRange:range]];
+                    [strongSelf.adContainers removeObjectsInRange:range];
+                    strongSelf.delegate = nil;
                 }
             }];
         }

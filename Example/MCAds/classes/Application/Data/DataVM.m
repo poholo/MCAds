@@ -5,6 +5,7 @@
 
 #import "DataVM.h"
 #import "MCDto.h"
+#import "MCAdDecorate.h"
 
 
 @implementation DataVM
@@ -20,5 +21,12 @@
         _dataList = [NSMutableArray new];
     }
     return _dataList;
+}
+
+- (MCAdDecorate *)adDecorate {
+    if (!_adDecorate) {
+        _adDecorate = [MCAdDecorate new];
+    }
+    return _adDecorate;
 }
 @end

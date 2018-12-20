@@ -9,6 +9,7 @@
 
 #import "VideoDto.h"
 #import "MCColor.h"
+#import "UIView+AdCorner.h"
 
 
 @interface VideoCell ()
@@ -36,7 +37,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.coverImageView.frame = self.contentView.bounds;
+    self.coverImageView.frame = CGRectMake(self.marginLeftRight, self.marginTopBottom, CGRectGetWidth(self.frame) - 2 * self.marginLeftRight, CGRectGetHeight(self.frame) - 2 * self.marginTopBottom - 20);
     self.titleLabel.frame = CGRectMake(10, CGRectGetHeight(self.frame) - 20, CGRectGetWidth(self.frame) - 20, 15);
 }
 
@@ -46,6 +47,7 @@
     if (!_coverImageView) {
         _coverImageView = [UIImageView new];
         _coverImageView.backgroundColor = [MCColor randomImageColor];
+        [_coverImageView addCorner:10];
     }
     return _coverImageView;
 }
@@ -60,7 +62,8 @@
 }
 
 + (CGFloat)height {
-    return 100;
+    CGFloat height = CGRectGetWidth([UIScreen mainScreen].bounds) * 9 / 16.0f;
+    return height;
 }
 
 

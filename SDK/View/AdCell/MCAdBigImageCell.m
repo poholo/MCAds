@@ -41,7 +41,7 @@
 
 }
 
-+ (CGFloat)staticHeight {
++ (CGFloat)height {
     CGFloat maxWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
     CGFloat screenWidth9Division16 = maxWidth * 9 / 16.0f;
     return screenWidth9Division16 + 70;

@@ -45,7 +45,7 @@
     self.logoView.frame = CGRectMake(CGRectGetMaxX(picFrame) - size.width, CGRectGetMaxY(self.picImageView.frame) - size.height, size.width, size.height);
 }
 
-+ (CGFloat)staticHeight {
++ (CGFloat)height {
     return 80;
 }
 

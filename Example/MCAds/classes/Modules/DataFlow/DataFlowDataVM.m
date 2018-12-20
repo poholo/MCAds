@@ -7,6 +7,7 @@
 
 #import "RootCateDto.h"
 #import "VideoDto.h"
+#import "MCAdDecorate.h"
 
 
 @implementation DataFlowDataVM
@@ -16,10 +17,14 @@
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-    for (NSDictionary *tmDict in dictionary[@"data"]) {
-        VideoDto *dto = [VideoDto createDto:tmDict];
-        [self.dataList addObject:dto];
+    for (NSDictionary *tmDict in dictionary[@"cards"]) {
+        if ([tmDict[@"ct"] isEqualToString:@"v"]) {
+            VideoDto *dto = [VideoDto createDto:tmDict[@"video"]];
+            [self.dataList addObject:dto];
+        }
     }
+
+    self.dataList = [self.adDecorate wrapAdsWithList:self.dataList adJoint:[MCAdJointDto createDto:dictionary[kAdJointKey]]];
 
     if (callBack) {
         callBack(error ? NO : YES, self.dataList);

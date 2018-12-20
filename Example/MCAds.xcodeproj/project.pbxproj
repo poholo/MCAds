@@ -29,6 +29,7 @@
 		1A66679AE7AA0C718B01BB25 /* DataFlow_small.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666B61356CF414BDD54850 /* DataFlow_small.json */; };
 		1A6667AD1668B6A39F5EC7EE /* MCAdMutipleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666B2FE06215A152701C9C /* MCAdMutipleImageCell.m */; };
 		1A6667C4F9BD4D3FAB647BDF /* MCOpAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66600E49D3013A83A0F3F1 /* MCOpAdCell.m */; };
+		1A6667F1868C38E93B4D13FE /* MCAdDecorate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666DF3DCD146D119E10FED /* MCAdDecorate.m */; };
 		1A6668020084CD8E38F6352C /* MCSnapAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6663CC56E39C3DCCFB4D1D /* MCSnapAdCell.m */; };
 		1A666898D97918AD0E296C19 /* MCAdDef.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666FDF958729ED42EDCAF6 /* MCAdDef.m */; };
 		1A6668E1DA2820E6520B9F4A /* MCAdCollectionBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6662FFE5C4A0EFFFB639FD /* MCAdCollectionBaseCell.m */; };
@@ -143,11 +144,13 @@
 		1A666C7812DBCAD4C10933C8 /* MCAdContinuePlayCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdContinuePlayCollectionCell.h; sourceTree = "<group>"; };
 		1A666CB61F34BEABD7325DAD /* MCCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCollectionCell.h; sourceTree = "<group>"; };
 		1A666D8672C6EC0DA57B8138 /* NSObject+AdApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AdApi.m"; sourceTree = "<group>"; };
+		1A666DF3DCD146D119E10FED /* MCAdDecorate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdDecorate.m; sourceTree = "<group>"; };
 		1A666E21F22CEF8F18AAD7FB /* MCPlayerPauseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPlayerPauseView.m; sourceTree = "<group>"; };
 		1A666E4B946E168D1C7F95CC /* MCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCColor.h; sourceTree = "<group>"; };
 		1A666E963826E0531326B76D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		1A666ED7ACC06FAEEF71AE40 /* MCMobileBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMobileBase.m; sourceTree = "<group>"; };
 		1A666EEB97D82D811EE19D03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MCAds/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		1A666EFA00924144DDA3A16B /* MCAdDecorate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdDecorate.h; sourceTree = "<group>"; };
 		1A666F4C23E0D6E8253A6749 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
 		1A666F9450013ED4261F7CE5 /* DataFlow_video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_video.json; sourceTree = "<group>"; };
 		1A666FD1E337A6BBAD818F52 /* MCAdDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdDef.h; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 				1A666E4B946E168D1C7F95CC /* MCColor.h */,
 				1A666B659908077422D19135 /* MCFont.m */,
 				1A666646DBCFED338DF6D801 /* MCFont.h */,
+				1A666EFA00924144DDA3A16B /* MCAdDecorate.h */,
+				1A666DF3DCD146D119E10FED /* MCAdDecorate.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -674,6 +679,7 @@
 				1A666C8302BD3EBC24397A87 /* VideoDto.m in Sources */,
 				1A66690E75A6ADC49ECA6A4C /* VideoCell.m in Sources */,
 				1A6669252C9E7CD939CDC18B /* MCTableCell.m in Sources */,
+				1A6667F1868C38E93B4D13FE /* MCAdDecorate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
