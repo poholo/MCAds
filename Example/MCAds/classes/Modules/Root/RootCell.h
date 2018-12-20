@@ -3,11 +3,11 @@
 // Copyright (c) 2018 majiancheng. All rights reserved.
 //
 
-#import "MCTapTableCell.h"
+#import "MCTableCell.h"
 
 @class RootCateDto;
 
-@interface RootCell : MCTapTableCell
+@interface RootCell : MCTableCell
 
 - (void)loadData:(RootCateDto *)dto;
 

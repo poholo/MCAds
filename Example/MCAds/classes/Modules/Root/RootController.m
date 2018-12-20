@@ -14,6 +14,7 @@
 #import "RootCateDto.h"
 #import "MCAdsManager.h"
 #import "MCSplashService.h"
+#import "DataFlowController.h"
 
 @interface RootController ()
 
@@ -55,6 +56,11 @@
     RootCateDto *cateDto = self.dataVM.dataList[indexPath.row];
     if ([cateDto.entityId isEqualToString:@"0"]) {
         [[MCAdsManager share].splashService showSplash];
+    } else if ([cateDto.entityId isEqualToString:@"1"]
+            || [cateDto.entityId isEqualToString:@"2"]
+            || [cateDto.entityId isEqualToString:@"3"]) {
+        DataFlowController *dataFlowController = [[DataFlowController alloc] initWithCate:cateDto];
+        [self.navigationController pushViewController:dataFlowController animated:YES];
     }
 }
 

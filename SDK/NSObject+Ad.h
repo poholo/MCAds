@@ -10,7 +10,7 @@
 @class MCAdDto;
 @class UIScrollView;
 @class MCDto;
-@class MCTapTableCell;
+@class MCTableCell;
 
 
 @interface NSObject (Ad)
@@ -82,7 +82,7 @@
  * @param dto
  * @return
  */
-- (MCTapTableCell *)adOpSuitCell:(MCDto *)dto
+- (MCTableCell *)adOpSuitCell:(MCDto *)dto
                        container:(UIScrollView *)container
                        indexPath:(NSIndexPath *)indexPath
                            refer:(NSString *)refer;

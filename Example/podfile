@@ -8,4 +8,5 @@ target 'MCAds' do
  pod 'SDWebImage'
  pod 'MCPlayerKit'
  pod 'HWWeakTimer'
+ pod 'MJRefresh'
 end

@@ -11,7 +11,7 @@
 
 #import <BaiduMobAdSDK/BaiduMobAdNativeAdObject.h>
 
-#import "MCTapTableCell.h"
+#import "MCTableCell.h"
 #import "MCAdBaseDelegate.h"
 
 @class MCMobAdNativeAdView;
@@ -22,7 +22,7 @@
 /****
  * TableviewCell 广告基类
  */
-@interface MCAdBaseCell : MCTapTableCell <MCAdBaseDelegate>
+@interface MCAdBaseCell : MCTableCell <MCAdBaseDelegate>
 
 @property(nonatomic, strong) MCAdBaseView *baseView;
 

@@ -4,12 +4,12 @@
 //
 
 
-#import "MCTapTableCell.h"
+#import "MCTableCell.h"
 
 @class MCAdvertisementDto;
 
 
-@interface MCOpAdCell : MCTapTableCell
+@interface MCOpAdCell : MCTableCell
 
 - (void)updateDto:(MCAdvertisementDto *)dto;
 

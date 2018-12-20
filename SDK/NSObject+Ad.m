@@ -18,7 +18,7 @@
 #import "MCAdvertisementDto.h"
 #import "MCSnapAdCell.h"
 #import "MCH5AdDto.h"
-#import "MCTapTableCell.h"
+#import "MCTableCell.h"
 
 @implementation NSObject (Ad)
 
@@ -213,7 +213,7 @@
 }
 
 
-- (MCTapTableCell *)adOpSuitCell:(MCDto *)dto container:(UIScrollView *)container indexPath:(NSIndexPath *)indexPath refer:(NSString *)refer {
+- (MCTableCell *)adOpSuitCell:(MCDto *)dto container:(UIScrollView *)container indexPath:(NSIndexPath *)indexPath refer:(NSString *)refer {
     if ([dto isKindOfClass:[MCAdvertisementDto class]]) {
         MCOpAdCell *cell = [(UITableView *) container dequeueReusableCellWithIdentifier:[MCOpAdCell identifier] forIndexPath:indexPath];
         [cell updateDto:dto];
