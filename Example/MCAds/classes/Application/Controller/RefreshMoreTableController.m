@@ -4,10 +4,11 @@
 //
 
 #import "RefreshMoreTableController.h"
-#import "MJRefreshHeader.h"
-#import "MJRefreshFooter.h"
 
 #import <UIScrollView+MJRefresh.h>
+#import <MJRefresh/MJRefreshBackNormalFooter.h>
+
+#import "MJRefreshNormalHeader.h"
 
 
 @implementation RefreshMoreTableController
@@ -20,12 +21,12 @@
 
 - (void)configRefresh {
     __weak typeof(self) weakSelf = self;
-    [self.tableView setMj_header:[MJRefreshHeader headerWithRefreshingBlock:^{
+    [self.tableView setMj_header:[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf refresh];
     }]];
 
-    [self.tableView setMj_footer:[MJRefreshFooter footerWithRefreshingBlock:^{
+    [self.tableView setMj_footer:[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [self more];
     }]];
