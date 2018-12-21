@@ -21,7 +21,8 @@
 
 @property(nonatomic, strong) MCNativeAdDto *nativeAdDto;
 
-@property(nonatomic, assign) MCAdStyleType styleId;
+@property(nonatomic, assign) MCAdStyleType styleType;
+@property(nonatomic, assign) MCAdMaterialType materialType;
 @property(nonatomic, assign) MCAdSourceType adSourceType;
 
 @property(nonatomic, copy) NSString *title;

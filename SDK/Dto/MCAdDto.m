@@ -31,7 +31,7 @@
             self.nativeAdDto = dto;
         }
         self.lastTimeInterval = [[NSDate date] timeIntervalSince1970];
-        self.styleId = styleId;
+        self.styleType = styleId;
     }
 
     return self;

@@ -20,12 +20,15 @@
 @property(nonatomic, readonly) UILabel *popularizeLabel;
 @property(nonatomic, readonly) UIImageView *logoView;
 @property(nonatomic, readonly) UIImageView *adImageView;
+@property(nonatomic, readonly) UIView *videoView;
 
 @property(nonatomic, strong) NSIndexPath *indexPath;
 @property(nonatomic, copy) NSString *type;
 @property(nonatomic, assign) MCAdStyleType picType;
 @property(nonatomic, copy) NSString *referId;
 @property(nonatomic, strong) NSString *apId;
+
+- (void)refreshVideoFrame:(CGRect)frame;
 
 - (void)setAdModel:(MCAdDto *)model;
 

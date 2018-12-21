@@ -19,4 +19,6 @@
 @property(nonatomic, copy) NSString * title;
 @property(nonatomic, assign) NSInteger picType;
 
+- (void)refreshVideoFrame:(CGRect)frame;
+
 @end

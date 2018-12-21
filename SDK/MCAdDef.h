@@ -24,6 +24,14 @@ typedef NS_ENUM(NSInteger, MCAdStyleType) {
     MCAdStyleH5
 };
 
+/***
+ * 广告素材类型
+ */
+typedef NS_ENUM(NSInteger, MCAdMaterialType) {
+    MCAdMaterialTextImage,
+    MCAdMaterialVideo,
+};
+
 /**
  * 广告类型
  */

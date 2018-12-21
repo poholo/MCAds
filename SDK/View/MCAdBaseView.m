@@ -30,7 +30,6 @@
 @property(nonatomic, strong) UILabel *popularizeLabel;
 @property(nonatomic, strong) UIImageView *logoView;
 @property(nonatomic, strong) UIImageView *adImageView;
-@property(nonatomic, strong) BaiduMobAdNativeVideoView *videoBaseView;
 
 @end
 
@@ -54,29 +53,29 @@
 
 - (void)configureBaiduAd {
     if (!self.adBaiduView) {
-
-        self.adBaiduView = [[MCMobAdNativeAdView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight(self.frame))
-                                                            brandName:nil
-                                                                title:self.infoLabel
-                                                                 text:self.titleLabel
-                                                                 icon:nil
-                                                            mainImage:self.picImageView
-                                                            videoView:self.videoBaseView];
-        [self.videoBaseView play];
-        self.adBaiduView.backgroundColor = [MCColor colorV];
-        [self addSubview:self.adBaiduView];
-        [self.adBaiduView addSubview:self.popularizeLabel];
-        [self.adBaiduView addSubview:self.adImageView];
-        [self.adBaiduView addSubview:self.logoView];
-        [self.logoView sd_setImageWithURL:[NSURL URLWithString:@"https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"]];
-        [self.adImageView sd_setImageWithURL:[NSURL URLWithString:@"https://cpro.baidustatic.com/cpro/ui/noexpire/img/mob_adicon.png"]];
+        [self.adBaiduView removeFromSuperview];
+    }
+    BaiduMobAdNativeVideoBaseView *videoBaseView;
+    if (self.adDto.materialType == MCAdMaterialVideo) {
+        videoBaseView = [[BaiduMobAdNativeVideoView alloc] initWithFrame:self.picImageView.frame andObject:self.adDto.nativeAdDto.baiduAdData];
+        [videoBaseView play];
     }
 
-    self.videoBaseView = [[BaiduMobAdNativeVideoView alloc] initWithFrame:CGRectMake(0, 0, 300, 100) andObject:self.adDto.nativeAdDto];
-    self.videoBaseView.backgroundColor = [MCColor redColor];
+    self.adBaiduView = [[MCMobAdNativeAdView alloc] initWithFrame:self.bounds
+                                                        brandName:nil
+                                                            title:self.infoLabel
+                                                             text:self.titleLabel
+                                                             icon:nil
+                                                        mainImage:self.picImageView
+                                                        videoView:videoBaseView];
+    self.adBaiduView.backgroundColor = [MCColor colorV];
+    [self addSubview:self.adBaiduView];
+    [self.adBaiduView addSubview:self.popularizeLabel];
+    [self.adBaiduView addSubview:self.adImageView];
+    [self.adBaiduView addSubview:self.logoView];
+    [self.logoView sd_setImageWithURL:[NSURL URLWithString:@"https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"]];
+    [self.adImageView sd_setImageWithURL:[NSURL URLWithString:@"https://cpro.baidustatic.com/cpro/ui/noexpire/img/mob_adicon.png"]];
 
-    [self.commenAdView addSubview:self.videoBaseView];
-    [self.videoBaseView play];
 }
 
 - (void)configureCommenAd {
@@ -143,6 +142,11 @@
 
     [self sendSubviewToBack:self.picImageView];
 }
+
+- (void)refreshVideoFrame:(CGRect)frame {
+    [self.adBaiduView refreshVideoFrame:frame];
+}
+
 
 - (void)setAdModel:(MCAdDto *)mmAdDto {
     self.adDto = mmAdDto;
@@ -251,6 +255,10 @@
         [_commenAdView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAd)]];
     }
     return _commenAdView;
+}
+
+- (UIView *)videoView {
+    return self.adBaiduView.videoView;
 }
 
 @end

@@ -11,12 +11,14 @@
 #import "UIView+AdCorner.h"
 #import "NSString+Extend.h"
 #import "MCColor.h"
+#import "MCAdBaseView.h"
 
 @implementation MCAdOrientionImageCell
 
 - (void)updateStyle {
     [self.picImageView addDefaultCorner];
     [self.logoView addDefaultCorner];
+    [self.videoView addDefaultCorner];
     self.titleLabel.textColor = [MCColor whiteColor];
     self.infoLabel.textColor = [MCColor whiteColor];
     self.popularizeLabel.textColor = [MCColor whiteColor];
@@ -29,6 +31,7 @@
     CGFloat maxWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
     CGFloat height = 100;
     self.picImageView.frame = CGRectMake(leftRightMargin, top, maxWidth - 2 * leftRightMargin, height);
+    [self.baseView refreshVideoFrame:self.picImageView.frame];
 
     self.popularizeLabel.frame = CGRectMake(leftRightMargin + leftRightMargin, CGRectGetMaxY(self.picImageView.frame) - 20, 30, 15);
 

@@ -50,6 +50,7 @@
     MCNativeAdDto *dto = [[MCNativeAdDto alloc] init];
     if ([adNatvie isKindOfClass:[BaiduMobAdNativeAdObject class]]) {
         BaiduMobAdNativeAdObject *adObject = adNatvie;
+        adObject.presentAdViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
         dto.baiduAdData = adObject;
         dto.text = adObject.text;
         dto.title = adObject.title;

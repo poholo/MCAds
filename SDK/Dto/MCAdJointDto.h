@@ -20,6 +20,8 @@
 
 @property(nonatomic, assign) MCAdStyleType styleId;
 
+@property(nonatomic, assign) MCAdMaterialType materialType;
+
 - (BOOL)avaliable;
 
 @end

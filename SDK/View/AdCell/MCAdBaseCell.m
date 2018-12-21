@@ -54,6 +54,8 @@
 
 - (void)setAdModel:(MCAdDto *)mmAdDto {
     [self.baseView setAdModel:mmAdDto];
+    [self updateStyle];
+    [self setNeedsLayout];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
     [self layoutIfNeeded];
@@ -100,5 +102,10 @@
 - (UIImageView *)adImageView {
     return self.baseView.adImageView;
 }
+
+- (UIView *)videoView {
+    return self.baseView.videoView;
+}
+
 
 @end

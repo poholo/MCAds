@@ -69,7 +69,7 @@
     MCDto *dto = self.dataVM.dataList[indexPath.row];
     if ([dto isKindOfClass:[MCAdDto class]]) {
         MCAdDto *adDto = (MCAdDto *) dto;
-        MCAdBaseCell *cell = [self adSuiltCell:adDto.styleId container:self.tableView indexPath:indexPath adDto:adDto refer:nil];
+        MCAdBaseCell *cell = [self adSuiltCell:adDto.styleType container:self.tableView indexPath:indexPath adDto:adDto refer:nil];
         return cell;
     } else if ([dto isKindOfClass:[VideoDto class]]) {
         VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:[VideoCell identifier] forIndexPath:indexPath];
@@ -87,7 +87,7 @@
     MCDto *dto = self.dataVM.dataList[indexPath.row];
     if ([dto isKindOfClass:[MCAdDto class]]) {
         MCAdDto *adDto = (MCAdDto *) dto;
-        return [self adSuiltHeight:adDto.styleId];
+        return [self adSuiltHeight:adDto.styleType];
     } else if ([dto isKindOfClass:[VideoDto class]]) {
         return [VideoCell height];
     }

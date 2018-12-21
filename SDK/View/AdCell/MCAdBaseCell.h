@@ -32,6 +32,6 @@
 @property(nonatomic, readonly) UILabel *popularizeLabel;
 @property(nonatomic, readonly) UIImageView *logoView;
 @property(nonatomic, readonly) UIImageView *adImageView;
-
+@property(nonatomic, readonly) UIView *videoView;
 
 @end

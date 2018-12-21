@@ -21,12 +21,14 @@
     self.titleLabel.font = [MCFont fontVI];
     [self.picImageView addDefaultCorner];
     [self.logoView addDefaultCorner];
+    [self.videoView addDefaultCorner];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat top = 5;
     self.picImageView.frame = CGRectMake(15, top, 140, 70);
+    [self.baseView refreshVideoFrame:self.picImageView.frame];
 
     CGFloat maxWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
     CGFloat screenWidth9Division16 = maxWidth * 9 / 16.0f;

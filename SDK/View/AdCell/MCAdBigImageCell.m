@@ -11,12 +11,14 @@
 #import "MCAdsManager.h"
 #import "UIView+AdCorner.h"
 #import "NSString+Extend.h"
+#import "MCAdBaseView.h"
 
 @implementation MCAdBigImageCell
 
 - (void)updateStyle {
     [self.picImageView addDefaultCorner];
     [self.logoView addDefaultCorner];
+    [self.videoView addDefaultCorner];
 }
 
 - (void)layoutSubviews {
@@ -29,6 +31,7 @@
     self.titleLabel.frame = CGRectMake(leftRightMargin, top, titleSize.width, titleSize.height);
 
     self.picImageView.frame = CGRectMake(leftRightMargin, CGRectGetMaxY(self.titleLabel.frame) + 10, maxWidth - 2 * leftRightMargin, screenWidth9Division16);
+   [self.baseView refreshVideoFrame:self.picImageView.frame];
 
     [self.popularizeLabel setFrame:CGRectMake(CGRectGetMinX(self.titleLabel.frame), CGRectGetMaxY(self.picImageView.frame) + 5, 30, 15)];
 
@@ -38,7 +41,6 @@
     CGSize size = self.logoView.image.size;
     self.logoView.frame = CGRectMake(CGRectGetMaxX(self.picImageView.frame) - size.width, CGRectGetMaxY(self.picImageView.frame) - size.height, size.width, size.height);
     self.adImageView.frame = CGRectMake(CGRectGetMaxX(self.picImageView.frame) - 12.5, CGRectGetMaxY(self.picImageView.frame) - 7, 12.5, 7);
-
 }
 
 + (CGFloat)height {
