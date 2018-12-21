@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A666096038E76A9D82625AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A666F3ECC21FD6BD268BA51 /* LaunchScreen.storyboard */; };
+		1A666096886C272207A8FB27 /* AdInfos_Self.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666A7F140FC49960358B32 /* AdInfos_Self.json */; };
 		1A666100917F4D9CCE976956 /* DataFlow_Oriention.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666410D711B16A3183451C /* DataFlow_Oriention.json */; };
 		1A666195F9715FF1282A9D8D /* DataVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6667D9A942448B7BD20BE4 /* DataVM.m */; };
 		1A6661ECA533F2B9866AB2CA /* MCMobAdNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6668802804039F46B79B28 /* MCMobAdNativeAdView.m */; };
@@ -43,7 +44,7 @@
 		1A666A02EC0C47D396E9A298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A66623F8E19496458C98F51 /* Assets.xcassets */; };
 		1A666A109C2B6768DB8AFD67 /* MCCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C2EF03CFEA17A8ED487 /* MCCollectionCell.m */; };
 		1A666A32CBCD64A627ED2712 /* MCAdLittleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666A2C83673B5406A92216 /* MCAdLittleImageCell.m */; };
-		1A666B3D787AACBB37503D13 /* AdInfos.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666934FBBCBB88FA65C9D2 /* AdInfos.json */; };
+		1A666B3D787AACBB37503D13 /* AdInfos_GDT.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666934FBBCBB88FA65C9D2 /* AdInfos_GDT.json */; };
 		1A666C356CBA254C789F804A /* MCAdBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666651888DE7D6B85F61B9 /* MCAdBaseView.m */; };
 		1A666C5FA599CBD3039FE294 /* AdCateDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6664E97D77CA0A07740A55 /* AdCateDto.m */; };
 		1A666C8302BD3EBC24397A87 /* VideoDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666FFB45E33288B19FF5A0 /* VideoDto.m */; };
@@ -117,7 +118,7 @@
 		1A6668E62AE83B11CBE377AE /* DataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVM.h; sourceTree = "<group>"; };
 		1A66692727E492FA5E8CEACA /* MCDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDto.m; sourceTree = "<group>"; };
 		1A666934D7059C65D92FA1D0 /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
-		1A666934FBBCBB88FA65C9D2 /* AdInfos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos.json; sourceTree = "<group>"; };
+		1A666934FBBCBB88FA65C9D2 /* AdInfos_GDT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_GDT.json; sourceTree = "<group>"; };
 		1A66695350963F2BB1D5D15D /* MCPlayerPauseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPlayerPauseView.h; sourceTree = "<group>"; };
 		1A66699296C03930A3D3D728 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
 		1A6669A63E1958D851BCB788 /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 		1A666A52FA334BB6FC58E080 /* MCPlayerPreAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPlayerPreAdView.m; sourceTree = "<group>"; };
 		1A666A747B6F445EE5F52A83 /* RootDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootDataVM.m; sourceTree = "<group>"; };
 		1A666A7B8E2CEDB218584FBF /* MCMobileBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMobileBase.h; sourceTree = "<group>"; };
+		1A666A7F140FC49960358B32 /* AdInfos_Self.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_Self.json; sourceTree = "<group>"; };
 		1A666AAED0BE65E36A9791CB /* RootDataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootDataVM.h; sourceTree = "<group>"; };
 		1A666AF5C3FBC2B8A2FDCB43 /* MCAdMutipleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdMutipleImageCell.h; sourceTree = "<group>"; };
 		1A666B2FE06215A152701C9C /* MCAdMutipleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdMutipleImageCell.m; sourceTree = "<group>"; };
@@ -291,13 +293,14 @@
 		1A66661BA9AF4E97194491AB /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				1A666934FBBCBB88FA65C9D2 /* AdInfos.json */,
+				1A666934FBBCBB88FA65C9D2 /* AdInfos_GDT.json */,
 				1A6665BFC47AC1B252463D08 /* AdInfos_Baidu.json */,
 				1A666C1F74AE7973B0F6F102 /* RootData.json */,
 				1A66608BBB420F670C13CF3A /* DataFlow_Big.json */,
 				1A666B61356CF414BDD54850 /* DataFlow_Little.json */,
 				1A666410D711B16A3183451C /* DataFlow_Oriention.json */,
 				1A666F9450013ED4261F7CE5 /* DataFlow_Video.json */,
+				1A666A7F140FC49960358B32 /* AdInfos_Self.json */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -575,13 +578,14 @@
 				1A666096038E76A9D82625AC /* LaunchScreen.storyboard in Resources */,
 				1A666A02EC0C47D396E9A298 /* Assets.xcassets in Resources */,
 				1A66620B3DBE0A4068A6E83B /* Main.storyboard in Resources */,
-				1A666B3D787AACBB37503D13 /* AdInfos.json in Resources */,
+				1A666B3D787AACBB37503D13 /* AdInfos_GDT.json in Resources */,
 				1A66650D0FE00C28DFB661DD /* AdInfos_Baidu.json in Resources */,
 				1A666D8F00C6BECB5AA2DA7B /* RootData.json in Resources */,
 				1A666E4F477DF37F9368093F /* DataFlow_Big.json in Resources */,
 				1A66679AE7AA0C718B01BB25 /* DataFlow_Little.json in Resources */,
 				1A666100917F4D9CCE976956 /* DataFlow_Oriention.json in Resources */,
 				1A666F7AE9252828D93B4D9D /* DataFlow_Video.json in Resources */,
+				1A666096886C272207A8FB27 /* AdInfos_Self.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

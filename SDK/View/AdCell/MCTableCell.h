@@ -5,6 +5,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * TableCell基类
+ */
 @interface MCTableCell : UITableViewCell
 
 + (CGFloat)height;

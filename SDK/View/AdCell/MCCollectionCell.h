@@ -5,6 +5,13 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * CollectionCell 基类
+ */
 @interface MCCollectionCell : UICollectionViewCell
+
++ (NSString *)identifier;
+
++ (CGSize)size;
 
 @end

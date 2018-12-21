@@ -6,7 +6,16 @@
 #import "MCCollectionCell.h"
 
 
-@implementation MCCollectionCell {
+@implementation MCCollectionCell
 
++ (NSString *)identifier {
+    return NSStringFromClass(self.class);
 }
+
++ (CGSize)size {
+    CGFloat width = CGRectGetWidth([UIScreen mainScreen].bounds) / 2.0f;
+    CGSize result = CGSizeMake(width, width);
+    return result;
+}
+
 @end

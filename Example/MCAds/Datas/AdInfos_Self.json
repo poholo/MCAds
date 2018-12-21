@@ -3,7 +3,7 @@
   "adConfig": {
     "splash": {
       "id": "2058492",
-      "source": "baidu",
+      "source": "self",
       "appId": "ccb60059",
       "duration": 5,
       "refer": "launch",
@@ -16,13 +16,13 @@
     },
     "dataFlow": {
       "id": "2362914",//"2058621",
-      "source": "baidu",
+      "source": "self",
       "appId": "ccb60059"
     },
     "dataPre": {
-      "id": "2362914",
-      "source": "baidu",
-      "appId": "ccb60059"
+      "id": "2030021727039283",
+      "source": "self",
+      "appId": "1106180396"
     }
   }
 }

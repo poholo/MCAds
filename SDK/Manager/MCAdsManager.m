@@ -148,12 +148,12 @@
 
             if (strongSelf.flowAdService == nil || strongSelf.flowAdService.adConfig == nil) {
                 strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataFlow]
-                                                                        adType:SSPDataFlow delegate:nil];
+                                                                              adType:SSPDataFlow delegate:nil];
             }
 
             if (strongSelf.playerPauseAdService == nil || strongSelf.playerPauseAdService.adConfig == nil) {
                 strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataPause]
-                                                                               adType:SSPDataPause delegate:nil];
+                                                                                     adType:SSPDataPause delegate:nil];
             }
 
             [strongSelf requestAllData];
@@ -168,7 +168,7 @@
     NSString *fileName = [path stringByAppendingPathComponent:@"MCAdConfig.json"];
 
     __weak typeof(self) weakSelf = self;
-    [self apiAdConfigMaterial:^(BOOL success, NSDictionary *dict) {
+    [self apiAdConfigMaterialSourceType:sourceType callBack:^(BOOL success, NSDictionary *dict) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (success) {
             NSDictionary *config = dict[@"adConfig"];
@@ -196,6 +196,7 @@
 
             [strongSelf requestAllData];
         }
+        MCLog(@"[MCAdsManager]changeMeterial %d", success);
     }];
 }
 

@@ -27,8 +27,4 @@
 
 - (void)setAdModel:(MCAdDto *)model;
 
-+ (NSString *)identifier;
-
-+ (CGSize)size;
-
 @end

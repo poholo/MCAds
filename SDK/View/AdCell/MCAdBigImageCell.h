@@ -7,7 +7,9 @@
 //
 
 #import "MCAdBaseCell.h"
-
+/**
+ * 大图
+ */
 @interface MCAdBigImageCell : MCAdBaseCell
 
 @end

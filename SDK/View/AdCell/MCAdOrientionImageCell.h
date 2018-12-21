@@ -8,6 +8,9 @@
 
 #import "MCAdBaseCell.h"
 
+/**
+ * 横幅模式
+ */
 @interface MCAdOrientionImageCell : MCAdBaseCell
 
 @end

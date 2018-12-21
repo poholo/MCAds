@@ -19,7 +19,7 @@
 }
 
 - (void)apiAdConfigMaterialSourceType:(AdSourceType)sourceType callBack:(void (^)(BOOL success, NSDictionary *dict))callBack {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_Baidu" ofType:@"json"];
+    NSString *path = [self adSourceFileOfType:sourceType];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
@@ -29,13 +29,22 @@
 }
 
 - (NSString *)adSourceFileOfType:(AdSourceType)sourceType {
-    NSString * fileName = nil;
+    NSString *fileName = nil;
     switch (sourceType) {
-        case AdSourceBaidu: {} break;
-        case AdSourceTencent: {} break;
-        case AdSourceInmmobi: {} break;
+        case AdSourceBaidu: {
+            fileName = @"AdInfos_Baidu.json";
+        }
+            break;
+        case AdSourceTencent: {
+            fileName = @"AdInfos_GDT.json";
+        }
+            break;
+        case AdSourceInmmobi: {
+            fileName = @"AdInfos_Self.json";
+        }
+            break;
     }
-    return nil;
+    return [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
 }
 
 

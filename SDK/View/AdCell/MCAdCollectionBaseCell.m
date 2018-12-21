@@ -105,14 +105,4 @@
     return self.baseView.adImageView;
 }
 
-+ (NSString *)identifier {
-    return NSStringFromClass(self.class);
-}
-
-+ (CGSize)size {
-    CGSize result = CGSizeMake(100, 100);
-    return result;
-}
-
-
 @end

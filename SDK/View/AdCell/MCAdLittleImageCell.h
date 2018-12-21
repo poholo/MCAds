@@ -8,6 +8,9 @@
 
 #import "MCAdBaseCell.h"
 
+/**
+ * 小图模式
+ */
 @interface MCAdLittleImageCell : MCAdBaseCell
 
 @end

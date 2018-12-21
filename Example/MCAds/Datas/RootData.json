@@ -1,76 +1,61 @@
 {
-    "success": true,
-    "data": [
+  "success": true,
+  "data": [
+    {
+      "id": "0",
+      "name": "开屏",
+      "data": [
         {
-            "id": "0",
-            "name": "开屏",
-            "data": [
-                {
-                    "id": "1",
-                    "name": "开屏[图]"
-                },
-                {
-                    "id": "2",
-                    "name": "开屏[视频]"
-                }
-            ]
+          "id": "1",
+          "name": "开屏[图]"
         },
         {
-            "id": "1",
-            "name": "信息流[图文]",
-            "data": [
-                {
-                    "id": "11",
-                    "name": "大卡片信息流",
-                    "file": "DataFlow_Big.json"
-                },
-                {
-                    "id": "12",
-                    "name": "小卡片信息流",
-                    "file": "DataFlow_Little.json"
-                },
-                {
-                    "id": "13",
-                    "name": "横幅卡片信息流",
-                    "file": "DataFlow_Oriention.json"
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "name": "信息流[图]",
-            "data": [
-                {
-                    "id": "21",
-                    "name": "大卡片信息流"
-                },
-                {
-                    "id": "22",
-                    "name": "小卡片信息流"
-                },
-                {
-                    "id": "23",
-                    "name": "横幅卡片信息流"
-                }
-            ]
-        },
-        {
-            "id": "3",
-            "name": "信息流[视频]",
-            "data": [
-                {
-                    "id": "31",
-                    "name": "大卡片信息流"
-                },
-                {
-                    "id": "32",
-                    "name": "小卡片信息流"
-                },
-                {
-                    "id": "33",
-                    "name": "横幅卡片信息流"
-                }
-            ]
+          "id": "2",
+          "name": "开屏[视频]"
         }
-    ]
+      ]
+    },
+    {
+      "id": "1",
+      "name": "信息流[图文]",
+      "data": [
+        {
+          "id": "11",
+          "name": "大卡片信息流",
+          "file": "DataFlow_Big.json"
+        },
+        {
+          "id": "12",
+          "name": "小卡片信息流",
+          "file": "DataFlow_Little.json"
+        },
+        {
+          "id": "13",
+          "name": "横幅卡片信息流",
+          "file": "DataFlow_Oriention.json"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "信息流[视频]",
+      "data": [
+        {
+          "id": "31",
+          "name": "大卡片信息流",
+          "file": "DataFlow_Big.json"
+        },
+        {
+          "id": "32",
+          "name": "小卡片信息流",
+          "file": "DataFlow_Little.json"
+        },
+        {
+          "id": "33",
+          "name": "横幅卡片信息流",
+          "file": "DataFlow_Oriention.json"
+        }
+      ]
+    }
+  ]
 }
