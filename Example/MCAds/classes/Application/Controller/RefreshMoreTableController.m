@@ -28,7 +28,7 @@
 
     [self.tableView setMj_footer:[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [self more];
+        [strongSelf more];
     }]];
 }
 
