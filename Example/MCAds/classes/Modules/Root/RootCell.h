@@ -5,10 +5,10 @@
 
 #import "MCTableCell.h"
 
-@class RootCateDto;
+@class AdCateDto;
 
 @interface RootCell : MCTableCell
 
-- (void)loadData:(RootCateDto *)dto;
+- (void)loadData:(AdCateDto *)dto;
 
 @end

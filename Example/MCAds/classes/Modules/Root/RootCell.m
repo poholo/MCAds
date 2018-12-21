@@ -4,7 +4,7 @@
 //
 
 #import "RootCell.h"
-#import "RootCateDto.h"
+#import "AdCateDto.h"
 
 
 @implementation RootCell
@@ -17,7 +17,7 @@
     return self;
 }
 
-- (void)loadData:(RootCateDto *)dto {
+- (void)loadData:(AdCateDto *)dto {
     self.textLabel.text = dto.name;
 }
 

@@ -4,7 +4,7 @@
 //
 
 #import "RootDataVM.h"
-#import "RootCateDto.h"
+#import "AdCateDto.h"
 
 
 @implementation RootDataVM
@@ -15,7 +15,7 @@
     NSError *error;
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     for(NSDictionary * tmDict in dictionary[@"data"]) {
-        RootCateDto * dto = [RootCateDto createDto:tmDict];
+        AdCateDto * dto = [AdCateDto createDto:tmDict];
         [self.dataList addObject:dto];
     }
 

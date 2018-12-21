@@ -162,6 +162,44 @@
 
 }
 
+- (void)changeConfig:(AdSourceType)sourceType {
+    //获取下一次的配置
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *fileName = [path stringByAppendingPathComponent:@"MCAdConfig.json"];
+
+    __weak typeof(self) weakSelf = self;
+    [self apiAdConfigMaterial:^(BOOL success, NSDictionary *dict) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (success) {
+            NSDictionary *config = dict[@"adConfig"];
+            [strongSelf __loadCommenFactory:config];
+            [dict writeToFile:fileName atomically:YES];
+            [strongSelf requestAllData];
+        } else {
+            if (strongSelf.preConfig == nil) {
+                strongSelf.preConfig = [strongSelf localConfig:SSPDataPre];
+            }
+
+            if (strongSelf.splashConfig == nil) {
+                strongSelf.splashConfig = [strongSelf localConfig:SSPSplash];
+            }
+
+            if (strongSelf.flowAdService == nil || strongSelf.flowAdService.adConfig == nil) {
+                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataFlow]
+                                                                              adType:SSPDataFlow delegate:nil];
+            }
+
+            if (strongSelf.playerPauseAdService == nil || strongSelf.playerPauseAdService.adConfig == nil) {
+                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataPause]
+                                                                                     adType:SSPDataPause delegate:nil];
+            }
+
+            [strongSelf requestAllData];
+        }
+    }];
+}
+
+
 - (void)__loadCommenFactory:(NSDictionary *)dict {
 
     NSDictionary *pre = dict[@"dataPre"];

@@ -45,7 +45,7 @@
 		1A666A32CBCD64A627ED2712 /* MCAdLittleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666A2C83673B5406A92216 /* MCAdLittleImageCell.m */; };
 		1A666B3D787AACBB37503D13 /* AdInfos.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666934FBBCBB88FA65C9D2 /* AdInfos.json */; };
 		1A666C356CBA254C789F804A /* MCAdBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666651888DE7D6B85F61B9 /* MCAdBaseView.m */; };
-		1A666C5FA599CBD3039FE294 /* RootCateDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6664E97D77CA0A07740A55 /* RootCateDto.m */; };
+		1A666C5FA599CBD3039FE294 /* AdCateDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6664E97D77CA0A07740A55 /* AdCateDto.m */; };
 		1A666C8302BD3EBC24397A87 /* VideoDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666FFB45E33288B19FF5A0 /* VideoDto.m */; };
 		1A666D8F00C6BECB5AA2DA7B /* RootData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666C1F74AE7973B0F6F102 /* RootData.json */; };
 		1A666DE94C5B190236DCCA77 /* UIView+AdCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C740A28F8C545C7A378 /* UIView+AdCorner.m */; };
@@ -79,7 +79,7 @@
 		1A666094DAC7473527AB58AE /* MCAdContinuePlayCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdContinuePlayCollectionCell.m; sourceTree = "<group>"; };
 		1A66614CDC7C9A8C9617FDB7 /* MCTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTableCell.h; sourceTree = "<group>"; };
 		1A66615DF71BED593C51F3C7 /* VideoDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDto.h; sourceTree = "<group>"; };
-		1A666162DC8A28A54F48B563 /* RootCateDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCateDto.h; sourceTree = "<group>"; };
+		1A666162DC8A28A54F48B563 /* AdCateDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdCateDto.h; sourceTree = "<group>"; };
 		1A6661811B58A8D324A01F48 /* MCAdBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdBaseCell.h; sourceTree = "<group>"; };
 		1A6661C425A445A3B0BE0EA4 /* MCAdSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdSplashView.m; sourceTree = "<group>"; };
 		1A666223C041D6993101CE7B /* NSObject+AdApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AdApi.h"; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		1A66644696936D370889DB2D /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
 		1A66644E640B5E132F9B37C8 /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
 		1A6664B87B161626EC74BA8F /* DataFlowDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFlowDataVM.m; sourceTree = "<group>"; };
-		1A6664E97D77CA0A07740A55 /* RootCateDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCateDto.m; sourceTree = "<group>"; };
+		1A6664E97D77CA0A07740A55 /* AdCateDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdCateDto.m; sourceTree = "<group>"; };
 		1A666504AC80905FBA42ACF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MCAds/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1A666505BA8A5CA0DC2CDE11 /* MCPlayerPreAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPlayerPreAdView.h; sourceTree = "<group>"; };
 		1A666508DC6024F34841F426 /* UIView+AdCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AdCorner.h"; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 				1A666F4C23E0D6E8253A6749 /* RootController.h */,
 				1A666A747B6F445EE5F52A83 /* RootDataVM.m */,
 				1A666AAED0BE65E36A9791CB /* RootDataVM.h */,
-				1A6664E97D77CA0A07740A55 /* RootCateDto.m */,
-				1A666162DC8A28A54F48B563 /* RootCateDto.h */,
+				1A6664E97D77CA0A07740A55 /* AdCateDto.m */,
+				1A666162DC8A28A54F48B563 /* AdCateDto.h */,
 				1A66654CB647A47247AE6CE4 /* RootCell.m */,
 				1A6662B0F9120DA9C087A6F1 /* RootCell.h */,
 			);
@@ -596,10 +596,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MCAds/Pods-MCAds-resources.sh",
 				"${PODS_ROOT}/MCBaiduAds/SDK/baidumobadsdk.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/baidumobadsdk.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -674,7 +676,7 @@
 				1A66699169D09676A3409AAC /* DataFlowDataVM.m in Sources */,
 				1A666918BCF99EA6DA988BC5 /* RootController.m in Sources */,
 				1A66699BCC60B1CA25FC7CF1 /* RootDataVM.m in Sources */,
-				1A666C5FA599CBD3039FE294 /* RootCateDto.m in Sources */,
+				1A666C5FA599CBD3039FE294 /* AdCateDto.m in Sources */,
 				1A66646BDEBA41BEA5104720 /* RootCell.m in Sources */,
 				1A666195F9715FF1282A9D8D /* DataVM.m in Sources */,
 				1A66690C0B9A6EE9A4314519 /* RefreshMoreTableController.m in Sources */,

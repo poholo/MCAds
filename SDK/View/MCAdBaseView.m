@@ -6,6 +6,7 @@
 #import "MCAdBaseView.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <BaiduMobAdSDK/BaiduMobAdNativeVideoView.h>
 
 #import "MCMobAdNativeAdView.h"
 #import "MCAdsManager.h"
@@ -29,6 +30,7 @@
 @property(nonatomic, strong) UILabel *popularizeLabel;
 @property(nonatomic, strong) UIImageView *logoView;
 @property(nonatomic, strong) UIImageView *adImageView;
+@property(nonatomic, strong) BaiduMobAdNativeVideoView *videoBaseView;
 
 @end
 
@@ -53,7 +55,14 @@
 - (void)configureBaiduAd {
     if (!self.adBaiduView) {
 
-        self.adBaiduView = [[MCMobAdNativeAdView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight(self.frame)) brandName:nil title:self.infoLabel text:self.titleLabel icon:nil mainImage:self.picImageView];
+        self.adBaiduView = [[MCMobAdNativeAdView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight(self.frame))
+                                                            brandName:nil
+                                                                title:self.infoLabel
+                                                                 text:self.titleLabel
+                                                                 icon:nil
+                                                            mainImage:self.picImageView
+                                                            videoView:self.videoBaseView];
+        [self.videoBaseView play];
         self.adBaiduView.backgroundColor = [MCColor colorV];
         [self addSubview:self.adBaiduView];
         [self.adBaiduView addSubview:self.popularizeLabel];
@@ -62,6 +71,12 @@
         [self.logoView sd_setImageWithURL:[NSURL URLWithString:@"https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"]];
         [self.adImageView sd_setImageWithURL:[NSURL URLWithString:@"https://cpro.baidustatic.com/cpro/ui/noexpire/img/mob_adicon.png"]];
     }
+
+    self.videoBaseView = [[BaiduMobAdNativeVideoView alloc] initWithFrame:CGRectMake(0, 0, 300, 100) andObject:self.adDto.nativeAdDto];
+    self.videoBaseView.backgroundColor = [MCColor redColor];
+
+    [self.commenAdView addSubview:self.videoBaseView];
+    [self.videoBaseView play];
 }
 
 - (void)configureCommenAd {
@@ -72,6 +87,7 @@
     [self.commenAdView addSubview:self.infoLabel];
     [self.commenAdView addSubview:self.titleLabel];
     [self.commenAdView addSubview:self.logoView];
+
     self.logoView.image = [UIImage imageNamed:@"ic_ad_gdt_logo"];
 }
 

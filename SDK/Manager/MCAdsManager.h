@@ -28,6 +28,8 @@
 
 - (void)loadNextConfig;
 
+- (void)changeConfig:(AdSourceType)sourceType;
+
 - (void)requestNativeAds:(SSPAdType)adType;
 
 - (MCAdDto *)takeOneAd:(SSPAdType)adType;

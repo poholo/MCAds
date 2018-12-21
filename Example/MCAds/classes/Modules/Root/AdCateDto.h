@@ -6,8 +6,11 @@
 #import "MCDto.h"
 
 
-@interface RootCateDto : MCDto
+@interface AdCateDto : MCDto
 
 @property(nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSString *file;
+
+@property(nonatomic, strong) NSMutableArray<AdCateDto *> *cateDtos;
 
 @end

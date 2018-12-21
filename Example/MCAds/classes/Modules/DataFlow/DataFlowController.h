@@ -5,10 +5,10 @@
 
 #import "RefreshMoreTableController.h"
 
-@class RootCateDto;
+@class AdCateDto;
 
 @interface DataFlowController : RefreshMoreTableController
 
-- (instancetype)initWithCate:(RootCateDto *)cateDto;
+- (instancetype)initWithCate:(AdCateDto *)cateDto;
 
 @end

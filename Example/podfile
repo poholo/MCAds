@@ -9,4 +9,5 @@ target 'MCAds' do
  pod 'MCPlayerKit'
  pod 'HWWeakTimer'
  pod 'MJRefresh'
+ pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 end

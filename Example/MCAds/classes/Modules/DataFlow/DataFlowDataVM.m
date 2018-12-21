@@ -5,7 +5,7 @@
 
 #import "DataFlowDataVM.h"
 
-#import "RootCateDto.h"
+#import "AdCateDto.h"
 #import "VideoDto.h"
 #import "MCAdDecorate.h"
 
@@ -13,7 +13,7 @@
 @implementation DataFlowDataVM
 
 - (void)reqDataFlow:(void (^)(BOOL success, NSMutableArray *dataList))callBack {
-    NSString *path = [self jsonPath];
+    NSString *path = [[NSBundle mainBundle] pathForResource:self.cateDto.file ofType:@""];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
@@ -30,20 +30,5 @@
         callBack(error ? NO : YES, self.dataList);
     }
 }
-
-- (NSString *)jsonPath {
-    NSString *jsonPath;
-    if ([self.cateDto.entityId isEqualToString:@"1"]) {
-        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_Big" ofType:@"json"];
-    } else if ([self.cateDto.entityId isEqualToString:@"2"]) {
-        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_Little" ofType:@"json"];
-    } else if ([self.cateDto.entityId isEqualToString:@"3"]) {
-        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_Oriention" ofType:@"json"];
-    } else if ([self.cateDto.entityId isEqualToString:@"4"]) {
-        jsonPath = [[NSBundle mainBundle] pathForResource:@"DataFlow_video" ofType:@"json"];
-    }
-    return jsonPath;
-}
-
 
 @end

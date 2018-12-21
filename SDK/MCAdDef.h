@@ -4,7 +4,7 @@
 typedef NS_ENUM(NSInteger, AdSourceType) {
     AdSourceBaidu,
     AdSourceTencent,
-    AdSourceInmmobi
+    AdSourceInmmobi,
 };
 
 

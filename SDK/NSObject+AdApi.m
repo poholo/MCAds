@@ -18,4 +18,25 @@
     }
 }
 
+- (void)apiAdConfigMaterialSourceType:(AdSourceType)sourceType callBack:(void (^)(BOOL success, NSDictionary *dict))callBack {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_Baidu" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSError *error;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    if (callBack) {
+        callBack(error ? NO : YES, dictionary);
+    }
+}
+
+- (NSString *)adSourceFileOfType:(AdSourceType)sourceType {
+    NSString * fileName = nil;
+    switch (sourceType) {
+        case AdSourceBaidu: {} break;
+        case AdSourceTencent: {} break;
+        case AdSourceInmmobi: {} break;
+    }
+    return nil;
+}
+
+
 @end

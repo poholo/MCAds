@@ -5,7 +5,7 @@
 
 #import "DataFlowController.h"
 
-#import "RootCateDto.h"
+#import "AdCateDto.h"
 #import "DataFlowDataVM.h"
 #import "NSObject+Ad.h"
 #import "MCAdDto.h"
@@ -20,7 +20,7 @@
 
 @implementation DataFlowController
 
-- (instancetype)initWithCate:(RootCateDto *)cateDto {
+- (instancetype)initWithCate:(AdCateDto *)cateDto {
     self = [super init];
     if (self) {
         self.dataVM.cateDto = cateDto;

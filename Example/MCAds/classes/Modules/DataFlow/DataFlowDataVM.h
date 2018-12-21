@@ -5,12 +5,12 @@
 
 #import "DataVM.h"
 
-@class RootCateDto;
+@class AdCateDto;
 
 
 @interface DataFlowDataVM : DataVM
 
-@property (nonatomic, weak) RootCateDto * cateDto;
+@property (nonatomic, weak) AdCateDto * cateDto;
 
 - (void)reqDataFlow:(void (^)(BOOL success, NSMutableArray *dataList))callBack;
 
