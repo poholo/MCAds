@@ -16,7 +16,7 @@ extern NSString *const kAdJointKey;
 
 @interface MCAdDecorate : NSObject
 
-@property(nonatomic, readonly) AdDisplayStyleType styleId;
+@property(nonatomic, readonly) MCAdStyleType styleId;
 
 /***
  * 增加信息流广告

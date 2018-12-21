@@ -44,7 +44,7 @@
 }
 
 - (void)segmentedControlClick {
-    [[MCAdsManager share] changeConfig:(AdSourceType) self.segmentedControl.selectedSegmentIndex];
+    [[MCAdsManager share] changeConfig:(MCAdSourceType) self.segmentedControl.selectedSegmentIndex];
 }
 
 #pragma mark - table

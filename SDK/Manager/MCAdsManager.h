@@ -28,15 +28,15 @@
 
 - (void)loadNextConfig;
 
-- (void)changeConfig:(AdSourceType)sourceType;
+- (void)changeConfig:(MCAdSourceType)sourceType;
 
-- (void)requestNativeAds:(SSPAdType)adType;
+- (void)requestNativeAds:(MCAdCategoryType)adType;
 
-- (MCAdDto *)takeOneAd:(SSPAdType)adType;
+- (MCAdDto *)takeOneAd:(MCAdCategoryType)adType;
 
-- (NSString *)apIdAdType:(SSPAdType)adType;
+- (NSString *)apIdAdType:(MCAdCategoryType)adType;
 
-- (void)updoateRefer:(SSPAdType)adType refer:(NSString *)refer;
+- (void)updoateRefer:(MCAdCategoryType)adType refer:(NSString *)refer;
 
 
 @end

@@ -24,7 +24,7 @@
     return _nativeAdDto.title;
 }
 
-- (instancetype)initWithNativeAdDto:(id)dto styleId:(AdDisplayStyleType)styleId {
+- (instancetype)initWithNativeAdDto:(id)dto styleId:(MCAdStyleType)styleId {
     self = [super init];
     if (self) {
         if ([dto isKindOfClass:[MCNativeAdDto class]]) {
@@ -37,17 +37,17 @@
     return self;
 }
 
-- (AdSourceType)adSourceType {
+- (MCAdSourceType)adSourceType {
     NSString *source = self.nativeAdDto.source;
-    AdSourceType type = AdSourceTencent;
+    MCAdSourceType type = MCAdSourceTencent;
     if ([source isEqualToString:@"baidu"]) {
-        type = AdSourceBaidu;
+        type = MCAdSourceBaidu;
     } else if ([source isEqualToString:@"gdt"]) {
-        type = AdSourceTencent;
+        type = MCAdSourceTencent;
     } else if ([source isEqualToString:@"inmmob"]) {
-        type = AdSourceInmmobi;
+        type = MCAdSourceInmmobi;
     } else {
-        type = AdSourceTencent;
+        type = MCAdSourceTencent;
     }
     return type;
 }
@@ -63,15 +63,15 @@
 - (NSString *)adrefer:(NSString *)refer {
     NSString *adrefer = refer;
     switch (self.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
             adrefer = [refer stringByAppendingString:@"_bdad"];
         }
             break;
-        case AdSourceTencent : {
+        case MCAdSourceTencent : {
             adrefer = [refer stringByAppendingString:@"_gdt"];
         }
             break;
-        case AdSourceInmmobi: {
+        case MCAdSourceInmmobi: {
             adrefer = [refer stringByAppendingString:@"_imbad"];
         }
             break;

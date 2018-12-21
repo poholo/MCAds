@@ -34,40 +34,40 @@
     }
 }
 
-- (CGFloat)adSuiltHeight:(AdDisplayStyleType)type {
+- (CGFloat)adSuiltHeight:(MCAdStyleType)type {
     switch (type) {
-        case AdDisplayStyleLittle      : {
+        case MCAdStyleLittle      : {
             return [MCAdLittleImageCell height];
         }
             break;///< 小图模式
-        case AdDisplayStyleBig         : {
+        case MCAdStyleBig         : {
             return [MCAdBigImageCell height];
         }
             break;///< 大图模式
-        case AdDisplayStyleOriention   : {
+        case MCAdStyleOriention   : {
             return [MCAdOrientionImageCell height];
         }
             break;///< 横幅模式
-        case AdDisplayStyleMutiple     : {
+        case MCAdStyleMutiple     : {
             return [MCAdMutipleImageCell height];
         }
             break;///< 多图模式
-        case AdDisplayStyleContinuePlay : {
+        case MCAdStyleContinuePlay : {
             // not need
         }
             break;///< 联播模式
-        case AdDisplayStyleCollection: {
+        case MCAdStyleCollection: {
 
         }
             break;
-        case AdDisplayStyleCollectionH5: {
+        case MCAdStyleH5: {
         }
             break;
     }
     return [MCAdLittleImageCell height];
 }
 
-- (MCAdBaseCell *)adSuiltCell:(AdDisplayStyleType)type
+- (MCAdBaseCell *)adSuiltCell:(MCAdStyleType)type
                     container:(UIScrollView *)container
                     indexPath:(NSIndexPath *)indexPath
                         adDto:(MCAdDto *)adDto
@@ -76,31 +76,31 @@
     MCAdBaseCell *cell = nil;
 
     switch (type) {
-        case AdDisplayStyleLittle      : {
+        case MCAdStyleLittle      : {
             cell = [((UITableView *) container) dequeueReusableCellWithIdentifier:[MCAdLittleImageCell identifier] forIndexPath:indexPath];
         }
             break;///< 小图模式
-        case AdDisplayStyleBig         : {
+        case MCAdStyleBig         : {
             cell = [(UITableView *) container dequeueReusableCellWithIdentifier:[MCAdBigImageCell identifier] forIndexPath:indexPath];
         }
             break;///< 大图模式
-        case AdDisplayStyleOriention   : {
+        case MCAdStyleOriention   : {
             cell = [(UITableView *) container dequeueReusableCellWithIdentifier:[MCAdOrientionImageCell identifier] forIndexPath:indexPath];
         }
             break;///< 横幅模式
-        case AdDisplayStyleMutiple     : {
+        case MCAdStyleMutiple     : {
             cell = [(UITableView *) container dequeueReusableCellWithIdentifier:[MCAdMutipleImageCell identifier] forIndexPath:indexPath];
         }
             break;///< 多图模式
-        case AdDisplayStyleContinuePlay : {
+        case MCAdStyleContinuePlay : {
 
         }
             break;///< 联播模式
-        case AdDisplayStyleCollection: {
+        case MCAdStyleCollection: {
 
         }
             break;
-        case AdDisplayStyleCollectionH5: {
+        case MCAdStyleH5: {
         }
             break;
     }
@@ -113,36 +113,36 @@
     return cell;
 }
 
-- (CGSize)adCollectionViewSuiltHeight:(AdDisplayStyleType)type {
+- (CGSize)adCollectionViewSuiltHeight:(MCAdStyleType)type {
     switch (type) {
-        case AdDisplayStyleLittle      : {
+        case MCAdStyleLittle      : {
         }
             break;///< 小图模式
-        case AdDisplayStyleBig         : {
+        case MCAdStyleBig         : {
         }
             break;///< 大图模式
-        case AdDisplayStyleOriention   : {
+        case MCAdStyleOriention   : {
         }
             break;///< 横幅模式
-        case AdDisplayStyleMutiple     : {
+        case MCAdStyleMutiple     : {
         }
             break;///< 多图模式
-        case AdDisplayStyleContinuePlay : {
+        case MCAdStyleContinuePlay : {
             return [MCAdContinuePlayCollectionCell size];
         }
             break;///< 联播模式
-        case AdDisplayStyleCollection: {
+        case MCAdStyleCollection: {
             return [MCSnapAdCell size];
         }
             break;
-        case AdDisplayStyleCollectionH5: {
+        case MCAdStyleH5: {
         }
             break;
     }
     return CGSizeZero;
 }
 
-- (MCAdCollectionBaseCell *)adSuiltCollectionViewCell:(AdDisplayStyleType)type
+- (MCAdCollectionBaseCell *)adSuiltCollectionViewCell:(MCAdStyleType)type
                                             container:(UIScrollView *)container
                                             indexPath:(NSIndexPath *)indexPath
                                                 adDto:(MCDto *)adDto
@@ -150,27 +150,27 @@
     MCAdCollectionBaseCell *cell = nil;
 
     switch (type) {
-        case AdDisplayStyleLittle      : {
+        case MCAdStyleLittle      : {
         }
             break;///< 小图模式
-        case AdDisplayStyleBig         : {
+        case MCAdStyleBig         : {
         }
             break;///< 大图模式
-        case AdDisplayStyleOriention   : {
+        case MCAdStyleOriention   : {
         }
             break;///< 横幅模式
-        case AdDisplayStyleMutiple     : {
+        case MCAdStyleMutiple     : {
         }
             break;///< 多图模式
-        case AdDisplayStyleContinuePlay : {
+        case MCAdStyleContinuePlay : {
             cell = [(UICollectionView *) container dequeueReusableCellWithReuseIdentifier:[MCAdContinuePlayCollectionCell identifier] forIndexPath:indexPath];
         }
             break;///< 联播模式
-        case AdDisplayStyleCollection: {
+        case MCAdStyleCollection: {
             cell = [(UICollectionView *) container dequeueReusableCellWithReuseIdentifier:[MCSnapAdCell identifier] forIndexPath:indexPath];
         }
             break;
-        case AdDisplayStyleCollectionH5: {
+        case MCAdStyleH5: {
         }
             break;
     }

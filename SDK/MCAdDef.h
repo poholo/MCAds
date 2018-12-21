@@ -1,28 +1,37 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, AdSourceType) {
-    AdSourceBaidu,
-    AdSourceTencent,
-    AdSourceInmmobi,
+/**
+ * 广告来源
+ */
+typedef NS_ENUM(NSInteger, MCAdSourceType) {
+    MCAdSourceBaidu,
+    MCAdSourceTencent,
+    MCAdSourceInmmobi,
 };
 
 
-typedef NS_ENUM(NSInteger, AdDisplayStyleType) {
-    AdDisplayStyleLittle,       ///< 小图模式
-    AdDisplayStyleBig,          ///< 大图模式
-    AdDisplayStyleOriention,    ///< 横幅模式
-    AdDisplayStyleMutiple,      ///< 多图模式
-    AdDisplayStyleContinuePlay,  ///< 联播模式
-    AdDisplayStyleCollection,
-    AdDisplayStyleCollectionH5
+/**
+ * 广告样式
+ */
+typedef NS_ENUM(NSInteger, MCAdStyleType) {
+    MCAdStyleLittle,       ///< 小图模式
+    MCAdStyleBig,          ///< 大图模式
+    MCAdStyleOriention,    ///< 横幅模式
+    MCAdStyleMutiple,      ///< 多图模式
+    MCAdStyleContinuePlay,  ///< 联播模式
+    MCAdStyleCollection,
+    MCAdStyleH5
 };
 
-typedef NS_ENUM(NSInteger, SSPAdType) {
-    SSPSplash,
-    SSPDataFlow,
-    SSPDataPre,
-    SSPDataPause
+/**
+ * 广告类型
+ */
+typedef NS_ENUM(NSInteger, MCAdCategoryType) {
+    MCAdCategorySplash,
+    MCAdCategoryDataFlow,
+    MCAdCategoryDataPre,
+    MCAdCategoryDataPause
 };
 
 #if DEBUG

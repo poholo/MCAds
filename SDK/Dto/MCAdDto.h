@@ -21,8 +21,8 @@
 
 @property(nonatomic, strong) MCNativeAdDto *nativeAdDto;
 
-@property(nonatomic, assign) AdDisplayStyleType styleId;
-@property(nonatomic, assign) AdSourceType adSourceType;
+@property(nonatomic, assign) MCAdStyleType styleId;
+@property(nonatomic, assign) MCAdSourceType adSourceType;
 
 @property(nonatomic, copy) NSString *title;
 
@@ -30,7 +30,7 @@
 
 @property(nonatomic, assign) NSTimeInterval lastTimeInterval;
 
-- (instancetype)initWithNativeAdDto:(id)dto styleId:(AdDisplayStyleType)styleId;
+- (instancetype)initWithNativeAdDto:(id)dto styleId:(MCAdStyleType)styleId;
 
 - (CGSize)waterCellSize:(CGFloat)defaultWidth;
 

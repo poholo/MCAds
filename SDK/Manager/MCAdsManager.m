@@ -41,15 +41,15 @@
 
 - (void)activateApp {
     switch (self.splashConfig.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
 
         }
             break;
-        case AdSourceInmmobi: {
+        case MCAdSourceInmmobi: {
 
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
             [GDTTrack activateApp];
         }
             break;
@@ -70,13 +70,13 @@
 
 - (MCAdConfig *)splashConfig {
     if (_splashConfig == nil) {
-        _splashConfig = [self localConfig:SSPSplash];
+        _splashConfig = [self localConfig:MCAdCategorySplash];
     }
 
     return _splashConfig;
 }
 
-- (MCAdConfig *)findSuitConfigFromData:(id)data sspAdType:(SSPAdType)adType {
+- (MCAdConfig *)findSuitConfigFromData:(id)data MCAdCategoryType:(MCAdCategoryType)adType {
     if ([data isKindOfClass:[NSArray class]] && ((NSArray *) data).count > 0) {
         return [MCAdConfig createDto:((NSArray *) data).firstObject];
     } else if ([data isKindOfClass:[NSDictionary class]]) {
@@ -87,21 +87,21 @@
     return nil;
 }
 
-- (MCAdConfig *)localConfig:(SSPAdType)adType {
+- (MCAdConfig *)localConfig:(MCAdCategoryType)adType {
     switch (adType) {
-        case SSPSplash: {
+        case MCAdCategorySplash: {
             return [MCAdConfig createSplashDefault];
         }
             break;
-        case SSPDataFlow: {
+        case MCAdCategoryDataFlow: {
             return [MCAdConfig createDataFlow];
         }
             break;
-        case SSPDataPre : {
+        case MCAdCategoryDataPre : {
             return [MCAdConfig createPreConfig];
         }
             break;
-        case SSPDataPause: {
+        case MCAdCategoryDataPause: {
             return [MCAdConfig createPauseConfig];
         }
             break;
@@ -139,21 +139,21 @@
             [strongSelf requestAllData];
         } else {
             if (strongSelf.preConfig == nil) {
-                strongSelf.preConfig = [strongSelf localConfig:SSPDataPre];
+                strongSelf.preConfig = [strongSelf localConfig:MCAdCategoryDataPre];
             }
 
             if (strongSelf.splashConfig == nil) {
-                strongSelf.splashConfig = [strongSelf localConfig:SSPSplash];
+                strongSelf.splashConfig = [strongSelf localConfig:MCAdCategorySplash];
             }
 
             if (strongSelf.flowAdService == nil || strongSelf.flowAdService.adConfig == nil) {
-                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataFlow]
-                                                                              adType:SSPDataFlow delegate:nil];
+                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataFlow]
+                                                                              adType:MCAdCategoryDataFlow delegate:nil];
             }
 
             if (strongSelf.playerPauseAdService == nil || strongSelf.playerPauseAdService.adConfig == nil) {
-                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataPause]
-                                                                                     adType:SSPDataPause delegate:nil];
+                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataPause]
+                                                                                     adType:MCAdCategoryDataPause delegate:nil];
             }
 
             [strongSelf requestAllData];
@@ -162,7 +162,7 @@
 
 }
 
-- (void)changeConfig:(AdSourceType)sourceType {
+- (void)changeConfig:(MCAdSourceType)sourceType {
     //获取下一次的配置
     NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString *fileName = [path stringByAppendingPathComponent:@"MCAdConfig.json"];
@@ -177,21 +177,21 @@
             [strongSelf requestAllData];
         } else {
             if (strongSelf.preConfig == nil) {
-                strongSelf.preConfig = [strongSelf localConfig:SSPDataPre];
+                strongSelf.preConfig = [strongSelf localConfig:MCAdCategoryDataPre];
             }
 
             if (strongSelf.splashConfig == nil) {
-                strongSelf.splashConfig = [strongSelf localConfig:SSPSplash];
+                strongSelf.splashConfig = [strongSelf localConfig:MCAdCategorySplash];
             }
 
             if (strongSelf.flowAdService == nil || strongSelf.flowAdService.adConfig == nil) {
-                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataFlow]
-                                                                              adType:SSPDataFlow delegate:nil];
+                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataFlow]
+                                                                              adType:MCAdCategoryDataFlow delegate:nil];
             }
 
             if (strongSelf.playerPauseAdService == nil || strongSelf.playerPauseAdService.adConfig == nil) {
-                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:SSPDataPause]
-                                                                                     adType:SSPDataPause delegate:nil];
+                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataPause]
+                                                                                     adType:MCAdCategoryDataPause delegate:nil];
             }
 
             [strongSelf requestAllData];
@@ -208,17 +208,17 @@
     NSDictionary *flow = dict[@"dataFlow"];
     NSDictionary *dataPause = dict[@"dataPause"];
 
-    self.preConfig = [self findSuitConfigFromData:pre sspAdType:SSPDataPre];
-    self.splashConfig = [self findSuitConfigFromData:splash sspAdType:SSPSplash];
+    self.preConfig = [self findSuitConfigFromData:pre MCAdCategoryType:MCAdCategoryDataPre];
+    self.splashConfig = [self findSuitConfigFromData:splash MCAdCategoryType:MCAdCategorySplash];
 
-    self.preAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:pre sspAdType:SSPDataPre]
-                                                           adType:SSPDataPre delegate:nil];
+    self.preAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:pre MCAdCategoryType:MCAdCategoryDataPre]
+                                                           adType:MCAdCategoryDataPre delegate:nil];
 
-    self.flowAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:flow sspAdType:SSPDataFlow]
-                                                            adType:SSPDataFlow delegate:nil];
+    self.flowAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:flow MCAdCategoryType:MCAdCategoryDataFlow]
+                                                            adType:MCAdCategoryDataFlow delegate:nil];
 
-    self.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:dataPause sspAdType:SSPDataPause]
-                                                                   adType:SSPDataPause delegate:nil];
+    self.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[self findSuitConfigFromData:dataPause MCAdCategoryType:MCAdCategoryDataPause]
+                                                                   adType:MCAdCategoryDataPause delegate:nil];
 }
 
 - (void)requestAllData {
@@ -226,40 +226,40 @@
     [self.playerPauseAdService requestNativeAds];
 }
 
-- (void)requestNativeAds:(SSPAdType)adType {
+- (void)requestNativeAds:(MCAdCategoryType)adType {
     switch (adType) {
-        case SSPSplash : {
+        case MCAdCategorySplash : {
 
         }
             break;
-        case SSPDataFlow : {
+        case MCAdCategoryDataFlow : {
             [self.flowAdService requestNativeAds];
         }
             break;
-        case SSPDataPre : {
+        case MCAdCategoryDataPre : {
         }
             break;
-        case SSPDataPause : {
+        case MCAdCategoryDataPause : {
             [self.playerPauseAdService requestNativeAds];
         }
             break;
     }
 }
 
-- (MCAdDto *)takeOneAd:(SSPAdType)adType {
+- (MCAdDto *)takeOneAd:(MCAdCategoryType)adType {
     switch (adType) {
-        case SSPSplash : {
+        case MCAdCategorySplash : {
 
         }
             break;
-        case SSPDataFlow : {
+        case MCAdCategoryDataFlow : {
             return [self.flowAdService takeOneAd];
         }
             break;
-        case SSPDataPre : {
+        case MCAdCategoryDataPre : {
         }
             break;
-        case SSPDataPause : {
+        case MCAdCategoryDataPause : {
             return [self.playerPauseAdService takeOneAd];
         }
             break;
@@ -267,21 +267,21 @@
     return nil;
 }
 
-- (NSString *)apIdAdType:(SSPAdType)adType {
+- (NSString *)apIdAdType:(MCAdCategoryType)adType {
     switch (adType) {
-        case SSPSplash : {
+        case MCAdCategorySplash : {
 
         }
             break;
-        case SSPDataFlow : {
+        case MCAdCategoryDataFlow : {
             return [self.flowAdService apId];
         }
             break;
-        case SSPDataPre : {
+        case MCAdCategoryDataPre : {
             return [self.preAdService apId];
         }
             break;
-        case SSPDataPause : {
+        case MCAdCategoryDataPause : {
             return [self.playerPauseAdService apId];
         }
             break;
@@ -289,20 +289,20 @@
     return nil;
 }
 
-- (void)updoateRefer:(SSPAdType)adType refer:(NSString *)refer {
+- (void)updoateRefer:(MCAdCategoryType)adType refer:(NSString *)refer {
     switch (adType) {
-        case SSPSplash : {
+        case MCAdCategorySplash : {
 
         }
             break;
-        case SSPDataFlow : {
+        case MCAdCategoryDataFlow : {
             [self.flowAdService updateRefer:refer];
         }
             break;
-        case SSPDataPre : {
+        case MCAdCategoryDataPre : {
         }
             break;
-        case SSPDataPause : {
+        case MCAdCategoryDataPause : {
         }
             break;
     }

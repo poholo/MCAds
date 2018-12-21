@@ -30,7 +30,7 @@
 
 @property(nonatomic, assign) NSInteger interval;
 
-@property(nonatomic, readonly) AdSourceType adSourceType;
+@property(nonatomic, readonly) MCAdSourceType adSourceType;
 
 @property(nonatomic, strong) NSString *appId;
 

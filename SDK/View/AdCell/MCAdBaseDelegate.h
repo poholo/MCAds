@@ -15,7 +15,7 @@
 
 - (void)setAdType:(NSString *)adType;
 
-- (void)setAdPicType:(AdDisplayStyleType)picType;
+- (void)setAdPicType:(MCAdStyleType)picType;
 
 - (void)setAdRefer:(NSString *)refreId;
 

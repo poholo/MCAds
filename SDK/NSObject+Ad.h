@@ -25,7 +25,7 @@
  * @param type
  * @return
  */
-- (CGFloat)adSuiltHeight:(AdDisplayStyleType)type;
+- (CGFloat)adSuiltHeight:(MCAdStyleType)type;
 
 /**
  *TableView 广告通用cell包含日志上报
@@ -36,7 +36,7 @@
  * @param logADService 日志服务
  * @return
  */
-- (MCAdBaseCell *)adSuiltCell:(AdDisplayStyleType)type
+- (MCAdBaseCell *)adSuiltCell:(MCAdStyleType)type
                     container:(UIScrollView *)container
                     indexPath:(NSIndexPath *)indexPath
                         adDto:(MCAdDto *)adDto
@@ -47,7 +47,7 @@
  * @param type
  * @return
  */
-- (CGSize)adCollectionViewSuiltHeight:(AdDisplayStyleType)type;
+- (CGSize)adCollectionViewSuiltHeight:(MCAdStyleType)type;
 
 /**
  * CollectionView广告通用cell包含日志上报
@@ -58,7 +58,7 @@
  * @param logADService 日志服务
  * @return
  */
-- (MCAdCollectionBaseCell *)adSuiltCollectionViewCell:(AdDisplayStyleType)type
+- (MCAdCollectionBaseCell *)adSuiltCollectionViewCell:(MCAdStyleType)type
                                             container:(UIScrollView *)container
                                             indexPath:(NSIndexPath *)indexPath
                                                 adDto:(MCDto *)adDto

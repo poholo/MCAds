@@ -144,7 +144,7 @@
 #pragma mark - AdBaseDelegate
 
 - (NSString *)apId {
-    return [[MCAdsManager share] apIdAdType:SSPDataPre];
+    return [[MCAdsManager share] apIdAdType:MCAdCategoryDataPre];
 }
 
 
@@ -155,7 +155,7 @@
 - (void)setAdType:(NSString *)adType {
 }
 
-- (void)setAdPicType:(AdDisplayStyleType)picType {
+- (void)setAdPicType:(MCAdStyleType)picType {
 
 }
 

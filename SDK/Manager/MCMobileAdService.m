@@ -17,7 +17,7 @@
 
 @interface MCMobileAdService () <BaiduMobAdNativeAdDelegate, GDTNativeAdDelegate>
 
-@property(nonatomic, assign) SSPAdType adType;
+@property(nonatomic, assign) MCAdCategoryType adType;
 
 @property(nonatomic, strong) BaiduMobAdNative *baiduNativeAd;
 @property(nonatomic, strong) GDTNativeAd *tencentNativeAd;
@@ -38,7 +38,7 @@
     return nil;
 }
 
-- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(SSPAdType)adType delegate:(id <MobileAdServiceDelegate>)delegate {
+- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(MCAdCategoryType)adType delegate:(id <MobileAdServiceDelegate>)delegate {
     self = [super init];
     if (self) {
         self.adConfig = adConfig;
@@ -82,18 +82,18 @@
 
 - (void)smartRequestNativeAds {
     switch (self.adConfig.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
             [self.baiduNativeAd requestNativeAds];
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
 //            if ([GlobalRotate currentNavController].topViewController) {
 //                self.tencentNativeAd.controller = [GlobalRotate currentNavController].topViewController;
 //            }
             [self.tencentNativeAd loadAd:(int) self.containerLowValve];
         }
             break;
-        case AdSourceInmmobi: {
+        case MCAdSourceInmmobi: {
 
         }
             break;
@@ -127,14 +127,14 @@
 
 - (void)log2ThridPlatform:(MCAdDto *)adDto attachView:(UIView *)view {
     switch (self.adConfig.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
             [self.tencentNativeAd attachAd:adDto.nativeAdDto.tencentAdData toView:view];
         }
             break;
-        case AdSourceInmmobi: {
+        case MCAdSourceInmmobi: {
 
         }
             break;
@@ -146,17 +146,17 @@
 
 - (void)clickAd:(MCAdDto *)adDto {
     switch (self.adConfig.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
 //            if ([GlobalRotate currentNavController].topViewController) {
 //                self.tencentNativeAd.controller = [GlobalRotate currentNavController].topViewController;
 //            }
             [self.tencentNativeAd clickAd:adDto.nativeAdDto.tencentAdData];
         }
             break;
-        case AdSourceInmmobi: {
+        case MCAdSourceInmmobi: {
 
         }
             break;
@@ -199,7 +199,7 @@
     [nativeAds enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         MCNativeAdDto *adDto = [MCNativeAdDto creatWithAdNative:obj];
-        MCAdDto *dto = [[MCAdDto alloc] initWithNativeAdDto:adDto styleId:AdDisplayStyleLittle];
+        MCAdDto *dto = [[MCAdDto alloc] initWithNativeAdDto:adDto styleId:MCAdStyleLittle];
         dto.adService = strongSelf;
         [strongSelf.adContainers insertObject:dto atIndex:0];
     }];

@@ -171,7 +171,7 @@
     MCAdConfig *currentConfig = [MCAdsManager share].splashConfig;
     switch (dto.splashType) {
         case MCSplashTypeBaidu: {
-//            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] changeEventType:@"0"] advertisment:currentConfig.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]] advertismentPic:@(AdDisplayStyleLittle)]];
+//            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] changeEventType:@"0"] advertisment:currentConfig.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]] advertismentPic:@(MCAdStyleLittle)]];
             [self hide];
         }
             break;
@@ -181,13 +181,13 @@
         }
             break;
         case MCSplashTypeWaQuVideo: {
-//            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:@"plaunch"]] changeEventType:@"0"] advertisment:dto.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", dto.resq]] advertismentPic:@(AdDisplayStyleBig)]];
+//            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:@"plaunch"]] changeEventType:@"0"] advertisment:dto.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", dto.resq]] advertismentPic:@(MCAdStyleBig)]];
 //            [dto.advertisementDto startAction:self.logADService logParam:nil videoId:nil adId:dto.entityId];
             [self hide];
         }
             break;
         case MCSplashTypeTencent: {
-//            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] changeEventType:@"0"] advertisment:currentConfig.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]] advertismentPic:@(AdDisplayStyleLittle)]];
+//            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:REFER_VIEW_LUNCH]] changeEventType:@"0"] advertisment:currentConfig.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", self.currentSplashDto.resq]] advertismentPic:@(MCAdStyleLittle)]];
         }
             break;
         default: {

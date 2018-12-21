@@ -18,7 +18,7 @@
     }
 }
 
-- (void)apiAdConfigMaterialSourceType:(AdSourceType)sourceType callBack:(void (^)(BOOL success, NSDictionary *dict))callBack {
+- (void)apiAdConfigMaterialSourceType:(MCAdSourceType)sourceType callBack:(void (^)(BOOL success, NSDictionary *dict))callBack {
     NSString *path = [self adSourceFileOfType:sourceType];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;
@@ -28,18 +28,18 @@
     }
 }
 
-- (NSString *)adSourceFileOfType:(AdSourceType)sourceType {
+- (NSString *)adSourceFileOfType:(MCAdSourceType)sourceType {
     NSString *fileName = nil;
     switch (sourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
             fileName = @"AdInfos_Baidu.json";
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
             fileName = @"AdInfos_GDT.json";
         }
             break;
-        case AdSourceInmmobi: {
+        case MCAdSourceInmmobi: {
             fileName = @"AdInfos_Self.json";
         }
             break;

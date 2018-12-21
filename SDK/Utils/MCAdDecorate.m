@@ -24,7 +24,7 @@ NSString *const kAdJointKey = @"flowPage";
 @end
 
 @implementation MCAdDecorate
-- (AdDisplayStyleType)styleId {
+- (MCAdStyleType)styleId {
     return self.adJointDto.styleId;
 }
 

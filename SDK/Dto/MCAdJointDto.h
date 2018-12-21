@@ -18,7 +18,7 @@
 
 @property(nonatomic, assign) BOOL loop;
 
-@property(nonatomic, assign) AdDisplayStyleType styleId;
+@property(nonatomic, assign) MCAdStyleType styleId;
 
 - (BOOL)avaliable;
 

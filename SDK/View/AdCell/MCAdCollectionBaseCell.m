@@ -43,7 +43,7 @@
     self.baseView.type = adType;
 }
 
-- (void)setAdPicType:(AdDisplayStyleType)picType {
+- (void)setAdPicType:(MCAdStyleType)picType {
     self.baseView.picType = picType;
 }
 
@@ -56,7 +56,7 @@
 }
 
 - (NSString *)apId {
-    return [[MCAdsManager share] apIdAdType:SSPDataFlow];
+    return [[MCAdsManager share] apIdAdType:MCAdCategoryDataFlow];
 }
 
 

@@ -27,7 +27,7 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(SSPAdType)adType delegate:(id <MobileAdServiceDelegate>)delegate;
+- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(MCAdCategoryType)adType delegate:(id <MobileAdServiceDelegate>)delegate;
 
 - (void)requestNativeAds;
 

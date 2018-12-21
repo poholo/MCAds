@@ -23,7 +23,7 @@
 
 @property(nonatomic, strong) NSIndexPath *indexPath;
 @property(nonatomic, copy) NSString *type;
-@property(nonatomic, assign) AdDisplayStyleType picType;
+@property(nonatomic, assign) MCAdStyleType picType;
 @property(nonatomic, copy) NSString *referId;
 @property(nonatomic, strong) NSString *apId;
 

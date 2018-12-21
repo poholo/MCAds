@@ -56,7 +56,7 @@
             baseView;
         });
 
-        MCAdDto *adDto = [[MCAdsManager share] takeOneAd:SSPDataPause];
+        MCAdDto *adDto = [[MCAdsManager share] takeOneAd:MCAdCategoryDataPause];
         [_adBaseView setAdModel:adDto];
         _adBaseView.referId = nil;
 

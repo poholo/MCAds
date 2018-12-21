@@ -42,7 +42,7 @@
 }
 
 - (NSString *)apId {
-    return [[MCAdsManager share] apIdAdType:SSPDataFlow];
+    return [[MCAdsManager share] apIdAdType:MCAdCategoryDataFlow];
 }
 
 

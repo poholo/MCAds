@@ -147,19 +147,19 @@
 - (void)setAdModel:(MCAdDto *)mmAdDto {
     self.adDto = mmAdDto;
     switch (self.adDto.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
             [self configureBaiduAd];
             [self.adBaiduView loadAndDisplayNativeAdWithObject:self.adDto.nativeAdDto.baiduAdData completion:^(NSArray *errors) {
-                MCLog(@"[AdSourceBaidu]%@", errors);
+                MCLog(@"[MCAdSourceBaidu]%@", errors);
             }];
 
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
             [self configureCommenAd];
         }
             break;
-        case AdSourceInmmobi : {
+        case MCAdSourceInmmobi : {
             [self configureCommenAd];
         }
             break;
@@ -184,15 +184,15 @@
 
 - (void)clickAd {
     switch (self.adDto.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
 
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
             [self.adDto.adService clickAd:self.adDto];
         }
             break;
-        case AdSourceInmmobi: {
+        case MCAdSourceInmmobi: {
             if (self.adDto.nativeAdDto.inmobiDto && !self.adDto.nativeAdDto.inmobiDto.clicked) {
                 NSArray *pingURL = self.adDto.nativeAdDto.inmobiDto.eventTracking[@"8"][@"urls"];
                 for (NSString *url in pingURL) {
@@ -215,19 +215,19 @@
 //发送展现日志
 - (void)trackImpression {
     switch (self.adDto.adSourceType) {
-        case AdSourceBaidu: {
+        case MCAdSourceBaidu: {
 //            if ([[NetConfig share] isAdTrackImpression]) {
             [self.adBaiduView trackImpression];
 //            }
         }
             break;
-        case AdSourceTencent: {
+        case MCAdSourceTencent: {
 //            if ([[NetConfig share] isAdTrackImpression]) {
             [self.adDto.adService log2ThridPlatform:self.adDto attachView:self];
 //            }
         }
             break;
-        case AdSourceInmmobi : {
+        case MCAdSourceInmmobi : {
         }
             break;
         default: {
