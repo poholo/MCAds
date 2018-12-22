@@ -27,6 +27,7 @@
     self.videoImageView.frame = self.videoView.bounds;
     self.videoControlView.frame = self.videoView.bounds;
     self.actionButton.center = self.videoImageView.center;
+    self.indicatorView.center = self.videoImageView.center;
     CGRect countDownLabelFrame = self.countDownLabel.frame;
     self.countDownLabel.frame = CGRectMake(CGRectGetMaxX(self.videoView.frame) - CGRectGetWidth(countDownLabelFrame) - 10,
             5,
