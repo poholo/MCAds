@@ -25,9 +25,10 @@
 - (void)refreshVideoFrame:(CGRect)frame {
     self.videoView.frame = frame;
     self.videoImageView.frame = self.videoView.bounds;
+    self.videoControlView.frame = self.videoView.bounds;
     self.actionButton.center = self.videoImageView.center;
     CGRect countDownLabelFrame = self.countDownLabel.frame;
-    self.countDownLabel.frame = CGRectMake(CGRectGetMaxX(self.videoView.frame) - CGRectGetWidth(countDownLabelFrame),
+    self.countDownLabel.frame = CGRectMake(CGRectGetMaxX(self.videoView.frame) - CGRectGetWidth(countDownLabelFrame) - 10,
             5,
             CGRectGetWidth(countDownLabelFrame),
             CGRectGetHeight(countDownLabelFrame));
@@ -38,7 +39,7 @@
 - (UIActivityIndicatorView *)indicatorView {
     if (!_indicatorView) {
         for (UIView *view in self.videoControlView.subviews) {
-            if ([view isMemberOfClass:[UIActivityIndicatorView class]]) {
+            if ([view isKindOfClass:[UIActivityIndicatorView class]]) {
                 __weak typeof(view) weakView = view;
                 _indicatorView = (UIActivityIndicatorView *) weakView;
                 break;
@@ -64,7 +65,7 @@
 
 - (UIButton *)actionButton {
     if (!_actionButton) {
-        for (UIView *view in self.videoControlView.subviews) {
+        for (UIView *view in self.videoImageView.subviews) {
             if ([view isMemberOfClass:[UIButton class]]) {
                 __weak typeof(view) weakView = view;
                 _actionButton = (UIButton *) weakView;
