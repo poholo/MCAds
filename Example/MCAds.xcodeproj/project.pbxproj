@@ -20,6 +20,7 @@
 		1A6662EFD5BFA0DC3CD12B3D /* MCAdSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6661C425A445A3B0BE0EA4 /* MCAdSplashView.m */; };
 		1A66636BD210897E60CBE8BF /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66699296C03930A3D3D728 /* NSString+Extend.m */; };
 		1A6663D684CDB1D56A2FB707 /* MCFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666B659908077422D19135 /* MCFont.m */; };
+		1A6663DBEAECF9798D3947A3 /* RootData_Self.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666A484FFCA17EBAB49AF1 /* RootData_Self.json */; };
 		1A6663F1E8F31B8A40588251 /* MCAdPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666A5295FC0343404891DD /* MCAdPlayerView.m */; };
 		1A66646BDEBA41BEA5104720 /* RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66654CB647A47247AE6CE4 /* RootCell.m */; };
 		1A6664ADD263ADCC9EF40AF6 /* MCAdBigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C20236E717A2967FF7A /* MCAdBigImageCell.m */; };
@@ -39,6 +40,7 @@
 		1A66690E75A6ADC49ECA6A4C /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66644E640B5E132F9B37C8 /* VideoCell.m */; };
 		1A666918BCF99EA6DA988BC5 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6669A63E1958D851BCB788 /* RootController.m */; };
 		1A6669252C9E7CD939CDC18B /* MCTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C36847AB41A9CC554C7 /* MCTableCell.m */; };
+		1A666930C080D5E8B87AA614 /* RootData_GDT.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6663243F0A05FF74241766 /* RootData_GDT.json */; };
 		1A666986DCFE6BE63DDF5F03 /* MCAdBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6663B2C784CF7136EB7E35 /* MCAdBaseCell.m */; };
 		1A66699169D09676A3409AAC /* DataFlowDataVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6664B87B161626EC74BA8F /* DataFlowDataVM.m */; };
 		1A66699BCC60B1CA25FC7CF1 /* RootDataVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666A747B6F445EE5F52A83 /* RootDataVM.m */; };
@@ -51,7 +53,7 @@
 		1A666C8302BD3EBC24397A87 /* VideoDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666FFB45E33288B19FF5A0 /* VideoDto.m */; };
 		1A666C89655D456C97F39D92 /* DataFlow_Big_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666EDCB0C3EBCEA3843CE0 /* DataFlow_Big_v.json */; };
 		1A666D16FD21B797F6FC0A99 /* DataFlow_Oriention_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666A7636B092580047982D /* DataFlow_Oriention_v.json */; };
-		1A666D8F00C6BECB5AA2DA7B /* RootData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666C1F74AE7973B0F6F102 /* RootData.json */; };
+		1A666D8F00C6BECB5AA2DA7B /* RootData_Baidu.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666C1F74AE7973B0F6F102 /* RootData_Baidu.json */; };
 		1A666DE94C5B190236DCCA77 /* UIView+AdCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C740A28F8C545C7A378 /* UIView+AdCorner.m */; };
 		1A666E0567B623E45E1A0E2C /* MCAdContinuePlayCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666094DAC7473527AB58AE /* MCAdContinuePlayCollectionCell.m */; };
 		1A666E4F477DF37F9368093F /* DataFlow_Big.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A66608BBB420F670C13CF3A /* DataFlow_Big.json */; };
@@ -93,6 +95,7 @@
 		1A6662B0F9120DA9C087A6F1 /* RootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCell.h; sourceTree = "<group>"; };
 		1A6662CEE95A5EB2D8FA7316 /* MCAdCollectionBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdCollectionBaseCell.h; sourceTree = "<group>"; };
 		1A6662FFE5C4A0EFFFB639FD /* MCAdCollectionBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdCollectionBaseCell.m; sourceTree = "<group>"; };
+		1A6663243F0A05FF74241766 /* RootData_GDT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_GDT.json; sourceTree = "<group>"; };
 		1A66636742683F72F369789E /* MCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCColor.m; sourceTree = "<group>"; };
 		1A66638BCB334A78C074A878 /* MCAdOrientionImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdOrientionImageCell.h; sourceTree = "<group>"; };
 		1A66639CEF7D0173D076F277 /* DataFlowDataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFlowDataVM.h; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		1A6669DF91A411FF92BC3E9F /* MCSnapAdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSnapAdCell.h; sourceTree = "<group>"; };
 		1A666A079171DF578F2806B6 /* MCAdBigImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdBigImageCell.h; sourceTree = "<group>"; };
 		1A666A2C83673B5406A92216 /* MCAdLittleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdLittleImageCell.m; sourceTree = "<group>"; };
+		1A666A484FFCA17EBAB49AF1 /* RootData_Self.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_Self.json; sourceTree = "<group>"; };
 		1A666A5295FC0343404891DD /* MCAdPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdPlayerView.m; sourceTree = "<group>"; };
 		1A666A52FA334BB6FC58E080 /* MCPlayerPreAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPlayerPreAdView.m; sourceTree = "<group>"; };
 		1A666A747B6F445EE5F52A83 /* RootDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootDataVM.m; sourceTree = "<group>"; };
@@ -142,7 +146,7 @@
 		1A666B61356CF414BDD54850 /* DataFlow_Little.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Little.json; sourceTree = "<group>"; };
 		1A666B659908077422D19135 /* MCFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFont.m; sourceTree = "<group>"; };
 		1A666B71F0734EC51106634D /* MCAdLittleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdLittleImageCell.h; sourceTree = "<group>"; };
-		1A666C1F74AE7973B0F6F102 /* RootData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData.json; sourceTree = "<group>"; };
+		1A666C1F74AE7973B0F6F102 /* RootData_Baidu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_Baidu.json; sourceTree = "<group>"; };
 		1A666C20236E717A2967FF7A /* MCAdBigImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdBigImageCell.m; sourceTree = "<group>"; };
 		1A666C2EF03CFEA17A8ED487 /* MCCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCollectionCell.m; sourceTree = "<group>"; };
 		1A666C3566D1FA9645CF427C /* MCAdBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdBaseView.h; sourceTree = "<group>"; };
@@ -301,7 +305,7 @@
 			children = (
 				1A666934FBBCBB88FA65C9D2 /* AdInfos_GDT.json */,
 				1A6665BFC47AC1B252463D08 /* AdInfos_Baidu.json */,
-				1A666C1F74AE7973B0F6F102 /* RootData.json */,
+				1A666C1F74AE7973B0F6F102 /* RootData_Baidu.json */,
 				1A66608BBB420F670C13CF3A /* DataFlow_Big.json */,
 				1A666B61356CF414BDD54850 /* DataFlow_Little.json */,
 				1A666410D711B16A3183451C /* DataFlow_Oriention.json */,
@@ -309,6 +313,8 @@
 				1A666A7636B092580047982D /* DataFlow_Oriention_v.json */,
 				1A6662A943EAAC1C6129C112 /* DataFlow_Little_v.json */,
 				1A666EDCB0C3EBCEA3843CE0 /* DataFlow_Big_v.json */,
+				1A6663243F0A05FF74241766 /* RootData_GDT.json */,
+				1A666A484FFCA17EBAB49AF1 /* RootData_Self.json */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -597,7 +603,7 @@
 				1A66620B3DBE0A4068A6E83B /* Main.storyboard in Resources */,
 				1A666B3D787AACBB37503D13 /* AdInfos_GDT.json in Resources */,
 				1A66650D0FE00C28DFB661DD /* AdInfos_Baidu.json in Resources */,
-				1A666D8F00C6BECB5AA2DA7B /* RootData.json in Resources */,
+				1A666D8F00C6BECB5AA2DA7B /* RootData_Baidu.json in Resources */,
 				1A666E4F477DF37F9368093F /* DataFlow_Big.json in Resources */,
 				1A66679AE7AA0C718B01BB25 /* DataFlow_Little.json in Resources */,
 				1A666100917F4D9CCE976956 /* DataFlow_Oriention.json in Resources */,
@@ -606,6 +612,8 @@
 				1A6666C6199A2164CCB7792D /* DataFlow_Little_v.json in Resources */,
 				2502E91621CF998900B0A7B5 /* MCAds.xcassets in Resources */,
 				1A666C89655D456C97F39D92 /* DataFlow_Big_v.json in Resources */,
+				1A666930C080D5E8B87AA614 /* RootData_GDT.json in Resources */,
+				1A6663DBEAECF9798D3947A3 /* RootData_Self.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

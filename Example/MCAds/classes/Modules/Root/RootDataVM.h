@@ -10,6 +10,6 @@
 
 @property(nonatomic, strong) NSMutableArray *dataList;
 
-- (void)reqHomeData:(void (^)(BOOL succcess, NSArray *dataList))callBack;
+- (void)reqHomeData:(NSInteger)adIndex callBack:(void (^)(BOOL succcess, NSArray *dataList))callBack;
 
 @end

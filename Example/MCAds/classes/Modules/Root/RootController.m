@@ -37,7 +37,7 @@
 
 - (void)pullToRefresh {
     __weak typeof(self) weakSelf = self;
-    [self.dataVM reqHomeData:^(BOOL succcess, NSArray *dataList) {
+    [self.dataVM reqHomeData:self.segmentedControl.selectedSegmentIndex callBack:^(BOOL succcess, NSArray *dataList) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.tableView reloadData];
     }];
@@ -45,6 +45,7 @@
 
 - (void)segmentedControlClick {
     [[MCAdsManager share] changeConfig:(MCAdSourceType) self.segmentedControl.selectedSegmentIndex];
+    [self pullToRefresh];
 }
 
 #pragma mark - table
