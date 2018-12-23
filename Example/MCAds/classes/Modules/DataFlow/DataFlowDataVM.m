@@ -13,6 +13,9 @@
 @implementation DataFlowDataVM
 
 - (void)reqDataFlow:(void (^)(BOOL success, NSMutableArray *dataList))callBack {
+    if(self.isRefresh) {
+        [self.dataList removeAllObjects];
+    }
     NSString *path = [[NSBundle mainBundle] pathForResource:self.cateDto.file ofType:@""];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSError *error;

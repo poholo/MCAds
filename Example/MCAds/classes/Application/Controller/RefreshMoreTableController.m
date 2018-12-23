@@ -51,15 +51,18 @@
 
 - (void)stopRefresh {
     [self.tableView.mj_header endRefreshing];
+    [self.tableView reloadData];
 }
 
 - (void)stopMore {
     [self.tableView.mj_footer endRefreshing];
+    [self.tableView reloadData];
 }
 
 - (void)stopAll {
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
+    [self.tableView reloadData];
 }
 
 
