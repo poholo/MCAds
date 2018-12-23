@@ -222,6 +222,8 @@
         case MCAdSourceBaidu: {
 //            if ([[NetConfig share] isAdTrackImpression]) {
             [self.adBaiduView trackImpression];
+            //TODO::
+//            [self.adDto.nativeAdDto.baiduAdData trackVideoEvent:<#(BaiduAdNativeVideoEvent)event#> withCurrentTime:<#(NSTimeInterval)currentPlaybackTime#>];
 //            }
         }
             break;

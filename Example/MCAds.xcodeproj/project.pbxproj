@@ -56,6 +56,7 @@
 		1A666E0567B623E45E1A0E2C /* MCAdContinuePlayCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666094DAC7473527AB58AE /* MCAdContinuePlayCollectionCell.m */; };
 		1A666E4F477DF37F9368093F /* DataFlow_Big.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A66608BBB420F670C13CF3A /* DataFlow_Big.json */; };
 		1A666ED96A4726934D559D05 /* MCDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66692727E492FA5E8CEACA /* MCDto.m */; };
+		2502E91621CF998900B0A7B5 /* MCAds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2502E91521CF998900B0A7B5 /* MCAds.xcassets */; };
 		25CC36AC21C8FAAD0010BC25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36AB21C8FAAD0010BC25 /* AppDelegate.m */; };
 		25CC36BA21C8FAAF0010BC25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36B921C8FAAF0010BC25 /* main.m */; };
 		25CC370F21C8FC230010BC25 /* MCH5AdDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC36C821C8FC230010BC25 /* MCH5AdDto.m */; };
@@ -164,6 +165,7 @@
 		1A666FDF958729ED42EDCAF6 /* MCAdDef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdDef.m; sourceTree = "<group>"; };
 		1A666FF32851F6144E831CA5 /* MCAdSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdSplashView.h; sourceTree = "<group>"; };
 		1A666FFB45E33288B19FF5A0 /* VideoDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDto.m; sourceTree = "<group>"; };
+		2502E91521CF998900B0A7B5 /* MCAds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MCAds.xcassets; sourceTree = "<group>"; };
 		25CC36A721C8FAAD0010BC25 /* MCAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CC36AA21C8FAAD0010BC25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25CC36AB21C8FAAD0010BC25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -361,6 +363,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1A6668EA9E09089A24C5AC94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2502E91521CF998900B0A7B5 /* MCAds.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1A666BE8E79344EEB0A974EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +468,7 @@
 				1A666223C041D6993101CE7B /* NSObject+AdApi.h */,
 				1A66650FDD6566366B046957 /* Categories */,
 				1A666FDF958729ED42EDCAF6 /* MCAdDef.m */,
+				1A6668EA9E09089A24C5AC94 /* Resources */,
 			);
 			name = SDK;
 			path = ../SDK;
@@ -593,6 +604,7 @@
 				1A666096886C272207A8FB27 /* AdInfos_Self.json in Resources */,
 				1A666D16FD21B797F6FC0A99 /* DataFlow_Oriention_v.json in Resources */,
 				1A6666C6199A2164CCB7792D /* DataFlow_Little_v.json in Resources */,
+				2502E91621CF998900B0A7B5 /* MCAds.xcassets in Resources */,
 				1A666C89655D456C97F39D92 /* DataFlow_Big_v.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -845,7 +857,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.mobads.BaiduMobAdSdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waqu.video;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -864,7 +876,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.mobads.BaiduMobAdSdk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waqu.video;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";

@@ -87,9 +87,7 @@
         }
             break;
         case MCAdSourceTencent: {
-//            if ([GlobalRotate currentNavController].topViewController) {
-//                self.tencentNativeAd.controller = [GlobalRotate currentNavController].topViewController;
-//            }
+            self.tencentNativeAd.controller = [self topController];
             [self.tencentNativeAd loadAd:(int) self.containerLowValve];
         }
             break;
@@ -150,9 +148,7 @@
         }
             break;
         case MCAdSourceTencent: {
-//            if ([GlobalRotate currentNavController].topViewController) {
-//                self.tencentNativeAd.controller = [GlobalRotate currentNavController].topViewController;
-//            }
+            self.tencentNativeAd.controller = [self topController];
             [self.tencentNativeAd clickAd:adDto.nativeAdDto.tencentAdData];
         }
             break;
@@ -357,7 +353,7 @@
     if (!_tencentNativeAd) {
         _tencentNativeAd = [[GDTNativeAd alloc] initWithAppkey:self.adConfig.appId placementId:self.adConfig.entityId];
         _tencentNativeAd.delegate = self;
-//        _tencentNativeAd.controller = [GlobalRotate currentNavController].topViewController;
+        _tencentNativeAd.controller = [self topController];
     }
     return _tencentNativeAd;
 }
@@ -383,6 +379,17 @@
             }
         });
     }
+}
+
+- (UIViewController *)topController {
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *nav;
+    if ([root isKindOfClass:[UINavigationController class]]) {
+        nav = (UINavigationController *) root;
+    } else {
+        nav = root.navigationController;
+    }
+    return nav.topViewController;
 }
 
 

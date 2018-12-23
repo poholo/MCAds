@@ -27,6 +27,12 @@ B.信息流
 
 ```
 
+## Demo
+```text
+切换百度广告，请把bundleid改为'com.baidu.mobads.BaiduMobAdSdk'
+切换广点通时，请把bundleid改为''
+```
+
 ## Author
 
 ```text
