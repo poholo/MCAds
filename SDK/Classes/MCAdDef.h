@@ -8,6 +8,7 @@ typedef NS_ENUM(NSInteger, MCAdSourceType) {
     MCAdSourceBaidu,
     MCAdSourceTencent,
     MCAdSourceInmmobi,
+    MCAdSourceCustom,
 };
 
 

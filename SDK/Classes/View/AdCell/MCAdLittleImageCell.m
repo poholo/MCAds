@@ -36,10 +36,9 @@
     CGSize titleSize = [self.titleLabel.text size4size:CGSizeMake(maxWidth - 140 - 40, CGFLOAT_MAX) font:self.titleLabel.font];
     self.titleLabel.frame = CGRectMake(CGRectGetMaxX(self.picImageView.frame) + 10, top, titleSize.width, titleSize.height);
 
-    [self.popularizeLabel setFrame:CGRectMake(CGRectGetMinX(self.titleLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 5, 30, 15)];
-
     CGSize infoSize = [self.infoLabel.text size4size:CGSizeMake(maxWidth - 140 - 40, CGFLOAT_MAX) font:self.infoLabel.font];
     self.infoLabel.frame = CGRectMake(CGRectGetMinX(self.titleLabel.frame), 75 - infoSize.height, infoSize.width, infoSize.height);
+    self.popularizeLabel.frame = CGRectMake(CGRectGetMinX(self.titleLabel.frame), CGRectGetMinY(self.infoLabel.frame) - 15, 30, 15);
     self.adImageView.frame = CGRectMake(CGRectGetMaxX(self.picImageView.frame) - 12.5, CGRectGetMaxY(self.picImageView.frame) - 7, 12.5, 7);
 
     CGSize size = self.logoView.image.size;

@@ -33,6 +33,9 @@
             adrefer = [refer stringByAppendingString:@"_imbad"];
         }
             break;
+        case MCAdSourceCustom: {
+            adrefer = @"_custom";
+        } break;
         default: {
             adrefer = [refer stringByAppendingString:@"gdt"];
         }
@@ -50,6 +53,8 @@
         type = MCAdSourceTencent;
     } else if ([source isEqualToString:@"inmmob"]) {
         type = MCAdSourceInmmobi;
+    } else if([source isEqualToString:@"custom"]) {
+        type = MCAdSourceCustom;
     } else {
         type = MCAdSourceTencent;
     }

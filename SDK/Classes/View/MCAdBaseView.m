@@ -105,7 +105,6 @@
         UILabel *label = [[UILabel alloc] init];
         label.textColor = [MCColor colorIII];
         label.font = [MCFont fontIII];
-        label.textAlignment = NSTextAlignmentCenter;
         label.text = @"推广";
         [label addCorner:7 borderColor:[MCColor colorVI]];
         label;
@@ -131,16 +130,19 @@
     self.logoView = ({
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, CGRectGetHeight(self.frame) - 5 - 10, 10, 10)];
         imageView.userInteractionEnabled = NO;
+        imageView.clipsToBounds = YES;
         imageView;
     });
 
     self.adImageView = ({
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGFloat) (CGRectGetMaxX(self.picImageView.frame) - 5 - 12.5), CGRectGetHeight(self.picImageView.frame) - 5 - 7, 12.5, 7)];
         imageView.userInteractionEnabled = NO;
+        imageView.clipsToBounds = YES;
         imageView;
     });
 
     [self sendSubviewToBack:self.picImageView];
+    self.clipsToBounds = YES;
 }
 
 - (void)refreshVideoFrame:(CGRect)frame {
@@ -165,6 +167,11 @@
             break;
         case MCAdSourceInmmobi : {
             [self configureCommenAd];
+        }
+            break;
+        case MCAdSourceCustom: {
+            [self configureCommenAd];
+            [self.logoView sd_setImageWithURL:[NSURL URLWithString:self.adDto.nativeAdDto.iconImageURLString]];
         }
             break;
         default: {
@@ -207,6 +214,10 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.adDto.nativeAdDto.inmobiDto.landingPage]];
         }
             break;
+        case MCAdSourceCustom: {
+            [self.adDto.adService clickAd:self.adDto];
+        }
+            break;
         default: {
         }
             break;
@@ -234,6 +245,9 @@
         }
             break;
         case MCAdSourceInmmobi : {
+        }
+            break;
+        case MCAdSourceCustom: {
         }
             break;
         default: {

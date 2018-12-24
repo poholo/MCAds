@@ -20,8 +20,8 @@ typedef NS_ENUM(NSInteger, AdvertisementActionType) {
 @property(nonatomic, strong) NSString *videoUrl;
 @property(nonatomic, strong) NSString *url; ///< 下载地址
 @property(nonatomic, strong) NSString *source;
-@property(nonatomic, strong) NSString *packageName;
-@property(nonatomic, strong) NSString *appName; //< app打开标识比如schema
+@property(nonatomic, strong) NSString *packageName; //< app打开标识比如schema
+@property(nonatomic, strong) NSString *appName;
 @property(nonatomic, strong) NSString *versionCode;
 @property(nonatomic, assign) BOOL isDownloadTip;
 
@@ -29,6 +29,8 @@ typedef NS_ENUM(NSInteger, AdvertisementActionType) {
 
 @property(nonatomic, copy) NSString *img;
 @property(nonatomic, copy) NSString *link;
+
+@property(nonatomic, copy) NSString *iconUrl;
 
 - (void)startAction;
 

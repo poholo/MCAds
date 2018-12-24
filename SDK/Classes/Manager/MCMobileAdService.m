@@ -12,7 +12,8 @@
 #import "MCAdConfig.h"
 #import "MCMobAdNativeAdView.h"
 #import "MCAdDto.h"
-#import "MCAdDef.h"
+#import "NSObject+AdApi.h"
+#import "MCAdvertisementDto.h"
 
 
 @interface MCMobileAdService () <BaiduMobAdNativeAdDelegate, GDTNativeAdDelegate>
@@ -95,6 +96,10 @@
 
         }
             break;
+        case MCAdSourceCustom: {
+            [self reqCustomAds:self.containerLowValve];
+        }
+            break;
         default: {
         }
             break;
@@ -136,6 +141,10 @@
 
         }
             break;
+        case MCAdSourceCustom: {
+
+        }
+            break;
         default: {
         }
             break;
@@ -154,6 +163,10 @@
             break;
         case MCAdSourceInmmobi: {
 
+        }
+            break;
+        case MCAdSourceCustom: {
+            [adDto.nativeAdDto.customAdvertisementDto startAction];
         }
             break;
         default: {
@@ -228,7 +241,7 @@
 //        [LogService createRequestAD:[[[LogParam createWithRefer:refer] advertisment:self.apId] num:[NSString stringWithFormat:@"%lu", (unsigned long) self.adContainers.count]]];
     } else {
 //        NSError *error = [NSError errorWithDomain:ERROR_DOMAIM code:-1 userInfo:@{ERROR_MESSAGE: @"This is Ads empty"}];
-//        [self nativeAdFailedLoadUnion:error];
+        [self nativeAdFailedLoadUnion:nil];
     }
 }
 
@@ -336,6 +349,22 @@
  */
 - (void)nativeAdClosed {
     [self adServiceCloseUnionAdDetail];
+}
+
+#pragma mark - Custom
+
+- (void)reqCustomAds:(NSInteger)num {
+    __weak typeof(self) weakSelf = self;
+    [self apiReqCustomAds:num callBack:^(BOOL success, NSDictionary *dictionary) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        MCLog(@"[Custom][AdReq] success = %d", success);
+        NSMutableArray *nativeAds = [NSMutableArray new];
+        for (NSDictionary *dict in dictionary[@"data"]) {
+            MCAdvertisementDto *dto = [MCAdvertisementDto createDto:dict];
+            [nativeAds addObject:dto];
+        }
+        [strongSelf nativeAdSuccessLoad:nativeAds];
+    }];
 }
 
 #pragma mark - getter

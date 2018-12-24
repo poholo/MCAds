@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "1",
+      "title": "MCAds-1",
+      "desc": "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。",
+      "imageUrl": "http://poholo.github.io/img/avatar.jpg",
+      "packageName": "wechat://",
+      "url": "https://itunes.apple.com/cn/app/id414478124?mt=8",
+      "iconUrl": "https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"
+    },
+    {
+      "id": "1",
+      "title": "MCAds-2",
+      "desc": "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。",
+      "imageUrl": "http://poholo.github.io/img/avatar.jpg",
+      "packageName": "wechat://",
+      "url": "https://itunes.apple.com/cn/app/id414478124?mt=8",
+      "iconUrl": "https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"
+    },
+    {
+      "id": "1",
+      "title": "MCAds-3",
+      "desc": "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。",
+      "imageUrl": "http://poholo.github.io/img/avatar.jpg",
+      "packageName": "wechat://",
+      "url": "https://itunes.apple.com/cn/app/id414478124?mt=8",
+      "iconUrl": "https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"
+    },
+    {
+      "id": "1",
+      "title": "MCAds-4",
+      "desc": "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。",
+      "imageUrl": "http://poholo.github.io/img/avatar.jpg",
+      "packageName": "wechat://",
+      "url": "https://itunes.apple.com/cn/app/id414478124?mt=8",
+      "iconUrl": "https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"
+    },
+    {
+      "id": "1",
+      "title": "MCAds-5",
+      "desc": "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。",
+      "imageUrl": "http://poholo.github.io/img/avatar.jpg",
+      "packageName": "wechat://",
+      "url": "https://itunes.apple.com/cn/app/id414478124?mt=8",
+      "iconUrl": "https://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bd-logo4.png"
+    }
+  ]
+}

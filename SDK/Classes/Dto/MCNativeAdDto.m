@@ -12,12 +12,14 @@
 
 #import "MCInmobiDto.h"
 #import "NSString+Extend.h"
+#import "MCAdvertisementDto.h"
 
 @interface MCNativeAdDto ()
 
 @property(nonatomic, strong) GDTNativeAdData *tencentAdData;
 @property(nonatomic, strong) BaiduMobAdNativeAdObject *baiduAdData;
 @property(nonatomic, strong) MCInmobiDto *inmobiDto;
+@property(nonatomic, strong) MCAdvertisementDto *customAdvertisementDto;
 
 @end
 
@@ -41,6 +43,8 @@
         source = @"gdt";
     } else if (_inmobiDto) {
         source = @"inmmob";
+    } else if (_customAdvertisementDto) {
+        source = @"custom";
     }
     return source;
 }
@@ -79,6 +83,13 @@
         dto.iconImageURLString = adObject.iconURL;
         dto.mainImageURLString = adObject.screenshotsURL;
         dto.materialType = NORMAL;
+    } else if ([adNatvie isKindOfClass:[MCAdvertisementDto class]]) {
+        MCAdvertisementDto *advertisementDto = adNatvie;
+        dto.customAdvertisementDto = advertisementDto;
+        dto.text = advertisementDto.desc;
+        dto.title = advertisementDto.title;
+        dto.mainImageURLString = advertisementDto.imageUrl;
+        dto.iconImageURLString = advertisementDto.iconUrl;
     }
     return dto;
 }

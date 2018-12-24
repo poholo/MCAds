@@ -28,6 +28,16 @@
     }
 }
 
+- (void)apiReqCustomAds:(NSInteger)num callBack:(void (^)(BOOL success, NSDictionary *))callBack {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DataFlow_Custom_Ads" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSError *error;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    if (callBack) {
+        callBack(error ? NO : YES, dictionary);
+    }
+}
+
 - (NSString *)adSourceFileOfType:(MCAdSourceType)sourceType {
     NSString *fileName = nil;
     switch (sourceType) {
@@ -40,6 +50,10 @@
         }
             break;
         case MCAdSourceInmmobi: {
+            fileName = @"AdInfos_Custom.json";
+        }
+            break;
+        case MCAdSourceCustom: {
             fileName = @"AdInfos_Custom.json";
         }
             break;

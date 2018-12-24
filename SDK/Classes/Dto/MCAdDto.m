@@ -46,6 +46,8 @@
         type = MCAdSourceTencent;
     } else if ([source isEqualToString:@"inmmob"]) {
         type = MCAdSourceInmmobi;
+    } else if ([source isEqualToString:@"custom"]) {
+        type = MCAdSourceCustom;
     } else {
         type = MCAdSourceTencent;
     }
