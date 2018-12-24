@@ -15,6 +15,8 @@
 #import "MCAdsManager.h"
 #import "MCSplashService.h"
 #import "DataFlowController.h"
+#import "MCAdConfig.h"
+#import "MCAdvertisementDto.h"
 
 @interface RootController ()
 
@@ -76,6 +78,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     AdCateDto *cateDto = self.dataVM.dataList[indexPath.section];
     if ([cateDto.entityId isEqualToString:@"0"]) {
+        if (self.segmentedControl.selectedSegmentIndex == 2) {
+            if (indexPath.row == 1) {
+                [MCAdsManager share].splashConfig.advertisementDto.videoUrl = @"http://ksy.fffffive.com/mda-hfshah045smezhtf/mda-hfshah045smezhtf.mp4";
+            } else {
+                [MCAdsManager share].splashConfig.advertisementDto.videoUrl = nil;
+
+            }
+        }
         [[MCAdsManager share].splashService showSplash];
     } else if ([cateDto.entityId isEqualToString:@"1"]
             || [cateDto.entityId isEqualToString:@"2"]
