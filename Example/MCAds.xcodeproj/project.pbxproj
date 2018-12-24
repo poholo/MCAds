@@ -24,18 +24,19 @@
 		1A6662BBCCE1FF8A02BFCDF9 /* MCAdBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6669C4FADD60BB0055C24F /* MCAdBaseCell.m */; };
 		1A66630291047B6663A90FF5 /* MCAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6665E2A30CF8514D588147 /* MCAdsManager.m */; };
 		1A666395145102DB1846218D /* MCInmobiDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6666FDE06F5BBBF1122C96 /* MCInmobiDto.m */; };
-		1A6663DBEAECF9798D3947A3 /* RootData_Self.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666A484FFCA17EBAB49AF1 /* RootData_Self.json */; };
+		1A6663DBEAECF9798D3947A3 /* RootData_Custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666A484FFCA17EBAB49AF1 /* RootData_Custom.json */; };
 		1A6664003483396D5A0B809F /* MCCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666E6BAEC0DB45521A9CE9 /* MCCollectionCell.m */; };
 		1A66646BDEBA41BEA5104720 /* RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66654CB647A47247AE6CE4 /* RootCell.m */; };
 		1A6664775DE498DEF285755E /* MCAdMutipleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66661BAB69B894C169FD06 /* MCAdMutipleImageCell.m */; };
 		1A6664C20FE1A8F56553F688 /* MCMobileBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66642909BA523C79C09268 /* MCMobileBase.m */; };
 		1A6664C37F65A7377B18F218 /* MCMobAdNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6663E4ED8A4F56A238B052 /* MCMobAdNativeAdView.m */; };
 		1A6664F765FA893581C7F772 /* MCAdConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666F8E349DE24EAB19BE23 /* MCAdConfig.m */; };
+		1A66659FA27709085E0EE266 /* DataFlow_Custom_Ads.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666E130B99B77E621CCC63 /* DataFlow_Custom_Ads.json */; };
 		1A6665D6FBAED7EB4B8B1F3E /* MCAdSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6666F8290B580F4F185623 /* MCAdSplashView.m */; };
 		1A666645D9712A4A724233BE /* MCAdDecorate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6669650E2E09480BBCD567 /* MCAdDecorate.m */; };
 		1A6666C6199A2164CCB7792D /* DataFlow_Little_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6662A943EAAC1C6129C112 /* DataFlow_Little_v.json */; };
 		1A6666CAD5BA08709B81204D /* UIView+AdCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6669B3C7A2409712613F54 /* UIView+AdCorner.m */; };
-		1A66670A6F8E4647CB457FC9 /* AdInfos_Self.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666F85272EC3A49AFD201C /* AdInfos_Self.json */; };
+		1A66670A6F8E4647CB457FC9 /* AdInfos_Custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666F85272EC3A49AFD201C /* AdInfos_Custom.json */; };
 		1A666788A0D333C2416C6FC8 /* NSObject+Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C83110C61822FD2A25F /* NSObject+Ad.m */; };
 		1A66679AE7AA0C718B01BB25 /* DataFlow_Little.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666B61356CF414BDD54850 /* DataFlow_Little.json */; };
 		1A6668B99F293CB93F0CDEFF /* MCH5AdDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666DB2D494A48EC9CDC907 /* MCH5AdDto.m */; };
@@ -62,7 +63,6 @@
 		1A666CDC65A068CEB729BBE1 /* MCSnapAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666AAD000559555332D620 /* MCSnapAdCell.m */; };
 		1A666CE6ED82B18C5C3547E0 /* MCAdPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6666D9590E621639BE2936 /* MCAdPlayerView.m */; };
 		1A666D16FD21B797F6FC0A99 /* DataFlow_Oriention_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666A7636B092580047982D /* DataFlow_Oriention_v.json */; };
-		1A666D5E0C8C24446C99F7E8 /* MCLiveAdDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666ECC09406B2829C4D454 /* MCLiveAdDto.m */; };
 		1A666D8F00C6BECB5AA2DA7B /* RootData_Baidu.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666C1F74AE7973B0F6F102 /* RootData_Baidu.json */; };
 		1A666DC54B8A91E2A33B21B3 /* MCAdDef.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66695605B12F1AE28ABB62 /* MCAdDef.m */; };
 		1A666E0B08269C0C2F4CF379 /* MCOpAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6665F737A753719FD4C503 /* MCOpAdCell.m */; };
@@ -116,7 +116,6 @@
 		1A666410D711B16A3183451C /* DataFlow_Oriention.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Oriention.json; sourceTree = "<group>"; };
 		1A66642909BA523C79C09268 /* MCMobileBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMobileBase.m; sourceTree = "<group>"; };
 		1A66644E640B5E132F9B37C8 /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
-		1A66644E7B6B586E3120C606 /* MCLiveAdDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLiveAdDto.h; sourceTree = "<group>"; };
 		1A666459078624A063189448 /* MCAdJointDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdJointDto.h; sourceTree = "<group>"; };
 		1A6664B68331C8DCA1E707AF /* MCAdJointDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdJointDto.m; sourceTree = "<group>"; };
 		1A6664B87B161626EC74BA8F /* DataFlowDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFlowDataVM.m; sourceTree = "<group>"; };
@@ -159,7 +158,7 @@
 		1A6669B3C7A2409712613F54 /* UIView+AdCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AdCorner.m"; sourceTree = "<group>"; };
 		1A6669B6BB2BC42F54F9FCBB /* MCSplashDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSplashDto.m; sourceTree = "<group>"; };
 		1A6669C4FADD60BB0055C24F /* MCAdBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdBaseCell.m; sourceTree = "<group>"; };
-		1A666A484FFCA17EBAB49AF1 /* RootData_Self.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_Self.json; sourceTree = "<group>"; };
+		1A666A484FFCA17EBAB49AF1 /* RootData_Custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_Custom.json; sourceTree = "<group>"; };
 		1A666A747B6F445EE5F52A83 /* RootDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootDataVM.m; sourceTree = "<group>"; };
 		1A666A7636B092580047982D /* DataFlow_Oriention_v.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Oriention_v.json; sourceTree = "<group>"; };
 		1A666A7B252B180EAA409425 /* MCAdContinuePlayCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdContinuePlayCollectionCell.m; sourceTree = "<group>"; };
@@ -179,18 +178,18 @@
 		1A666D628079D2C8AC09C3F3 /* UIView+AdCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AdCorner.h"; sourceTree = "<group>"; };
 		1A666D7995B10546EF1FBE83 /* MCOpAdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOpAdCell.h; sourceTree = "<group>"; };
 		1A666DB2D494A48EC9CDC907 /* MCH5AdDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCH5AdDto.m; sourceTree = "<group>"; };
+		1A666E130B99B77E621CCC63 /* DataFlow_Custom_Ads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Custom_Ads.json; sourceTree = "<group>"; };
 		1A666E6BAEC0DB45521A9CE9 /* MCCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCollectionCell.m; sourceTree = "<group>"; };
 		1A666E707E0D818A155A7DEC /* MCAdBigImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdBigImageCell.h; sourceTree = "<group>"; };
 		1A666E963826E0531326B76D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		1A666EA5143C48BF2B57E0B4 /* MCPlayerPreAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPlayerPreAdView.m; sourceTree = "<group>"; };
 		1A666EC67CF0A2EFD19BF3F0 /* MCAdBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdBaseView.m; sourceTree = "<group>"; };
-		1A666ECC09406B2829C4D454 /* MCLiveAdDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLiveAdDto.m; sourceTree = "<group>"; };
 		1A666EDCB0C3EBCEA3843CE0 /* DataFlow_Big_v.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Big_v.json; sourceTree = "<group>"; };
 		1A666EEB97D82D811EE19D03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MCAds/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		1A666F3E2D6B30D51B517268 /* MCPlayerPauseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPlayerPauseView.m; sourceTree = "<group>"; };
 		1A666F4C23E0D6E8253A6749 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
 		1A666F7E70C56AB542385349 /* MCFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFont.h; sourceTree = "<group>"; };
-		1A666F85272EC3A49AFD201C /* AdInfos_Self.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_Self.json; sourceTree = "<group>"; };
+		1A666F85272EC3A49AFD201C /* AdInfos_Custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_Custom.json; sourceTree = "<group>"; };
 		1A666F8E349DE24EAB19BE23 /* MCAdConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdConfig.m; sourceTree = "<group>"; };
 		1A666F96997D16E104BECAF7 /* MCPlayerPreAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPlayerPreAdView.h; sourceTree = "<group>"; };
 		1A666FB2DE6B8752AE1C0DC8 /* MCAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdsManager.h; sourceTree = "<group>"; };
@@ -343,7 +342,8 @@
 				1A6662A943EAAC1C6129C112 /* DataFlow_Little_v.json */,
 				1A666EDCB0C3EBCEA3843CE0 /* DataFlow_Big_v.json */,
 				1A6663243F0A05FF74241766 /* RootData_GDT.json */,
-				1A666A484FFCA17EBAB49AF1 /* RootData_Self.json */,
+				1A666A484FFCA17EBAB49AF1 /* RootData_Custom.json */,
+				1A666E130B99B77E621CCC63 /* DataFlow_Custom_Ads.json */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 		1A666B1946A269DF9A857941 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				1A666F85272EC3A49AFD201C /* AdInfos_Self.json */,
+				1A666F85272EC3A49AFD201C /* AdInfos_Custom.json */,
 				1A6662DEE3661B1BC60B7E8B /* AdInfos_GDT.json */,
 				1A66606E0158FE185FC3B5A3 /* AdInfos_Baidu.json */,
 			);
@@ -415,8 +415,6 @@
 				1A666DB2D494A48EC9CDC907 /* MCH5AdDto.m */,
 				1A66619232E5F26DE162411D /* MCInmobiDto.h */,
 				1A6666FDE06F5BBBF1122C96 /* MCInmobiDto.m */,
-				1A66644E7B6B586E3120C606 /* MCLiveAdDto.h */,
-				1A666ECC09406B2829C4D454 /* MCLiveAdDto.m */,
 				1A66690DBAD3B696437C5A76 /* MCAdDto.h */,
 				1A66601699E3D461621594D4 /* MCAdDto.m */,
 				1A666D1B9EA025F20C00C3B0 /* MCAdvertisementDto.h */,
@@ -625,11 +623,12 @@
 				1A6666C6199A2164CCB7792D /* DataFlow_Little_v.json in Resources */,
 				1A666C89655D456C97F39D92 /* DataFlow_Big_v.json in Resources */,
 				1A666930C080D5E8B87AA614 /* RootData_GDT.json in Resources */,
-				1A6663DBEAECF9798D3947A3 /* RootData_Self.json in Resources */,
+				1A6663DBEAECF9798D3947A3 /* RootData_Custom.json in Resources */,
 				1A666C55509742B20EF8662E /* MCAds.xcassets in Resources */,
-				1A66670A6F8E4647CB457FC9 /* AdInfos_Self.json in Resources */,
+				1A66670A6F8E4647CB457FC9 /* AdInfos_Custom.json in Resources */,
 				1A666EE0EF25D4332BE69A15 /* AdInfos_GDT.json in Resources */,
 				1A666BFD3F3457CB9F5093EC /* AdInfos_Baidu.json in Resources */,
+				1A66659FA27709085E0EE266 /* DataFlow_Custom_Ads.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +720,6 @@
 				1A6660FA9C9CD9CDE990CDEF /* MCAdJointDto.m in Sources */,
 				1A6668B99F293CB93F0CDEFF /* MCH5AdDto.m in Sources */,
 				1A666395145102DB1846218D /* MCInmobiDto.m in Sources */,
-				1A666D5E0C8C24446C99F7E8 /* MCLiveAdDto.m in Sources */,
 				1A666107326546ED8EAFA954 /* MCAdDto.m in Sources */,
 				1A66624CEDE459A1440EC767 /* MCAdvertisementDto.m in Sources */,
 				1A666121E373DBC837F00B2D /* MCSplashDto.m in Sources */,

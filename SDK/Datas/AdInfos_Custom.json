@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "adConfig": {
+    "splash": {
+      "id": "2058492",
+      "source": "custom",
+      "appId": "ccb60059",
+      "duration": 5,
+      "refer": "launch",
+      "loop": false,
+      "start": 0,
+      "interval": 0,
+      "cardBlow": true,
+      "adId": "2058492",
+      "skip": false,
+      "custom": {
+        "videoUrl": "http://aliuwmp3.changba.com/userdata/video/45F6BD5E445E4C029C33DC5901307461.mp4",
+        "imageUrl": "http://poholo.github.io/img/avatar.jpg"
+      }
+    },
+    "dataFlow": {
+      "id": "2362914",
+      "source": "custom",
+      "appId": "ccb60059",
+      "api": "DataFlow_Custom_Ads.json"
+    },
+    "dataPre": {
+      "id": "2030021727039283",
+      "source": "custom",
+      "appId": "1106180396",
+      "api": "DataFlow_Custom_Ads.json"
+    }
+  }
+}

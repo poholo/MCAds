@@ -8,7 +8,6 @@
 
 #import "MCSplashDto.h"
 
-#import "MCLiveAdDto.h"
 #import "MCAdConfig.h"
 #import "MCAdvertisementDto.h"
 
@@ -25,17 +24,14 @@
 + (MCSplashDto *)convertByAdConfig:(MCAdConfig *)adConfig {
     MCSplashDto *splashDto = [[MCSplashDto alloc] init];
     splashDto.source = adConfig.source;
+    splashDto.advertisementDto = adConfig.advertisementDto;
     return splashDto;
 }
 
 
 - (void)setValue:(nullable id)value forUndefinedKey:(NSString *)key {
-    if ([key isEqualToString:@"waquAdvert"]) {
+    if ([key isEqualToString:@"custom"]) {
         self.advertisementDto = [MCAdvertisementDto createDto:value];
-    } else if ([key isEqualToString:@"imgUrl"]) {
-        self.liveAdDto.picUrl = value;
-    } else if ([key isEqualToString:@"adid"]) {
-        self.liveAdDto.entityId = value;
     }
 }
 
@@ -43,11 +39,11 @@
     return self.advertisementDto.entityId;
 }
 
--  (MCSplashType)splashType {
-    if (self.liveAdDto.entityId) {
-        return MCSplashTypeWaQuImage;
-    } else if (self.advertisementDto.entityId) {
-        return MCSplashTypeWaQuVideo;
+- (MCSplashType)splashType {
+    if (self.advertisementDto.videoUrl) {
+        return MCSplashTypeCustomVideo;
+    } else if (self.advertisementDto.imageUrl) {
+        return MCSplashTypeCustomVideo;
     } else if ([self.source isEqualToString:@"baidu"]) {
         return MCSplashTypeBaidu;
     } else if ([self.source isEqualToString:@"gdt"]) {
@@ -55,13 +51,6 @@
     } else {
         return MCSplashTypeTencent;
     }
-}
-
-- (MCLiveAdDto *)liveAdDto {
-    if (!_liveAdDto) {
-        _liveAdDto = [MCLiveAdDto new];
-    }
-    return _liveAdDto;
 }
 
 @end

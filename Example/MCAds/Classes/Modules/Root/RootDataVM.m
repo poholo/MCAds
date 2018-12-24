@@ -32,7 +32,7 @@
     } else if (index == 1) {
         file = @"RootData_GDT.json";
     } else if (index == 2) {
-        file = @"RootData_Self.json";
+        file = @"RootData_Custom.json";
     }
     return [[NSBundle mainBundle] pathForResource:file ofType:nil];
 }

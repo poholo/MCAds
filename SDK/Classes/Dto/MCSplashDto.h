@@ -8,15 +8,14 @@
 
 #import "MCDto.h"
 
-@class MCLiveAdDto;
 @class MCAdConfig;
 @class MCAdvertisementDto;
 
 typedef NS_ENUM(NSInteger, MCSplashType) {
     MCSplashTypeBaidu,
-    MCSplashTypeWaQuImage,
-    MCSplashTypeWaQuVideo,
-    MCSplashTypeTencent
+    MCSplashTypeTencent,
+    MCSplashTypeCustomImage,
+    MCSplashTypeCustomVideo,
 };
 
 @interface MCSplashDto : MCDto
@@ -25,8 +24,6 @@ typedef NS_ENUM(NSInteger, MCSplashType) {
 
 @property(nonatomic, strong) MCAdvertisementDto *advertisementDto;
 
-@property(nonatomic, strong) MCLiveAdDto *liveAdDto;
-
 @property(nonatomic, assign) BOOL skipType;
 
 @property(nonatomic, assign) NSInteger duration;
@@ -34,7 +31,6 @@ typedef NS_ENUM(NSInteger, MCSplashType) {
 @property(nonatomic, strong) NSNumber *resq;
 
 @property(nonatomic, strong) NSString *source;
-
 
 + (MCSplashDto *)convertByAdConfig:(MCAdConfig *)adConfig;
 

@@ -16,8 +16,6 @@
 #import "AppDelegate.h"
 #import "MCAdvertisementDto.h"
 
-#define SplashDefaultTime 10
-
 @interface MCSplashService () <AdSplashViewDelegate>
 
 @property(nonatomic, strong) UIWindow *window;
@@ -28,13 +26,14 @@
 @property(nonatomic, strong) NSTimer *timer;
 @property(nonatomic, assign) NSInteger duration;
 @property(nonatomic, strong) MCSplashDto *currentSplashDto;
-@property(nonatomic, assign) long long backgroundTime;
+@property(nonatomic, assign) NSTimeInterval resignActiveTimeInterval;
 
 @end
 
 @implementation MCSplashService
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.timer invalidate];
     self.timer = nil;
 }
@@ -46,63 +45,42 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        //app进入后台时,请求广告
-//        @weakify(self);
-//        [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil] subscribeNext:^(id x) {
-//            @strongify(self);
-//            long long int homeLastTime = [NSDate llmSec];
-//            self.backgroundTime = homeLastTime;
-//            [[NSUserDefaults standardUserDefaults] setObject:@(homeLastTime) forKey:HOME_LAST_TIME];
-//        }];
-//
-//        //后台进入,再次展示广告
-//        [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationWillEnterForegroundNotification object:nil] subscribeNext:^(id x) {
-//            @strongify(self);
-//            if (self.backgroundTime > 0 && [NSDate llmSec] > self.backgroundTime + SplashDefaultTime * 60 * 1000) {
-//                [self showSplash];
-//            }
-//        }];
     }
     return self;
 }
 
 - (void)showSplash {
     MCAdConfig *adconfig = [MCAdsManager share].splashConfig;
-    if (!adconfig.entityId && ![adconfig.source isEqualToString:@"waqu"]) {
+    if (!adconfig.entityId) {
         return;
     }
     [self resetEnv];
     [self showLoading];
 
-    if ([[MCAdsManager share].splashConfig.source isEqualToString:@"waqu"]) {
-        [self loadWaquAd];
-    } else {
-        self.currentSplashDto = [MCSplashDto convertByAdConfig:[MCAdsManager share].splashConfig];
-        [self show];
-    }
+    self.currentSplashDto = [MCSplashDto convertByAdConfig:[MCAdsManager share].splashConfig];
+    [self show];
 }
 
 - (void)resetEnv {
     if ([MCAdsManager share].splashConfig.duration) {
         self.duration = [MCAdsManager share].splashConfig.duration;
-    } else {
-        self.duration = SplashDefaultTime;
     }
-
 }
 
-- (void)loadWaquAd {
-//    RACSignal *racSignal = [self getLiveAd];
-//    @weakify(self);
-//    [racSignal subscribeNext:^(NSDictionary *result) {
-//        @strongify(self);
-//        self.currentSplashDto = [MCSplashDto createDto:result];
-//        self.currentSplashDto.source = [MCAdsManager share].splashConfig.source;
-//        [self show];
-//    }                  error:^(NSError *error) {
-//        @strongify(self);
-//        [self hide];
-//    }];
+- (void)becomeActived {
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
+    if (self.resignActiveTimeInterval > 0 && timeInterval > self.resignActiveTimeInterval + 10 * 60) {
+        [self showSplash];
+    }
+}
+
+- (void)resignActive {
+    self.resignActiveTimeInterval = [[NSDate date] timeIntervalSince1970];
+}
+
+- (void)registerService {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeActived) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignActive) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void)showLoading {
@@ -113,7 +91,8 @@
 - (void)show {
     MCLog(@"[SPlashManager]show");
     [self.adSplashView loadData:self.currentSplashDto];
-    if (self.currentSplashDto.splashType != MCSplashTypeTencent) {
+    if (self.currentSplashDto.splashType == MCSplashTypeCustomImage
+            || self.currentSplashDto.splashType == MCSplashTypeCustomVideo) {
         [self timer];
     }
 }
@@ -148,11 +127,11 @@
 //            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_splash"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:[MCAdsManager share].splashConfig.entityId]];
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
 //            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_splash"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:dto.entityId]];
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
 //            [LogService createSkipAD:[[[LogParam createWithRefer:@"plaunch_vad"] playedDate:[NSString stringWithFormat:@"%ld", (long) (SplashDefaultTime - self.duration) * 1000]] advertisment:dto.entityId]];
         }
             break;
@@ -175,12 +154,12 @@
             [self hide];
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
             //TODO::
             [self hide];
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
 //            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:@"plaunch"]] changeEventType:@"0"] advertisment:dto.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", dto.resq]] advertismentPic:@(MCAdStyleBig)]];
 //            [dto.advertisementDto startAction:self.logADService logParam:nil videoId:nil adId:dto.entityId];
             [self hide];
@@ -202,11 +181,11 @@
 
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
 
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
 
         }
             break;
@@ -225,20 +204,18 @@
     switch (dto.splashType) {
         case MCSplashTypeBaidu: {
             [self resetEnv];
-            [self loadWaquAd];
         }
             break;
-        case MCSplashTypeWaQuImage: {
-
+        case MCSplashTypeCustomImage: {
+            [self resetEnv];
         }
             break;
-        case MCSplashTypeWaQuVideo: {
-
+        case MCSplashTypeCustomVideo: {
+            [self resetEnv];
         }
             break;
         case MCSplashTypeTencent: {
             [self resetEnv];
-            [self loadWaquAd];
         }
             break;
         default: {
@@ -253,11 +230,11 @@
         case MCSplashTypeBaidu: {
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
 
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
 
         }
             break;
@@ -278,11 +255,11 @@
 
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
 
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
             if (dto.advertisementDto.videoUrl) {
                 [self.playerKit playUrls:@[dto.advertisementDto.videoUrl]];
             } else {
@@ -310,11 +287,11 @@
 
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
 
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
 
         }
             break;
@@ -338,11 +315,11 @@
 //            [self hide];
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
 
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
 
         }
             break;
@@ -381,7 +358,6 @@
 
 - (NSTimer *)timer {
     if (!_timer) {
-
         __weak typeof(self) weakSelf = self;
         _timer = [HWWeakTimer scheduledTimerWithTimeInterval:1 block:^(id userInfo) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -397,7 +373,7 @@
 
 - (PlayerKit *)playerKit {
     if (!_playerKit) {
-        _playerKit = [[PlayerKit alloc] initWithPlayerView:self.adSplashView.adPlayerView];
+        _playerKit = [[PlayerKit alloc] initWithPlayerView:(PlayerBaseView <PlayerViewDelegate> *) self.adSplashView.adPlayerView];
         _playerKit.playerCoreType = PlayerCoreIJKPlayer;
         _playerKit.actionAtItemEnd = PlayerActionAtItemEndCircle;
     }

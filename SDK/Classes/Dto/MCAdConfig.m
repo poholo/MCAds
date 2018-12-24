@@ -7,11 +7,14 @@
 //
 
 #import "MCAdConfig.h"
+#import "MCAdvertisementDto.h"
 
 @implementation MCAdConfig
 - (void)setValue:(nullable id)value forUndefinedKey:(NSString *)key {
     if ([key isEqualToString:@"id"] || [key isEqualToString:@"adid"] || [key isEqualToString:@"adId"]) {
         self.entityId = value;
+    } else if ([key isEqualToString:@"custom"]) {
+        self.advertisementDto = [MCAdvertisementDto createDto:value];
     }
 }
 

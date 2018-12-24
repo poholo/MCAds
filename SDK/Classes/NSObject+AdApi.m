@@ -40,7 +40,7 @@
         }
             break;
         case MCAdSourceInmmobi: {
-            fileName = @"AdInfos_Self.json";
+            fileName = @"AdInfos_Custom.json";
         }
             break;
     }

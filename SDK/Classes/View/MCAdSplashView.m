@@ -14,7 +14,6 @@
 #import "MCAdPlayerView.h"
 #import "MCAdsManager.h"
 #import "MCAdConfig.h"
-#import "MCLiveAdDto.h"
 #import "UIImageView+WebCache.h"
 #import "MCAdvertisementDto.h"
 #import "MCColor.h"
@@ -55,21 +54,23 @@
 
 - (void)loadData:(MCSplashDto *)dto {
     self.dto = dto;
+    self.jumpBtn.hidden = NO;
     switch (dto.splashType) {
         case MCSplashTypeBaidu : {
             self.baiduMobAdSplash.delegate = self;
 //            [LogService createRequestAD:[[[LogParam createWithRefer:@"plaunch_splash"] advertisment:_baiduMobAdSplash.AdUnitTag] num:@"1"]];
             [self.baiduMobAdSplash loadAndDisplayUsingContainerView:self.adContainer];
+            self.jumpBtn.hidden = YES;
         }
             break;
-        case MCSplashTypeWaQuImage: {
+        case MCSplashTypeCustomImage: {
 //            [LogService createShowAD:[[[LogParam createWithRefer:@"plaunch_wqlive"] advertisment:dto.entityId] time:[NSString stringWithFormat:@"%@", dto.resq]]];
 
-            [self.adContainer sd_setImageWithURL:[NSURL URLWithString:dto.liveAdDto.picUrl] placeholderImage:nil];
+            [self.adContainer sd_setImageWithURL:[NSURL URLWithString:dto.advertisementDto.imageUrl] placeholderImage:nil];
 //                [LogService createShowAD:[[[[LogParam createWithRefer:@"plaunch_wqlive"] advertisment:dto.entityId] time:[NSString stringWithFormat:@"%@", dto.resq]] ctag:dto.liveAdDto.liveInfo.ctag]];
         }
             break;
-        case MCSplashTypeWaQuVideo: {
+        case MCSplashTypeCustomVideo: {
 //            [LogService createShowAD:[[[LogParam createWithRefer:@"plaunch_vad"] advertisment:dto.entityId] time:[NSString stringWithFormat:@"%@", dto.resq]]];
 
             if (dto.advertisementDto.imageUrl) {
@@ -279,7 +280,7 @@
     if (!_jumpBtn) {
         _jumpBtn = ({
             UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 120, 30, 100, 30)];
-            btn.backgroundColor = [MCColor whiteColor];
+            btn.backgroundColor = [MCColor colorII];
             btn.alpha = .6f;
             btn.titleLabel.font = [UIFont systemFontOfSize:12];
             btn.titleLabel.textAlignment = NSTextAlignmentCenter;

@@ -11,6 +11,8 @@
 #import "MCAdDef.h"
 #import "MCAdBaseDelegate.h"
 
+@class MCAdvertisementDto;
+
 
 @interface MCAdConfig : MCDto
 
@@ -31,6 +33,8 @@
 @property(nonatomic, assign) NSInteger interval;
 
 @property(nonatomic, readonly) MCAdSourceType adSourceType;
+
+@property(nonatomic, strong) MCAdvertisementDto *advertisementDto;
 
 @property(nonatomic, strong) NSString *appId;
 
