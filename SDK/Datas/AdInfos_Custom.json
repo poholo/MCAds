@@ -5,7 +5,7 @@
       "id": "2058492",
       "source": "custom",
       "appId": "ccb60059",
-      "duration": 5,
+      "duration": 60,
       "refer": "launch",
       "loop": false,
       "start": 0,
@@ -14,7 +14,7 @@
       "adId": "2058492",
       "skip": false,
       "custom": {
-        "videoUrl": "http://aliuwmp3.changba.com/userdata/video/45F6BD5E445E4C029C33DC5901307461.mp4",
+        "videoUrl": "https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=e486dc4931d041c1b5405e9fcb35e0ac&line=0&app_id=1115&watermark=1",
         "imageUrl": "http://poholo.github.io/img/avatar.jpg"
       }
     },

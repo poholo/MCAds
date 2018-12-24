@@ -8,7 +8,7 @@
 
 #import "MCMobAdNativeAdView.h"
 
-#import "BaiduMobAdNativeVideoBaseView.h"
+#import <BaiduMobAdSDK/BaiduMobAdNativeVideoBaseView.h>
 
 @interface MCMobAdNativeAdView ()
 

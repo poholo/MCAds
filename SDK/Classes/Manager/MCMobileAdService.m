@@ -6,7 +6,7 @@
 #import "MCMobileAdService.h"
 
 
-#import "BaiduMobAdNative.h"
+#import <BaiduMobAdSDK/BaiduMobAdNative.h>
 #import <GDTAd/GDTAd.h>
 
 #import "MCAdConfig.h"

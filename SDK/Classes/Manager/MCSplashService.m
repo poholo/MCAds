@@ -45,6 +45,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        [self registerService];
     }
     return self;
 }
@@ -374,7 +375,7 @@
 - (PlayerKit *)playerKit {
     if (!_playerKit) {
         _playerKit = [[PlayerKit alloc] initWithPlayerView:(PlayerBaseView <PlayerViewDelegate> *) self.adSplashView.adPlayerView];
-        _playerKit.playerCoreType = PlayerCoreIJKPlayer;
+        _playerKit.playerCoreType = PlayerCoreAVPlayer;
         _playerKit.actionAtItemEnd = PlayerActionAtItemEndCircle;
     }
     return _playerKit;
