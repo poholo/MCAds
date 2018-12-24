@@ -11,8 +11,8 @@
 ## Ads Style
 ```text
 A.开屏
-    1.图
-    2.视频
+    1.图 √
+    2.视频 √
     
 B.信息流
     1.图文  
@@ -20,9 +20,9 @@ B.信息流
         - 小卡片 √
         - 横幅   √
     2.视频
-        - 大卡片
-        - 小卡片
-        - 横幅
+        - 大卡片 √
+        - 小卡片 √
+        - 横幅   √
     
 
 ```
@@ -31,6 +31,12 @@ B.信息流
 ```text
 切换百度广告，请把bundleid改为'com.baidu.mobads.BaiduMobAdSdk'
 切换广点通时，请把bundleid改为'com.waqu.video'
+```
+
+## TODO
+```text
+1. 瀑布流、collectionview类广告
+2. 播放器前贴片、暂停、片尾广告。
 ```
 
 ## Author
