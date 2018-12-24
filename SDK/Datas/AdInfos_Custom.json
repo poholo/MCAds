@@ -14,8 +14,10 @@
       "adId": "2058492",
       "skip": false,
       "custom": {
-        "videoUrl": "https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=e486dc4931d041c1b5405e9fcb35e0ac&line=0&app_id=1115&watermark=1",
-        "imageUrl": "http://poholo.github.io/img/avatar.jpg"
+        "videoUrl": "http://ksy.fffffive.com/mda-hfshah045smezhtf/mda-hfshah045smezhtf.mp4",
+        "imageUrl": "http://poholo.github.io/img/avatar.jpg",
+        "packageName": "wechat://",
+        "url": "https://itunes.apple.com/cn/app/id414478124?mt=8"
       }
     },
     "dataFlow": {

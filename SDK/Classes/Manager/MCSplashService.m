@@ -156,13 +156,12 @@
         }
             break;
         case MCSplashTypeCustomImage: {
-            //TODO::
+            [self.currentSplashDto.advertisementDto startAction];
             [self hide];
         }
             break;
         case MCSplashTypeCustomVideo: {
-//            [LogService createClickAD:[[[[[[LogParam createWithRefer:[currentConfig adrefer:@"plaunch"]] changeEventType:@"0"] advertisment:dto.entityId] searchPostion:0] time:[NSString stringWithFormat:@"%@", dto.resq]] advertismentPic:@(MCAdStyleBig)]];
-//            [dto.advertisementDto startAction:self.logADService logParam:nil videoId:nil adId:dto.entityId];
+            [self.currentSplashDto.advertisementDto startAction];
             [self hide];
         }
             break;

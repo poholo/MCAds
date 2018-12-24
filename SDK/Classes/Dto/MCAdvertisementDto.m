@@ -16,8 +16,7 @@
     }
 }
 
-- (void)startActionVideoId:(NSString *)videoId adId:(NSString *)adId {
-
+- (void)startAction {
     NSURL *url = [NSURL URLWithString:self.packageName];
     switch (self.action) {
         case AdvertisementActionDown: {

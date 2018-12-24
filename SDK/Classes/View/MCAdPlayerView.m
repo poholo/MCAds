@@ -7,6 +7,7 @@
 //
 
 #import "MCAdPlayerView.h"
+#import "MCColor.h"
 
 
 @interface MCAdPlayerView ()
@@ -26,16 +27,19 @@
 }
 
 - (void)prepareUI {
+    [super prepareUI];
     [self addSubview:self.coverImageView];
 }
 
 - (void)updatePlayerLayer:(CALayer *)layer {
     [super updatePlayerLayer:layer];
+    layer.backgroundColor = [MCColor colorI].CGColor;
     [self sendSubviewToBack:self.coverImageView];
 }
 
 - (void)updatePlayerView:(UIView *)drawPlayerView {
     [super updatePlayerView:drawPlayerView];
+    drawPlayerView.backgroundColor = [MCColor colorI];
     [self sendSubviewToBack:self.coverImageView];
 }
 
