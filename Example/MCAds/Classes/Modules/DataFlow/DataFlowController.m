@@ -70,7 +70,7 @@
     if ([dto isKindOfClass:[MCAdDto class]]) {
         MCAdDto *adDto = (MCAdDto *) dto;
         MCAdBaseCell *cell = [self adSuiltCell:adDto.styleType container:self.tableView indexPath:indexPath adDto:adDto refer:nil];
-        return cell;
+        return (MCTableCell *)cell;
     } else if ([dto isKindOfClass:[VideoDto class]]) {
         VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:[VideoCell identifier] forIndexPath:indexPath];
         [cell loadData:(VideoDto *) dto];

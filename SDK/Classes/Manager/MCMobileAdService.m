@@ -295,7 +295,7 @@
 //广告返回失败
 - (void)nativeAdsFailLoad:(BaiduMobFailReason)reason {
     MCLog(@"nativeAdsFailLoad,reason = %d", reason);
-    NSError *error = [NSError errorWithDomain:ERROR_DOMAIM code:-2 userInfo:@{ERROR_MESSAGE: [NSString stringWithFormat:@"This baidu ads request failed %zd", reason]}];
+    NSError *error = [NSError errorWithDomain:ERROR_DOMAIM code:-2 userInfo:@{ERROR_MESSAGE: [NSString stringWithFormat:@"This baidu ads request failed %ud", reason]}];
     [self nativeAdFailedLoadUnion:error];
 }
 

@@ -145,6 +145,7 @@
 		1A66678CD58CCCBA43933DAE /* MCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCColor.m; sourceTree = "<group>"; };
 		1A6667B9A2E881013A8755E8 /* MCAds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MCAds.xcassets; sourceTree = "<group>"; };
 		1A6667D9A942448B7BD20BE4 /* DataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVM.m; sourceTree = "<group>"; };
+		1A666862D36221A78BA35845 /* MCAds.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; name = MCAds.podspec; path = ../MCAds.podspec; sourceTree = "<group>"; };
 		1A666893DE8341E5E8773FA0 /* MCAdBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdBaseCell.h; sourceTree = "<group>"; };
 		1A66689C3AA226E057AF84EB /* MCAdOrientionImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdOrientionImageCell.h; sourceTree = "<group>"; };
 		1A6668BF0D2C465E18FFAF63 /* DataFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFlowController.m; sourceTree = "<group>"; };
@@ -537,6 +538,7 @@
 				25CC36A821C8FAAD0010BC25 /* Products */,
 				1A666D0F462596E34A2FF85C /* README.md */,
 				25CC36C221C8FC230010BC25 /* SDK */,
+				1A666862D36221A78BA35845 /* MCAds.podspec */,
 			);
 			sourceTree = "<group>";
 		};

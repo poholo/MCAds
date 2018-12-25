@@ -21,7 +21,7 @@ extern NSString *const kAdJointKey;
 /***
  * 增加信息流广告
  * @param list 需要把整个信息流列表数据全部传进来
- * @param adJoint
+ * @param adJoint 广告包装实体
  * @return 根据AdJoint增加广告
  */
 - (NSMutableArray *)wrapAdsWithList:(NSArray *)list adJoint:(MCAdJointDto *)adJoint;

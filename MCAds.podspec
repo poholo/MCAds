@@ -13,25 +13,29 @@ Pod::Spec.new do |s|
 
 
     s.source_files = 'SDK/Classes/Categories/*.{h,m,mm}' ,
+                     'SDK/Classes/Configs/*.{h,m,mm}',
                      'SDK/Classes/Dto/*.{h,m,mm}',
                      'SDK/Classes/Manager/*.{h,m,mm}',
                      'SDK/Classes/Utils/*.{h,m,mm}',
                      'SDK/Classes/View/*.{h,m,mm}',
+                     'SDK/Classes/View/AdCell/*.{h,m,mm}',
+                     'SDK/Classes/View/Pre/*.{h,m,mm}',
                      'SDK/Classes/*.{h,m,mm}'
     s.public_header_files = 'SDK/Categories/*.h' ,
+                     'SDK/Classes/Configs/*.h',
                      'SDK/Classes/Dto/*.h',
                      'SDK/Classes/Manager/*.h',
                      'SDK/Classes/Utils/*.h',
                      'SDK/Classes/View/*.h',
+                     'SDK/Classes/View/AdCell/*.h',
+                     'SDK/Classes/View/Pre/*.h',
                      'SDK/Classes/*.h'
 
-    s.resources = ['SDK/Resources/*.xcassets', 'SDK/Datas/*.json']
+    s.resources = ['SDK/Resources/*.xcassets']
     s.dependency 'GDTAd'
     s.dependency 'MCBaiduAds'
     s.dependency 'SDWebImage'
     s.dependency 'MCPlayerKit'
     s.dependency 'HWWeakTimer'
-
-    s.ios.frameworks = 'AdSupport', 'Security', 'StoreKit', 'CoreMotion', 'CoreLocation', 'CoreTelephony', 'SystemConfiguration', 'QuartzCore'
 
 end
