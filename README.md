@@ -34,7 +34,9 @@ B.信息流
 ```
 
 ## ScreenShots
-![ScreenRecord](./ScreenShots/MCAds.gif)
+<iframe height=270 width=534 src="./ScreenShots/MCAds.gif">
+ScreenRecord
+</ifreme>
 
 ## TODO
 ```text
