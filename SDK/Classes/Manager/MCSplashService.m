@@ -13,7 +13,6 @@
 #import "MCAdConfig.h"
 #import "MCSplashDto.h"
 #import "MCAdSplashView.h"
-#import "AppDelegate.h"
 #import "MCAdvertisementDto.h"
 
 @interface MCSplashService () <AdSplashViewDelegate>
@@ -114,8 +113,8 @@
         _playerKit = nil;
     }
 
-    AppDelegate *delegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
-    UIWindow *keyWindow = delegate.window;
+
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow makeKeyAndVisible];
 }
 

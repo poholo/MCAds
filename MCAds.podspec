@@ -21,7 +21,8 @@ Pod::Spec.new do |s|
                      'SDK/Classes/View/AdCell/*.{h,m,mm}',
                      'SDK/Classes/View/Pre/*.{h,m,mm}',
                      'SDK/Classes/*.{h,m,mm}'
-    s.public_header_files = 'SDK/Categories/*.h' ,
+
+    s.public_header_files = 'SDK/Classes/Categories/*.h' ,
                      'SDK/Classes/Configs/*.h',
                      'SDK/Classes/Dto/*.h',
                      'SDK/Classes/Manager/*.h',
@@ -31,7 +32,7 @@ Pod::Spec.new do |s|
                      'SDK/Classes/View/Pre/*.h',
                      'SDK/Classes/*.h'
 
-    s.resources = ['SDK/Resources/*.xcassets']
+    s.ios.resource_bundle =  { 'MCAds' => 'SDK/Resources/*.xcassets' }
     s.dependency 'GDTAd'
     s.dependency 'MCBaiduAds'
     s.dependency 'SDWebImage'

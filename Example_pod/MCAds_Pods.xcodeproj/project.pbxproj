@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25B5ED5521D2003E0048389C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED5321D2003E0048389C /* Main.storyboard */; };
+		25B5ED5721D200400048389C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED5621D200400048389C /* Assets.xcassets */; };
+		25B5ED5A21D200400048389C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED5821D200400048389C /* LaunchScreen.storyboard */; };
+		25B5ED5D21D200400048389C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED5C21D200400048389C /* main.m */; };
+		25B5ED9421D200BA0048389C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED6321D200BA0048389C /* AppDelegate.m */; };
+		25B5ED9521D200BA0048389C /* RefreshMoreTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED6721D200BA0048389C /* RefreshMoreTableController.m */; };
+		25B5ED9621D200BA0048389C /* DataVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED6B21D200BA0048389C /* DataVM.m */; };
+		25B5ED9721D200BA0048389C /* DataFlowDataVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED7021D200BA0048389C /* DataFlowDataVM.m */; };
+		25B5ED9821D200BA0048389C /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED7121D200BA0048389C /* VideoCell.m */; };
+		25B5ED9921D200BA0048389C /* DataFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED7221D200BA0048389C /* DataFlowController.m */; };
+		25B5ED9A21D200BA0048389C /* VideoDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED7521D200BA0048389C /* VideoDto.m */; };
+		25B5ED9B21D200BA0048389C /* RootDataVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED7A21D200BA0048389C /* RootDataVM.m */; };
+		25B5ED9C21D200BA0048389C /* AdCateDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED7C21D200BA0048389C /* AdCateDto.m */; };
+		25B5ED9D21D200BA0048389C /* RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED7E21D200BA0048389C /* RootCell.m */; };
+		25B5ED9E21D200BA0048389C /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5ED8021D200BA0048389C /* RootController.m */; };
+		25B5ED9F21D200BA0048389C /* DataFlow_Oriention_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8321D200BA0048389C /* DataFlow_Oriention_v.json */; };
+		25B5EDA021D200BA0048389C /* DataFlow_Oriention.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8421D200BA0048389C /* DataFlow_Oriention.json */; };
+		25B5EDA121D200BA0048389C /* DataFlow_Little_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8521D200BA0048389C /* DataFlow_Little_v.json */; };
+		25B5EDA221D200BA0048389C /* RootData_Custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8621D200BA0048389C /* RootData_Custom.json */; };
+		25B5EDA321D200BA0048389C /* DataFlow_Big_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8721D200BA0048389C /* DataFlow_Big_v.json */; };
+		25B5EDA421D200BA0048389C /* RootData_Baidu.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8821D200BA0048389C /* RootData_Baidu.json */; };
+		25B5EDA521D200BA0048389C /* DataFlow_Little.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8921D200BA0048389C /* DataFlow_Little.json */; };
+		25B5EDA621D200BA0048389C /* AdInfos_Custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8B21D200BA0048389C /* AdInfos_Custom.json */; };
+		25B5EDA721D200BA0048389C /* AdInfos_GDT.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8C21D200BA0048389C /* AdInfos_GDT.json */; };
+		25B5EDA821D200BA0048389C /* DataFlow_Custom_Ads.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8D21D200BA0048389C /* DataFlow_Custom_Ads.json */; };
+		25B5EDA921D200BA0048389C /* AdInfos_Baidu.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8E21D200BA0048389C /* AdInfos_Baidu.json */; };
+		25B5EDAA21D200BA0048389C /* DataFlow_Big.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED8F21D200BA0048389C /* DataFlow_Big.json */; };
+		25B5EDAB21D200BA0048389C /* RootData_GDT.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED9021D200BA0048389C /* RootData_GDT.json */; };
+		25B5EDAC21D200BA0048389C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED9221D200BA0048389C /* Assets.xcassets */; };
+		25B5EDAD21D200BA0048389C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25B5ED9321D200BA0048389C /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		25B5ED4A21D2003E0048389C /* MCAds_Pods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCAds_Pods.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B5ED5421D2003E0048389C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25B5ED5621D200400048389C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25B5ED5921D200400048389C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25B5ED5B21D200400048389C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25B5ED5C21D200400048389C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		25B5ED6321D200BA0048389C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../Example/MCAds/AppDelegate.m; sourceTree = "<group>"; };
+		25B5ED6721D200BA0048389C /* RefreshMoreTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshMoreTableController.m; sourceTree = "<group>"; };
+		25B5ED6821D200BA0048389C /* RefreshMoreTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshMoreTableController.h; sourceTree = "<group>"; };
+		25B5ED6A21D200BA0048389C /* DataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVM.h; sourceTree = "<group>"; };
+		25B5ED6B21D200BA0048389C /* DataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVM.m; sourceTree = "<group>"; };
+		25B5ED7021D200BA0048389C /* DataFlowDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFlowDataVM.m; sourceTree = "<group>"; };
+		25B5ED7121D200BA0048389C /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
+		25B5ED7221D200BA0048389C /* DataFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFlowController.m; sourceTree = "<group>"; };
+		25B5ED7321D200BA0048389C /* VideoDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDto.h; sourceTree = "<group>"; };
+		25B5ED7421D200BA0048389C /* DataFlowDataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFlowDataVM.h; sourceTree = "<group>"; };
+		25B5ED7521D200BA0048389C /* VideoDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDto.m; sourceTree = "<group>"; };
+		25B5ED7621D200BA0048389C /* DataFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFlowController.h; sourceTree = "<group>"; };
+		25B5ED7721D200BA0048389C /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		25B5ED7921D200BA0048389C /* RootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCell.h; sourceTree = "<group>"; };
+		25B5ED7A21D200BA0048389C /* RootDataVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootDataVM.m; sourceTree = "<group>"; };
+		25B5ED7B21D200BA0048389C /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
+		25B5ED7C21D200BA0048389C /* AdCateDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdCateDto.m; sourceTree = "<group>"; };
+		25B5ED7D21D200BA0048389C /* RootDataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootDataVM.h; sourceTree = "<group>"; };
+		25B5ED7E21D200BA0048389C /* RootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCell.m; sourceTree = "<group>"; };
+		25B5ED7F21D200BA0048389C /* AdCateDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdCateDto.h; sourceTree = "<group>"; };
+		25B5ED8021D200BA0048389C /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
+		25B5ED8121D200BA0048389C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Example/MCAds/AppDelegate.h; sourceTree = "<group>"; };
+		25B5ED8321D200BA0048389C /* DataFlow_Oriention_v.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Oriention_v.json; sourceTree = "<group>"; };
+		25B5ED8421D200BA0048389C /* DataFlow_Oriention.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Oriention.json; sourceTree = "<group>"; };
+		25B5ED8521D200BA0048389C /* DataFlow_Little_v.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Little_v.json; sourceTree = "<group>"; };
+		25B5ED8621D200BA0048389C /* RootData_Custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_Custom.json; sourceTree = "<group>"; };
+		25B5ED8721D200BA0048389C /* DataFlow_Big_v.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Big_v.json; sourceTree = "<group>"; };
+		25B5ED8821D200BA0048389C /* RootData_Baidu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_Baidu.json; sourceTree = "<group>"; };
+		25B5ED8921D200BA0048389C /* DataFlow_Little.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Little.json; sourceTree = "<group>"; };
+		25B5ED8B21D200BA0048389C /* AdInfos_Custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_Custom.json; sourceTree = "<group>"; };
+		25B5ED8C21D200BA0048389C /* AdInfos_GDT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_GDT.json; sourceTree = "<group>"; };
+		25B5ED8D21D200BA0048389C /* DataFlow_Custom_Ads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Custom_Ads.json; sourceTree = "<group>"; };
+		25B5ED8E21D200BA0048389C /* AdInfos_Baidu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdInfos_Baidu.json; sourceTree = "<group>"; };
+		25B5ED8F21D200BA0048389C /* DataFlow_Big.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Big.json; sourceTree = "<group>"; };
+		25B5ED9021D200BA0048389C /* RootData_GDT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_GDT.json; sourceTree = "<group>"; };
+		25B5ED9221D200BA0048389C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25B5ED9321D200BA0048389C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25B5ED4721D2003E0048389C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25B5ED4121D2003E0048389C = {
+			isa = PBXGroup;
+			children = (
+				25B5ED8121D200BA0048389C /* AppDelegate.h */,
+				25B5ED6321D200BA0048389C /* AppDelegate.m */,
+				25B5ED6421D200BA0048389C /* Classes */,
+				25B5ED8221D200BA0048389C /* Datas */,
+				25B5ED9121D200BA0048389C /* Resources */,
+				25B5ED4C21D2003E0048389C /* MCAds_Pods */,
+				25B5ED4B21D2003E0048389C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25B5ED4B21D2003E0048389C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED4A21D2003E0048389C /* MCAds_Pods.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25B5ED4C21D2003E0048389C /* MCAds_Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED5321D2003E0048389C /* Main.storyboard */,
+				25B5ED5621D200400048389C /* Assets.xcassets */,
+				25B5ED5821D200400048389C /* LaunchScreen.storyboard */,
+				25B5ED5B21D200400048389C /* Info.plist */,
+				25B5ED5C21D200400048389C /* main.m */,
+			);
+			path = MCAds_Pods;
+			sourceTree = "<group>";
+		};
+		25B5ED6421D200BA0048389C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED6521D200BA0048389C /* Application */,
+				25B5ED6E21D200BA0048389C /* Modules */,
+			);
+			name = Classes;
+			path = ../Example/MCAds/Classes;
+			sourceTree = "<group>";
+		};
+		25B5ED6521D200BA0048389C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED6621D200BA0048389C /* Controller */,
+				25B5ED6921D200BA0048389C /* Data */,
+				25B5ED6C21D200BA0048389C /* Views */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		25B5ED6621D200BA0048389C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED6721D200BA0048389C /* RefreshMoreTableController.m */,
+				25B5ED6821D200BA0048389C /* RefreshMoreTableController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		25B5ED6921D200BA0048389C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED6A21D200BA0048389C /* DataVM.h */,
+				25B5ED6B21D200BA0048389C /* DataVM.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		25B5ED6C21D200BA0048389C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED6D21D200BA0048389C /* UIKit */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		25B5ED6D21D200BA0048389C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		25B5ED6E21D200BA0048389C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED6F21D200BA0048389C /* DataFlow */,
+				25B5ED7821D200BA0048389C /* Root */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		25B5ED6F21D200BA0048389C /* DataFlow */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED7021D200BA0048389C /* DataFlowDataVM.m */,
+				25B5ED7121D200BA0048389C /* VideoCell.m */,
+				25B5ED7221D200BA0048389C /* DataFlowController.m */,
+				25B5ED7321D200BA0048389C /* VideoDto.h */,
+				25B5ED7421D200BA0048389C /* DataFlowDataVM.h */,
+				25B5ED7521D200BA0048389C /* VideoDto.m */,
+				25B5ED7621D200BA0048389C /* DataFlowController.h */,
+				25B5ED7721D200BA0048389C /* VideoCell.h */,
+			);
+			path = DataFlow;
+			sourceTree = "<group>";
+		};
+		25B5ED7821D200BA0048389C /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED7921D200BA0048389C /* RootCell.h */,
+				25B5ED7A21D200BA0048389C /* RootDataVM.m */,
+				25B5ED7B21D200BA0048389C /* RootController.h */,
+				25B5ED7C21D200BA0048389C /* AdCateDto.m */,
+				25B5ED7D21D200BA0048389C /* RootDataVM.h */,
+				25B5ED7E21D200BA0048389C /* RootCell.m */,
+				25B5ED7F21D200BA0048389C /* AdCateDto.h */,
+				25B5ED8021D200BA0048389C /* RootController.m */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		25B5ED8221D200BA0048389C /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED8321D200BA0048389C /* DataFlow_Oriention_v.json */,
+				25B5ED8421D200BA0048389C /* DataFlow_Oriention.json */,
+				25B5ED8521D200BA0048389C /* DataFlow_Little_v.json */,
+				25B5ED8621D200BA0048389C /* RootData_Custom.json */,
+				25B5ED8721D200BA0048389C /* DataFlow_Big_v.json */,
+				25B5ED8821D200BA0048389C /* RootData_Baidu.json */,
+				25B5ED8921D200BA0048389C /* DataFlow_Little.json */,
+				25B5ED8A21D200BA0048389C /* ApiDatas */,
+				25B5ED8F21D200BA0048389C /* DataFlow_Big.json */,
+				25B5ED9021D200BA0048389C /* RootData_GDT.json */,
+			);
+			name = Datas;
+			path = ../Example/MCAds/Datas;
+			sourceTree = "<group>";
+		};
+		25B5ED8A21D200BA0048389C /* ApiDatas */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED8B21D200BA0048389C /* AdInfos_Custom.json */,
+				25B5ED8C21D200BA0048389C /* AdInfos_GDT.json */,
+				25B5ED8D21D200BA0048389C /* DataFlow_Custom_Ads.json */,
+				25B5ED8E21D200BA0048389C /* AdInfos_Baidu.json */,
+			);
+			path = ApiDatas;
+			sourceTree = "<group>";
+		};
+		25B5ED9121D200BA0048389C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				25B5ED9221D200BA0048389C /* Assets.xcassets */,
+				25B5ED9321D200BA0048389C /* Info.plist */,
+			);
+			name = Resources;
+			path = ../Example/MCAds/Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25B5ED4921D2003E0048389C /* MCAds_Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25B5ED6021D200400048389C /* Build configuration list for PBXNativeTarget "MCAds_Pods" */;
+			buildPhases = (
+				25B5ED4621D2003E0048389C /* Sources */,
+				25B5ED4721D2003E0048389C /* Frameworks */,
+				25B5ED4821D2003E0048389C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCAds_Pods;
+			productName = MCAds_Pods;
+			productReference = 25B5ED4A21D2003E0048389C /* MCAds_Pods.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25B5ED4221D2003E0048389C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = majiancheng;
+				TargetAttributes = {
+					25B5ED4921D2003E0048389C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 25B5ED4521D2003E0048389C /* Build configuration list for PBXProject "MCAds_Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25B5ED4121D2003E0048389C;
+			productRefGroup = 25B5ED4B21D2003E0048389C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25B5ED4921D2003E0048389C /* MCAds_Pods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25B5ED4821D2003E0048389C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25B5EDA121D200BA0048389C /* DataFlow_Little_v.json in Resources */,
+				25B5EDA521D200BA0048389C /* DataFlow_Little.json in Resources */,
+				25B5EDAD21D200BA0048389C /* Info.plist in Resources */,
+				25B5EDAA21D200BA0048389C /* DataFlow_Big.json in Resources */,
+				25B5ED5A21D200400048389C /* LaunchScreen.storyboard in Resources */,
+				25B5ED5721D200400048389C /* Assets.xcassets in Resources */,
+				25B5EDAB21D200BA0048389C /* RootData_GDT.json in Resources */,
+				25B5EDAC21D200BA0048389C /* Assets.xcassets in Resources */,
+				25B5EDA821D200BA0048389C /* DataFlow_Custom_Ads.json in Resources */,
+				25B5EDA321D200BA0048389C /* DataFlow_Big_v.json in Resources */,
+				25B5EDA021D200BA0048389C /* DataFlow_Oriention.json in Resources */,
+				25B5EDA721D200BA0048389C /* AdInfos_GDT.json in Resources */,
+				25B5ED9F21D200BA0048389C /* DataFlow_Oriention_v.json in Resources */,
+				25B5EDA421D200BA0048389C /* RootData_Baidu.json in Resources */,
+				25B5EDA221D200BA0048389C /* RootData_Custom.json in Resources */,
+				25B5EDA621D200BA0048389C /* AdInfos_Custom.json in Resources */,
+				25B5EDA921D200BA0048389C /* AdInfos_Baidu.json in Resources */,
+				25B5ED5521D2003E0048389C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25B5ED4621D2003E0048389C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25B5ED9721D200BA0048389C /* DataFlowDataVM.m in Sources */,
+				25B5ED9821D200BA0048389C /* VideoCell.m in Sources */,
+				25B5ED9621D200BA0048389C /* DataVM.m in Sources */,
+				25B5ED9E21D200BA0048389C /* RootController.m in Sources */,
+				25B5ED9A21D200BA0048389C /* VideoDto.m in Sources */,
+				25B5ED9521D200BA0048389C /* RefreshMoreTableController.m in Sources */,
+				25B5ED9D21D200BA0048389C /* RootCell.m in Sources */,
+				25B5ED9C21D200BA0048389C /* AdCateDto.m in Sources */,
+				25B5ED9921D200BA0048389C /* DataFlowController.m in Sources */,
+				25B5ED9421D200BA0048389C /* AppDelegate.m in Sources */,
+				25B5ED9B21D200BA0048389C /* RootDataVM.m in Sources */,
+				25B5ED5D21D200400048389C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		25B5ED5321D2003E0048389C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25B5ED5421D2003E0048389C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25B5ED5821D200400048389C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25B5ED5921D200400048389C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25B5ED5E21D200400048389C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		25B5ED5F21D200400048389C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25B5ED6121D200400048389C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6FNUHS4H7D;
+				INFOPLIST_FILE = MCAds_Pods/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gymchina.MCAds-Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		25B5ED6221D200400048389C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6FNUHS4H7D;
+				INFOPLIST_FILE = MCAds_Pods/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gymchina.MCAds-Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25B5ED4521D2003E0048389C /* Build configuration list for PBXProject "MCAds_Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25B5ED5E21D200400048389C /* Debug */,
+				25B5ED5F21D200400048389C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25B5ED6021D200400048389C /* Build configuration list for PBXNativeTarget "MCAds_Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25B5ED6121D200400048389C /* Debug */,
+				25B5ED6221D200400048389C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25B5ED4221D2003E0048389C /* Project object */;
+}
