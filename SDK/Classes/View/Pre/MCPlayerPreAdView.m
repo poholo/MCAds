@@ -69,7 +69,7 @@
 
     self.titleLabel.frame = CGRectMake(15, frame.size.height - 34, frame.size.width - 30, 13);
     self.popularizeLabel.frame = CGRectMake(frame.size.width - 30, frame.size.height - 10 - size.height, 30, 10);
-    self.popularizeLabel.backgroundColor = [UIColor clearColor];
+    self.popularizeLabel.backgroundColor = [MCColor clearColor];
     self.infoLabel.frame = CGRectMake(15, frame.size.height - 16, frame.size.width - 30, 15);
     self.logoView.frame = CGRectMake(frame.size.width - size.width, frame.size.height - size.height, size.width, size.height);
     self.picImageView.frame = frame;

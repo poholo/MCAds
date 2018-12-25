@@ -13,6 +13,7 @@
 #import "MCInmobiDto.h"
 #import "NSString+Extend.h"
 #import "MCAdvertisementDto.h"
+#import "MCFont.h"
 
 @interface MCNativeAdDto ()
 
@@ -101,7 +102,7 @@
 - (CGSize)waterCellSize:(CGFloat)defaultWidth {
     CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
     if (CGSizeEqualToSize(CGSizeZero, self.cacheSize)) {
-        CGSize titleSize = [self.text size4size:CGSizeMake(defaultWidth, 30) font:[UIFont boldSystemFontOfSize:14]];
+        CGSize titleSize = [self.text size4size:CGSizeMake(defaultWidth, 30) font:[MCFont fontIV]];
         if (titleSize.height > 30) {
             titleSize.height = 30;
         }

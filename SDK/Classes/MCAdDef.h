@@ -52,6 +52,9 @@ typedef NS_ENUM(NSInteger, MCAdCategoryType) {
 extern NSString *const ERROR_DOMAIM;
 extern NSString *const ERROR_MESSAGE;
 
+extern NSString *const DATA_SUCCESS;
+extern NSString *const DATA_DICT;
+
 @interface MCAdDef : NSObject
 
 @end

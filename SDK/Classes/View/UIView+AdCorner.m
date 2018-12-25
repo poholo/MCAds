@@ -5,18 +5,12 @@
 
 #import "UIView+AdCorner.h"
 
+#import "MCStyle.h"
+
 @implementation UIView (AdCorner)
 
-- (CGFloat)marginTopBottom {
-    return 12;
-}
-
-- (CGFloat)marginLeftRight {
-    return 12;
-}
-
 - (void)addDefaultCorner {
-    [self addCorner:5];
+    [self addCorner:[MCStyle cornorRadius]];
 }
 
 - (void)addCorner:(CGFloat)radius {

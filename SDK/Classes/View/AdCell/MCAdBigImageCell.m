@@ -12,6 +12,7 @@
 #import "UIView+AdCorner.h"
 #import "NSString+Extend.h"
 #import "MCAdBaseView.h"
+#import "MCStyle.h"
 
 @implementation MCAdBigImageCell
 
@@ -23,15 +24,17 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat top = [self marginTopBottom];
-    CGFloat leftRightMargin = [self marginLeftRight];
+
+    CGFloat top = [MCStyle contentInset].top;
+    CGFloat leftRightMargin = [MCStyle contentInset].left;
+
     CGFloat maxWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
     CGFloat screenWidth9Division16 = maxWidth * 9 / 16.0f;
     CGSize titleSize = [self.titleLabel.text size4size:CGSizeMake(maxWidth - 2 * leftRightMargin, CGFLOAT_MAX) font:self.titleLabel.font];
     self.titleLabel.frame = CGRectMake(leftRightMargin, top, titleSize.width, titleSize.height);
 
     self.picImageView.frame = CGRectMake(leftRightMargin, CGRectGetMaxY(self.titleLabel.frame) + 10, maxWidth - 2 * leftRightMargin, screenWidth9Division16);
-   [self.baseView refreshVideoFrame:self.picImageView.frame];
+    [self.baseView refreshVideoFrame:self.picImageView.frame];
 
     [self.popularizeLabel setFrame:CGRectMake(CGRectGetMinX(self.titleLabel.frame), CGRectGetMaxY(self.picImageView.frame) + 5, 30, 15)];
 

@@ -13,12 +13,13 @@
 #import "MCColor.h"
 #import "MCFont.h"
 #import "NSString+Extend.h"
+#import "MCStyle.h"
 
 @implementation MCAdLittleImageCell
 
 - (void)updateStyle {
     self.titleLabel.textColor = [MCColor colorII];
-    self.titleLabel.font = [MCFont fontVI];
+    self.titleLabel.font = [MCFont fontIII];
     [self.picImageView addDefaultCorner];
     [self.logoView addDefaultCorner];
     [self.videoView addDefaultCorner];
@@ -26,17 +27,18 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat top = 5;
-    self.picImageView.frame = CGRectMake(15, top, 140, 70);
+    CGFloat top = [MCStyle contentInset].top;
+    CGFloat left = [MCStyle contentInset].left;
+    CGFloat margin = 10;
+    self.picImageView.frame = CGRectMake(left, top, 140, 70);
     [self.baseView refreshVideoFrame:self.picImageView.frame];
 
     CGFloat maxWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
-    CGFloat screenWidth9Division16 = maxWidth * 9 / 16.0f;
 
-    CGSize titleSize = [self.titleLabel.text size4size:CGSizeMake(maxWidth - 140 - 40, CGFLOAT_MAX) font:self.titleLabel.font];
-    self.titleLabel.frame = CGRectMake(CGRectGetMaxX(self.picImageView.frame) + 10, top, titleSize.width, titleSize.height);
+    CGSize titleSize = [self.titleLabel.text size4size:CGSizeMake(maxWidth - 140 - left * 2 - margin , CGFLOAT_MAX) font:self.titleLabel.font];
+    self.titleLabel.frame = CGRectMake(CGRectGetMaxX(self.picImageView.frame) + margin, top, titleSize.width, titleSize.height);
 
-    CGSize infoSize = [self.infoLabel.text size4size:CGSizeMake(maxWidth - 140 - 40, CGFLOAT_MAX) font:self.infoLabel.font];
+    CGSize infoSize = [self.infoLabel.text size4size:CGSizeMake(maxWidth - 140 - left * 2 - margin, CGFLOAT_MAX) font:self.infoLabel.font];
     self.infoLabel.frame = CGRectMake(CGRectGetMinX(self.titleLabel.frame), 75 - infoSize.height, infoSize.width, infoSize.height);
     self.popularizeLabel.frame = CGRectMake(CGRectGetMinX(self.titleLabel.frame), CGRectGetMinY(self.infoLabel.frame) - 15, 30, 15);
     self.adImageView.frame = CGRectMake(CGRectGetMaxX(self.picImageView.frame) - 12.5, CGRectGetMaxY(self.picImageView.frame) - 7, 12.5, 7);

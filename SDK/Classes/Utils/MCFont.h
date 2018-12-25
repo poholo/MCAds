@@ -15,12 +15,4 @@
 
 + (UIFont *)fontIV;
 
-+ (UIFont *)fontV;
-
-+ (UIFont *)fontVI;
-
-+ (UIFont *)fontVII;
-
-+ (UIFont *)fontVIII;
-
 @end

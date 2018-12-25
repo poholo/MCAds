@@ -1,0 +1,50 @@
+
+#import "MCAdDef.h"
+#import "NSObject+Ad.h"
+#import "NSObject+AdApi.h"
+
+#import "NSString+Extend.h"
+
+#import "MCApiConfig.h"
+#import "MCColorConfig.h"
+#import "MCStyleConfig.h"
+
+#import "MCDto.h"
+#import "MCAdDto.h"
+#import "MCAdConfig.h"
+#import "MCAdJointDto.h"
+#import "MCAdvertisementDto.h"
+#import "MCH5AdDto.h"
+#import "MCInmobiDto.h"
+#import "MCMobileBase.h"
+#import "MCSplashDto.h"
+
+#import "MCAdsManager.h"
+#import "MCMobileAdService.h"
+#import "MCSplashService.h"
+
+#import "MCAdDecorate.h"
+#import "MCColor.h"
+#import "MCFont.h"
+
+#import "MCAdBaseView.h"
+#import "MCAdPlayerView.h"
+#import "MCAdSplashView.h"
+#import "MCMobAdNativeAdView.h"
+#import "UIView+AdCorner.h"
+
+#import "MCAdBaseCell.h"
+#import "MCAdBaseDelegate.h"
+#import "MCAdBigImageCell.h"
+#import "MCAdCollectionBaseCell.h"
+#import "MCAdContinuePlayCollectionCell.h"
+#import "MCAdLittleImageCell.h"
+#import "MCAdMutipleImageCell.h"
+#import "MCAdOrientionImageCell.h"
+#import "MCCollectionCell.h"
+#import "MCOpAdCell.h"
+#import "MCSnapAdCell.h"
+#import "MCTableCell.h"
+#import "MCPlayerPauseView.h"
+#import "MCPlayerPreAdView.h"
+

@@ -10,6 +10,8 @@
 #import "VideoDto.h"
 #import "MCColor.h"
 #import "UIView+AdCorner.h"
+#import "MCStyle.h"
+#import "MCFont.h"
 
 
 @interface VideoCell ()
@@ -37,7 +39,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.coverImageView.frame = CGRectMake(self.marginLeftRight, self.marginTopBottom, CGRectGetWidth(self.frame) - 2 * self.marginLeftRight, CGRectGetHeight(self.frame) - 2 * self.marginTopBottom - 20);
+    UIEdgeInsets insets = [MCStyle contentInset];
+    self.coverImageView.frame = CGRectMake(insets.left, insets.top, CGRectGetWidth(self.frame) - 2 * insets.left, CGRectGetHeight(self.frame) - 2 * insets.top - 20);
     self.titleLabel.frame = CGRectMake(10, CGRectGetHeight(self.frame) - 20, CGRectGetWidth(self.frame) - 20, 15);
 }
 
@@ -55,7 +58,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
-        _titleLabel.font = [UIFont systemFontOfSize:14];
+        _titleLabel.font = [MCFont fontIV];
         _titleLabel.textColor = [MCColor colorII];
     }
     return _titleLabel;

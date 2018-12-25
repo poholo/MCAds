@@ -4,6 +4,7 @@
 //
 
 #import "MCTableCell.h"
+#import "MCColor.h"
 
 
 @implementation MCTableCell
@@ -12,6 +13,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundColor = [MCColor colorV];
+        self.backgroundView.backgroundColor = [MCColor colorV];
     }
     return self;
 }

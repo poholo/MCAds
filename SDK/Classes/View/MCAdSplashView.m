@@ -18,6 +18,7 @@
 #import "MCAdvertisementDto.h"
 #import "MCColor.h"
 #import "UIView+AdCorner.h"
+#import "MCFont.h"
 
 @interface MCAdSplashView () <BaiduMobAdSplashDelegate, GDTSplashAdDelegate>
 
@@ -282,7 +283,7 @@
             UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 120, 30, 100, 30)];
             btn.backgroundColor = [MCColor colorII];
             btn.alpha = .6f;
-            btn.titleLabel.font = [UIFont systemFontOfSize:12];
+            btn.titleLabel.font = [MCFont fontII];
             btn.titleLabel.textAlignment = NSTextAlignmentCenter;
             [btn addCorner:15];
             [btn addTarget:self action:@selector(jumpBtnClick) forControlEvents:UIControlEventTouchUpInside];

@@ -5,39 +5,42 @@
 
 #import "MCFont.h"
 
+#import "MCAdsManager.h"
+#import "MCFontConfig.h"
 
 @implementation MCFont
 
 + (UIFont *)fontI {
-    return [UIFont systemFontOfSize:14];
+    UIFont *custom = [MCAdsManager share].fontConfig.fontI;
+    if (custom) {
+        return custom;
+    }
+    return [UIFont systemFontOfSize:10];
 }
 
 + (UIFont *)fontII {
+    UIFont *custom = [MCAdsManager share].fontConfig.fontII;
+    if (custom) {
+        return custom;
+    }
     return [UIFont systemFontOfSize:12];
 }
 
 + (UIFont *)fontIII {
-    return [UIFont systemFontOfSize:10];
-}
-
-+ (UIFont *)fontIV {
-    return [UIFont systemFontOfSize:8];
-}
-
-+ (UIFont *)fontV {
-    return [UIFont boldSystemFontOfSize:14];
-}
-
-+ (UIFont *)fontVI {
+    UIFont *custom = [MCAdsManager share].fontConfig.fontIII;
+    if (custom) {
+        return custom;
+    }
     return [UIFont boldSystemFontOfSize:12];
 }
 
-+ (UIFont *)fontVII {
-    return [UIFont boldSystemFontOfSize:10];
++ (UIFont *)fontIV {
+    UIFont *custom = [MCAdsManager share].fontConfig.fontIV;
+    if (custom) {
+        return custom;
+    }
+    return [UIFont boldSystemFontOfSize:14];
 }
 
-+ (UIFont *)fontVIII {
-    return [UIFont boldSystemFontOfSize:8];
-}
 
 @end

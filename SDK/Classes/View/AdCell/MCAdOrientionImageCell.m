@@ -12,6 +12,7 @@
 #import "NSString+Extend.h"
 #import "MCColor.h"
 #import "MCAdBaseView.h"
+#import "MCStyle.h"
 
 @implementation MCAdOrientionImageCell
 
@@ -26,8 +27,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat top = [self marginTopBottom];
-    CGFloat leftRightMargin = [self marginLeftRight];
+    CGFloat top = [MCStyle contentInset].top;
+    CGFloat leftRightMargin = [MCStyle contentInset].left;
     CGFloat maxWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
     CGFloat height = 100;
     self.picImageView.frame = CGRectMake(leftRightMargin, top, maxWidth - 2 * leftRightMargin, height);

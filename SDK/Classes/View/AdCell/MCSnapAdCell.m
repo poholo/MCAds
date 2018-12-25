@@ -15,6 +15,7 @@
 #import "UIView+AdCorner.h"
 #import "MCColor.h"
 #import "NSString+Extend.h"
+#import "MCFont.h"
 
 @implementation MCSnapAdCell {
     UIImageView *_iconImageView;
@@ -36,14 +37,14 @@
 
 - (void)updateStyle {
     self.titleLabel.textColor = [MCColor colorII];
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    self.titleLabel.font = [MCFont fontIV];
     self.titleLabel.numberOfLines = 2;
 
     self.infoLabel.textColor = [MCColor colorII];
-    self.infoLabel.backgroundColor = [UIColor clearColor];
+    self.infoLabel.backgroundColor = [MCColor clearColor];
     self.titleLabel.textAlignment = NSTextAlignmentLeft;
     self.popularizeLabel.layer.borderWidth = 0;
-    self.popularizeLabel.backgroundColor = [UIColor clearColor];
+    self.popularizeLabel.backgroundColor = [MCColor clearColor];
     [self.picImageView addDefaultCorner];
     [self.logoView addDefaultCorner];
     [self layoutIfNeeded];

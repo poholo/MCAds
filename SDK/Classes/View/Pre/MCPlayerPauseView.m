@@ -7,6 +7,8 @@
 
 #import "MCAdBaseView.h"
 #import "MCAdsManager.h"
+#import "MCFont.h"
+#import "MCColor.h"
 
 @interface MCPlayerPauseView ()
 
@@ -24,7 +26,7 @@
     if (self = [super initWithFrame:frame]) {
         _tapView = ({
             UIView *view = [[UIView alloc] initWithFrame:self.bounds];
-            view.backgroundColor = [UIColor blackColor];
+            view.backgroundColor = [MCColor colorV];
             view.alpha = .7;
             /*
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)];
@@ -67,9 +69,9 @@
                     CGRectGetMaxY(_adBaseView.frame) + 10,
                     CGRectGetWidth(_adBaseView.frame),
                     20)];
-            label.textColor = [UIColor whiteColor];
+            label.textColor = [MCColor colorII];
             label.text = @"休息一下，精彩继续";
-            label.font = [UIFont systemFontOfSize:18];
+            label.font = [MCFont fontIV];
             label.textAlignment = NSTextAlignmentCenter;
             [self addSubview:label];
             label;

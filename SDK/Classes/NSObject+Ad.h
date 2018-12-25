@@ -93,4 +93,5 @@
  * @param dataList
  */
 - (void)parseOpDto:(NSDictionary *)dict dataList:(NSMutableArray *)dataList;
+
 @end

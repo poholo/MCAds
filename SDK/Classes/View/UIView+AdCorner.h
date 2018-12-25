@@ -7,15 +7,8 @@
 
 @interface UIView (AdCorner)
 
-/***
- * 卡片默认top left right bottom 边距
- */
-@property(nonatomic, readonly) CGFloat marginTopBottom;
-@property(nonatomic, readonly) CGFloat marginLeftRight;
-
-
 /**
- * 默认圆角 5
+ * 默认圆角
  */
 - (void)addDefaultCorner;
 

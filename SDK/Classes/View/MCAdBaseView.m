@@ -95,7 +95,7 @@
     self.infoLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.textColor = [MCColor colorII];
-        label.font = [MCFont fontV];
+        label.font = [MCFont fontIV];
         label.numberOfLines = 2;
         label;
     });
@@ -104,7 +104,7 @@
     self.popularizeLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.textColor = [MCColor colorIII];
-        label.font = [MCFont fontIII];
+        label.font = [MCFont fontI];
         label.text = @"推广";
         [label addCorner:7 borderColor:[MCColor colorVI]];
         label;
@@ -115,7 +115,7 @@
         UILabel *label = [[UILabel alloc] init];
         label.textColor = [MCColor colorII];
         label.textAlignment = NSTextAlignmentLeft;
-        label.font = [MCFont fontVI];
+        label.font = [MCFont fontIII];
         label.numberOfLines = 2;
         label;
     });

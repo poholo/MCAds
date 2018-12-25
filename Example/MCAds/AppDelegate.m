@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "MCAdsManager.h"
 #import "MCSplashService.h"
+#import "MCApiConfig.h"
+#import "MCColorConfig.h"
+#import "MCFontConfig.h"
+#import "MCStyleConfig.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +22,47 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    //--------api 数据传输部分必须实现-----------//
+
+    __weak typeof(self) weakSelf = self;
+    [MCAdsManager share].apiConfig.apiAdConfigMaterialCallBack = ^NSDictionary *(void) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_Baidu" ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        NSError *error;
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary *dealDict = @{DATA_SUCCESS: @(error ? NO : YES), DATA_DICT: dictionary};
+        return dealDict;
+    };
+
+    [MCAdsManager share].apiConfig.apiAdConfigMaterialSourceTypeCallBack = ^NSDictionary *(MCAdSourceType type) {
+        __strong typeof(weakSelf) strongself = weakSelf;
+        NSString *path = [strongself adSourceFileOfType:type];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        NSError *error;
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary *dealDict = @{DATA_SUCCESS: @(error ? NO : YES), DATA_DICT: dictionary};
+        return dealDict;
+    };
+
+    [MCAdsManager share].apiConfig.apiReqCustomAdsCallBack = ^NSDictionary *(NSInteger num) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"DataFlow_Custom_Ads" ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        NSError *error;
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary *dealDict = @{DATA_SUCCESS: @(error ? NO : YES), DATA_DICT: dictionary};
+        return dealDict;
+    };
+
+    //----------------Color------------------------------------//
+//    [MCAdsManager share].colorConfig.colorI = ...
+//    [MCAdsManager share].colorConfig.color... = ...
+    //-----------------Font-------------------------//
+//    [MCAdsManager share].fontConfig.fontI = ...
+
+    //------------------Style----------------------------//
+//    [MCAdsManager share].styleConfig.contentInset = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(5, 12, 5, 12)];
+
     [[MCAdsManager share] loadConfig];
     [[MCAdsManager share].splashService showSplash];
     return YES;
@@ -51,5 +95,27 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (NSString *)adSourceFileOfType:(MCAdSourceType)sourceType {
+    NSString *fileName = nil;
+    switch (sourceType) {
+        case MCAdSourceBaidu: {
+            fileName = @"AdInfos_Baidu.json";
+        }
+            break;
+        case MCAdSourceTencent: {
+            fileName = @"AdInfos_GDT.json";
+        }
+            break;
+        case MCAdSourceInmmobi: {
+            fileName = @"AdInfos_Custom.json";
+        }
+            break;
+        case MCAdSourceCustom: {
+            fileName = @"AdInfos_Custom.json";
+        }
+            break;
+    }
+    return [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+}
 
 @end

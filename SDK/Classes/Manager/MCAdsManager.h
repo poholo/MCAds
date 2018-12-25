@@ -7,10 +7,13 @@
 #import "MCAdDef.h"
 
 @class MCAdConfig;
-@class MCLiveAdDto;
 @class MCAdDto;
 @class MCMobileAdService;
 @class MCSplashService;
+@class MCApiConfig;
+@class MCColorConfig;
+@class MCStyleConfig;
+@class MCFontConfig;
 
 @interface MCAdsManager : NSObject
 
@@ -19,6 +22,11 @@
 @property(nonatomic, readonly) MCMobileAdService *flowAdService;
 @property(nonatomic, readonly) MCMobileAdService *playerPauseAdService;
 @property(nonatomic, readonly) MCSplashService *splashService;
+
+@property(nonatomic, readonly) MCApiConfig *apiConfig;
+@property(nonatomic, readonly) MCColorConfig *colorConfig;
+@property(nonatomic, readonly) MCStyleConfig *styleConfig;
+@property(nonatomic, readonly) MCFontConfig *fontConfig;
 
 + (MCAdsManager *)share;
 

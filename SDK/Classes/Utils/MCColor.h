@@ -23,11 +23,6 @@
 + (UIColor *)colorIII;
 
 /***
- * 字体色 - 提示性文字
- */
-+ (UIColor *)colorIV;
-
-/***
  * 背景 - 分行&底色
  */
 + (UIColor *)colorV;
@@ -38,38 +33,8 @@
 + (UIColor *)colorVI;
 
 
-/***
- * 主色 - 蓝
- */
-+ (UIColor *)colorVII;
-
-/***
- * 主色 - 黄
- */
-+ (UIColor *)colorVIII;
-
-/***
- * 副主色 - 深灰色
- */
-+ (UIColor *)colorIX;
-
-/**
- * 副主色 - 浅灰色
- */
-+ (UIColor *)colorX;
-
-/**
- * 副主色 - 浅绿色
- */
-+ (UIColor *)colorXI;
-
-/**
- * 副主色 - 浅红色
- */
-+ (UIColor *)colorXII;
-
 + (UIColor *)randomImageColor;
 
-+ (UIColor *)colorWithHexInt:(NSUInteger)rgbValue;
++ (UIColor *)rgb:(NSUInteger)rgbValue;
 
 @end

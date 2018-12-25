@@ -26,6 +26,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.frame = self.bounds;
+
     self.picImageView.frame = CGRectMake(0, 0, 95, 58);
 
     self.logoView.frame = CGRectMake(0, CGRectGetMaxY(self.picImageView.frame) - 10, 10, 10);

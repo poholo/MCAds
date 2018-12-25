@@ -13,6 +13,10 @@
 #import "MCAdConfig.h"
 #import "NSObject+AdApi.h"
 #import "MCSplashService.h"
+#import "MCApiConfig.h"
+#import "MCColorConfig.h"
+#import "MCStyleConfig.h"
+#import "MCFontConfig.h"
 
 
 @interface MCAdsManager ()
@@ -24,6 +28,11 @@
 @property(nonatomic, strong) MCMobileAdService *flowAdService;
 @property(nonatomic, strong) MCMobileAdService *playerPauseAdService;
 @property(nonatomic, strong) MCSplashService *splashService;
+
+@property(nonatomic, strong) MCApiConfig *apiConfig;
+@property(nonatomic, strong) MCColorConfig *colorConfig;
+@property(nonatomic, strong) MCStyleConfig *styleConfig;
+@property(nonatomic, strong) MCFontConfig *fontConfig;
 
 @end
 
@@ -315,6 +324,34 @@
         _splashService = [MCSplashService new];
     }
     return _splashService;
+}
+
+- (MCApiConfig *)apiConfig {
+    if (!_apiConfig) {
+        _apiConfig = [MCApiConfig new];
+    }
+    return _apiConfig;
+}
+
+- (MCColorConfig *)colorConfig {
+    if (!_colorConfig) {
+        _colorConfig = [MCColorConfig new];
+    }
+    return _colorConfig;
+}
+
+- (MCStyleConfig *)styleConfig {
+    if (!_styleConfig) {
+        _styleConfig = [MCStyleConfig new];
+    }
+    return _styleConfig;
+}
+
+- (MCFontConfig *)fontConfig {
+    if (!_fontConfig) {
+        _fontConfig = [MCFontConfig new];
+    }
+    return _fontConfig;
 }
 
 @end

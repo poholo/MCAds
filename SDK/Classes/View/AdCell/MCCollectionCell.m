@@ -5,8 +5,18 @@
 
 #import "MCCollectionCell.h"
 
+#import "MCColor.h"
 
 @implementation MCCollectionCell
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [MCColor colorV];
+        self.backgroundView.backgroundColor = [MCColor colorV];
+    }
+    return self;
+}
 
 + (NSString *)identifier {
     return NSStringFromClass(self.class);
