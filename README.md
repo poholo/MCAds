@@ -34,9 +34,8 @@ B.信息流
 ```
 
 ## ScreenShots
-<iframe height=270 width=534 src="./ScreenShots/MCAds.gif">
-ScreenRecord
-</ifreme>
+
+![ScreenRecord](https://github.com/poholo/MCAds/raw/master/ScreenShots/MCAds.gif)
 
 ## TODO
 ```text
