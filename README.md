@@ -1,6 +1,13 @@
 # MCAds
 聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。
 
+## 集成方式
+```text
+pod 'MCAds'
+```
+
+[开发Wiki](https://github.com/poholo/MCAds/wiki)
+
 ## Support platform
 ```text
 1.百度 √
