@@ -373,8 +373,8 @@
 - (MCPlayerKit *)playerKit {
     if (!_playerKit) {
         _playerKit = [[MCPlayerKit alloc] initWithPlayerView:self.adSplashView.adPlayerView];
-        _playerKit.playerCoreType = PlayerCoreAVPlayer;
-        _playerKit.actionAtItemEnd = PlayerActionAtItemEndCircle;
+        _playerKit.playerCoreType = MCPlayerCoreAVPlayer;
+        _playerKit.actionAtItemEnd = MCPlayerActionAtItemEndCircle;
     }
     return _playerKit;
 }
