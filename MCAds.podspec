@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "MCAds"
-    s.version          = "0.0.1"
+    s.version          = "0.0.2"
     s.summary          = "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。"
     s.description      = "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。"
     s.license          = 'MIT'
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     s.dependency 'GDTAd'
     s.dependency 'MCBaiduAds'
     s.dependency 'SDWebImage'
-    s.dependency 'MCPlayerKit'
+    s.dependency 'MCPlayerKit', '0.1.1'
     s.dependency 'HWWeakTimer'
 
 end
