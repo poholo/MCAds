@@ -6,7 +6,6 @@
 #import "MCSplashService.h"
 
 #import <GDTAd/GDTAd.h>
-#import <MCPlayerKit/PlayerKit.h>
 #import <HWWeakTimer/HWWeakTimer.h>
 
 #import "MCAdsManager.h"
@@ -14,12 +13,13 @@
 #import "MCSplashDto.h"
 #import "MCAdSplashView.h"
 #import "MCAdvertisementDto.h"
+#import "MCPlayerKit.h"
 
 @interface MCSplashService () <AdSplashViewDelegate>
 
 @property(nonatomic, strong) UIWindow *window;
 @property(nonatomic, strong) MCAdSplashView *adSplashView;
-@property(nonatomic, strong) PlayerKit *playerKit;
+@property(nonatomic, strong) MCPlayerKit *playerKit;
 
 
 @property(nonatomic, strong) NSTimer *timer;
@@ -109,7 +109,7 @@
         _timer = nil;
     }
     if (_playerKit) {
-        [_playerKit destoryPlayer];
+        [_playerKit destory];
         _playerKit = nil;
     }
 
@@ -370,9 +370,9 @@
     return _timer;
 }
 
-- (PlayerKit *)playerKit {
+- (MCPlayerKit *)playerKit {
     if (!_playerKit) {
-        _playerKit = [[PlayerKit alloc] initWithPlayerView:(PlayerBaseView <PlayerViewDelegate> *) self.adSplashView.adPlayerView];
+        _playerKit = [[MCPlayerKit alloc] initWithPlayerView:self.adSplashView.adPlayerView];
         _playerKit.playerCoreType = PlayerCoreAVPlayer;
         _playerKit.actionAtItemEnd = PlayerActionAtItemEndCircle;
     }

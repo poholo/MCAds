@@ -18,14 +18,6 @@
 
 @implementation MCAdPlayerView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.playerStyle = PlayerStyleSizeRegularAuto;
-    }
-    return self;
-}
-
 - (void)prepareUI {
     [super prepareUI];
     [self addSubview:self.coverImageView];

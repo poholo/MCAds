@@ -6,8 +6,9 @@
 //  Copyright © 2017年 poholo Inc. All rights reserved.
 //
 
-#import "PlayerBaseView.h"
 
-@interface MCAdPlayerView : PlayerBaseView
+#import "MCPlayerView.h"
+
+@interface MCAdPlayerView : MCPlayerView
 
 @end
