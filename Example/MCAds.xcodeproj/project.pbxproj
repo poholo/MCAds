@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A666042579FC4ABACB574C7 /* MCAdBigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666175A8295BD5D0E5DE8B /* MCAdBigImageCell.m */; };
 		1A666096038E76A9D82625AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A666F3ECC21FD6BD268BA51 /* LaunchScreen.storyboard */; };
-		1A6660F81E713F5158A906B0 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666304B17C634E5021DAA8 /* NSString+Extend.m */; };
+		1A6660F81E713F5158A906B0 /* NSString+MCExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666304B17C634E5021DAA8 /* NSString+MCExtend.m */; };
 		1A6660FA9C9CD9CDE990CDEF /* MCAdJointDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6664B68331C8DCA1E707AF /* MCAdJointDto.m */; };
 		1A666100917F4D9CCE976956 /* DataFlow_Oriention.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666410D711B16A3183451C /* DataFlow_Oriention.json */; };
 		1A666107326546ED8EAFA954 /* MCAdDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66601699E3D461621594D4 /* MCAdDto.m */; };
@@ -40,7 +40,7 @@
 		1A666645D9712A4A724233BE /* MCAdDecorate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6669650E2E09480BBCD567 /* MCAdDecorate.m */; };
 		1A6666C6199A2164CCB7792D /* DataFlow_Little_v.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6662A943EAAC1C6129C112 /* DataFlow_Little_v.json */; };
 		1A6666CAD5BA08709B81204D /* UIView+AdCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6669B3C7A2409712613F54 /* UIView+AdCorner.m */; };
-		1A666788A0D333C2416C6FC8 /* NSObject+Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C83110C61822FD2A25F /* NSObject+Ad.m */; };
+		1A666788A0D333C2416C6FC8 /* NSObject+MCAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666C83110C61822FD2A25F /* NSObject+MCAd.m */; };
 		1A66679AE7AA0C718B01BB25 /* DataFlow_Little.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666B61356CF414BDD54850 /* DataFlow_Little.json */; };
 		1A6667D537CC7ADDEB5FB5E8 /* DataFlow_Custom_Ads.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A666CA04A8A1B5CAAF28174 /* DataFlow_Custom_Ads.json */; };
 		1A6668B99F293CB93F0CDEFF /* MCH5AdDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666DB2D494A48EC9CDC907 /* MCH5AdDto.m */; };
@@ -58,7 +58,7 @@
 		1A66699C3F7EAC99538B4A2D /* MCSplashService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666605616EF74335A16FA0 /* MCSplashService.m */; };
 		1A666A02EC0C47D396E9A298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A66623F8E19496458C98F51 /* Assets.xcassets */; };
 		1A666AE1EB5FE469F36F1563 /* MCAdOrientionImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66623066997C1CB995969F /* MCAdOrientionImageCell.m */; };
-		1A666B55AA5B47ED6D429AAD /* NSObject+AdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666CCFFDD84AFA341325AF /* NSObject+AdApi.m */; };
+		1A666B55AA5B47ED6D429AAD /* NSObject+MCAdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A666CCFFDD84AFA341325AF /* NSObject+MCAdApi.m */; };
 		1A666B7220F8D0CB3F2B45B7 /* MCStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66615EDEE3CA0C16FC236A /* MCStyle.m */; };
 		1A666C55509742B20EF8662E /* MCAds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6667B9A2E881013A8755E8 /* MCAds.xcassets */; };
 		1A666C5FA599CBD3039FE294 /* AdCateDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6664E97D77CA0A07740A55 /* AdCateDto.m */; };
@@ -87,7 +87,7 @@
 		1A6660076B769CA67C3E96B9 /* MCSnapAdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSnapAdCell.h; sourceTree = "<group>"; };
 		1A66601699E3D461621594D4 /* MCAdDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdDto.m; sourceTree = "<group>"; };
 		1A666016A56B08FE9054C97E /* MCAdSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdSplashView.h; sourceTree = "<group>"; };
-		1A66602110EFA6D9CD2BDAF1 /* NSObject+AdApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AdApi.h"; sourceTree = "<group>"; };
+		1A66602110EFA6D9CD2BDAF1 /* NSObject+MCAdApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MCAdApi.h"; sourceTree = "<group>"; };
 		1A666048A984A0DC8E6BF337 /* DataFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFlowController.h; sourceTree = "<group>"; };
 		1A66608BBB420F670C13CF3A /* DataFlow_Big.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Big.json; sourceTree = "<group>"; };
 		1A6661196FEF714189B0BA7A /* MCAdMutipleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdMutipleImageCell.h; sourceTree = "<group>"; };
@@ -98,9 +98,9 @@
 		1A666175A8295BD5D0E5DE8B /* MCAdBigImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdBigImageCell.m; sourceTree = "<group>"; };
 		1A6661856962C89FB5D69339 /* MCAdDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdDef.h; sourceTree = "<group>"; };
 		1A66619232E5F26DE162411D /* MCInmobiDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCInmobiDto.h; sourceTree = "<group>"; };
-		1A66619387EBCA88AF1A07AA /* NSObject+Ad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Ad.h"; sourceTree = "<group>"; };
+		1A66619387EBCA88AF1A07AA /* NSObject+MCAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MCAd.h"; sourceTree = "<group>"; };
 		1A6661BC39105F50C553DA92 /* MCMobileAdService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMobileAdService.h; sourceTree = "<group>"; };
-		1A6661C05DD5CA2416838E3B /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
+		1A6661C05DD5CA2416838E3B /* NSString+MCExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MCExtend.h"; sourceTree = "<group>"; };
 		1A666217DDABF68D23B5F191 /* MCAdCollectionBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdCollectionBaseCell.m; sourceTree = "<group>"; };
 		1A666227B36B1FFA7E0A54FA /* MCSplashService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSplashService.h; sourceTree = "<group>"; };
 		1A66623066997C1CB995969F /* MCAdOrientionImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdOrientionImageCell.m; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		1A666260B0B44FA13B6E00F6 /* MCStyleConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCStyleConfig.m; sourceTree = "<group>"; };
 		1A6662A943EAAC1C6129C112 /* DataFlow_Little_v.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Little_v.json; sourceTree = "<group>"; };
 		1A6662B0F9120DA9C087A6F1 /* RootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCell.h; sourceTree = "<group>"; };
-		1A666304B17C634E5021DAA8 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
+		1A666304B17C634E5021DAA8 /* NSString+MCExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MCExtend.m"; sourceTree = "<group>"; };
 		1A6663243F0A05FF74241766 /* RootData_GDT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_GDT.json; sourceTree = "<group>"; };
 		1A6663322F70F198DEE11521 /* MCPlayerPauseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPlayerPauseView.h; sourceTree = "<group>"; };
 		1A66639CEF7D0173D076F277 /* DataFlowDataVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFlowDataVM.h; sourceTree = "<group>"; };
@@ -179,11 +179,11 @@
 		1A666BF9CE12183DA9D4634E /* MCSplashDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSplashDto.h; sourceTree = "<group>"; };
 		1A666C1F74AE7973B0F6F102 /* RootData_Baidu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RootData_Baidu.json; sourceTree = "<group>"; };
 		1A666C58A7FCE718E5DF4615 /* MCFontConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFontConfig.m; sourceTree = "<group>"; };
-		1A666C83110C61822FD2A25F /* NSObject+Ad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Ad.m"; sourceTree = "<group>"; };
+		1A666C83110C61822FD2A25F /* NSObject+MCAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MCAd.m"; sourceTree = "<group>"; };
 		1A666CA04A8A1B5CAAF28174 /* DataFlow_Custom_Ads.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataFlow_Custom_Ads.json; sourceTree = "<group>"; };
 		1A666CB9E43FB6E0E0437955 /* MCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCColor.h; sourceTree = "<group>"; };
 		1A666CC8A509D859F43D5C6F /* MCAdLittleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAdLittleImageCell.m; sourceTree = "<group>"; };
-		1A666CCFFDD84AFA341325AF /* NSObject+AdApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AdApi.m"; sourceTree = "<group>"; };
+		1A666CCFFDD84AFA341325AF /* NSObject+MCAdApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MCAdApi.m"; sourceTree = "<group>"; };
 		1A666D0F462596E34A2FF85C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1A666D164BEEA3AEB2985059 /* MCFontConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFontConfig.h; sourceTree = "<group>"; };
 		1A666D1B9EA025F20C00C3B0 /* MCAdvertisementDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAdvertisementDto.h; sourceTree = "<group>"; };
@@ -495,8 +495,8 @@
 		1A666E24AE6A06618250A795 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				1A666304B17C634E5021DAA8 /* NSString+Extend.m */,
-				1A6661C05DD5CA2416838E3B /* NSString+Extend.h */,
+				1A666304B17C634E5021DAA8 /* NSString+MCExtend.m */,
+				1A6661C05DD5CA2416838E3B /* NSString+MCExtend.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -515,11 +515,11 @@
 				1A666394E3A2EB83BD18B7CB /* View */,
 				1A66695605B12F1AE28ABB62 /* MCAdDef.m */,
 				1A6661856962C89FB5D69339 /* MCAdDef.h */,
-				1A66602110EFA6D9CD2BDAF1 /* NSObject+AdApi.h */,
-				1A666CCFFDD84AFA341325AF /* NSObject+AdApi.m */,
+				1A66602110EFA6D9CD2BDAF1 /* NSObject+MCAdApi.h */,
+				1A666CCFFDD84AFA341325AF /* NSObject+MCAdApi.m */,
 				1A666839DD975FF784607520 /* Utils */,
-				1A66619387EBCA88AF1A07AA /* NSObject+Ad.h */,
-				1A666C83110C61822FD2A25F /* NSObject+Ad.m */,
+				1A66619387EBCA88AF1A07AA /* NSObject+MCAd.h */,
+				1A666C83110C61822FD2A25F /* NSObject+MCAd.m */,
 				1A666B47080B990B3FF73240 /* Dto */,
 				1A666699BAB912C18EDD0FC1 /* Manager */,
 				1A666E24AE6A06618250A795 /* Categories */,
@@ -748,11 +748,11 @@
 				1A6666CAD5BA08709B81204D /* UIView+AdCorner.m in Sources */,
 				1A6664C37F65A7377B18F218 /* MCMobAdNativeAdView.m in Sources */,
 				1A666DC54B8A91E2A33B21B3 /* MCAdDef.m in Sources */,
-				1A666B55AA5B47ED6D429AAD /* NSObject+AdApi.m in Sources */,
+				1A666B55AA5B47ED6D429AAD /* NSObject+MCAdApi.m in Sources */,
 				1A666FFD863DFB01F1A5CA63 /* MCColor.m in Sources */,
 				1A666943E37E6336116F42D6 /* MCFont.m in Sources */,
 				1A666645D9712A4A724233BE /* MCAdDecorate.m in Sources */,
-				1A666788A0D333C2416C6FC8 /* NSObject+Ad.m in Sources */,
+				1A666788A0D333C2416C6FC8 /* NSObject+MCAd.m in Sources */,
 				1A6664F765FA893581C7F772 /* MCAdConfig.m in Sources */,
 				1A6660FA9C9CD9CDE990CDEF /* MCAdJointDto.m in Sources */,
 				1A6668B99F293CB93F0CDEFF /* MCH5AdDto.m in Sources */,
@@ -766,7 +766,7 @@
 				1A66699C3F7EAC99538B4A2D /* MCSplashService.m in Sources */,
 				1A66630291047B6663A90FF5 /* MCAdsManager.m in Sources */,
 				1A6661C34EBD6C92776300EF /* MCMobileAdService.m in Sources */,
-				1A6660F81E713F5158A906B0 /* NSString+Extend.m in Sources */,
+				1A6660F81E713F5158A906B0 /* NSString+MCExtend.m in Sources */,
 				1A6663D5C516AD61EDB281C3 /* MCColorConfig.m in Sources */,
 				1A6665B5822469070595C6A0 /* MCApiConfig.m in Sources */,
 				1A666213A98B46BB934B790D /* MCStyleConfig.m in Sources */,

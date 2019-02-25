@@ -1,9 +1,9 @@
 
 #import "MCAdDef.h"
-#import "NSObject+Ad.h"
-#import "NSObject+AdApi.h"
+#import "NSObject+MCAd.h"
+#import "NSObject+MCAdApi.h"
 
-#import "NSString+Extend.h"
+#import "NSString+MCExtend.h"
 
 #import "MCApiConfig.h"
 #import "MCColorConfig.h"

@@ -49,11 +49,11 @@ typedef NS_ENUM(NSInteger, MCAdCategoryType) {
 #define MCLog(fmt, ...)
 #endif
 
-extern NSString *const ERROR_DOMAIM;
-extern NSString *const ERROR_MESSAGE;
+extern NSString *const MC_ERROR_DOMAIM;
+extern NSString *const MC_ERROR_MESSAGE;
 
-extern NSString *const DATA_SUCCESS;
-extern NSString *const DATA_DICT;
+extern NSString *const MC_DATA_SUCCESS;
+extern NSString *const MC_DATA_DICT;
 
 @interface MCAdDef : NSObject
 

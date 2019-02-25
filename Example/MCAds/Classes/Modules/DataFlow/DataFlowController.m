@@ -7,7 +7,7 @@
 
 #import "AdCateDto.h"
 #import "DataFlowDataVM.h"
-#import "NSObject+Ad.h"
+#import "NSObject+MCAd.h"
 #import "MCAdDto.h"
 #import "VideoCell.h"
 #import "VideoDto.h"

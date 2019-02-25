@@ -5,7 +5,7 @@
 
 #import "MCH5AdDto.h"
 
-#import "NSString+Extend.h"
+#import "NSString+MCExtend.h"
 #import "MCFont.h"
 
 

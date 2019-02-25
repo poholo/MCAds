@@ -19,10 +19,10 @@
 - (void)startAction {
     NSURL *url = [NSURL URLWithString:self.packageName];
     switch (self.action) {
-        case AdvertisementActionDown: {
+        case MCAdvertisementActionDown: {
         }
             break;
-        case AdvertisementActionOpenWeb: {
+        case MCAdvertisementActionOpenWeb: {
 
         }
             break;

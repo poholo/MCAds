@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'MCAds_Pods' do
- pod 'MCAds'
+ pod 'MCAds', path: '../'
  pod 'MJRefresh'
  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 end

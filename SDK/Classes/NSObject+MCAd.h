@@ -13,7 +13,7 @@
 @class MCTableCell;
 
 
-@interface NSObject (Ad)
+@interface NSObject (MCAd)
 /***
  * 注册广告通用cell
  * @param container 广告展示容器

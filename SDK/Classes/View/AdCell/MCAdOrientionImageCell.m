@@ -9,7 +9,7 @@
 #import "MCAdOrientionImageCell.h"
 
 #import "UIView+AdCorner.h"
-#import "NSString+Extend.h"
+#import "NSString+MCExtend.h"
 #import "MCColor.h"
 #import "MCAdBaseView.h"
 #import "MCStyle.h"

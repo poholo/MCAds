@@ -3,7 +3,7 @@
 // Copyright (c) 2017 poholo Inc. All rights reserved.
 //
 
-#import "NSObject+Ad.h"
+#import "NSObject+MCAd.h"
 
 #import "MCAdDto.h"
 #import "MCAdLittleImageCell.h"
@@ -20,7 +20,7 @@
 #import "MCH5AdDto.h"
 #import "MCTableCell.h"
 
-@implementation NSObject (Ad)
+@implementation NSObject (MCAd)
 
 - (void)registerCommenAdCell:(UIScrollView *)container {
     if ([container isKindOfClass:[UITableView class]]) {

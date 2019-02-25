@@ -9,7 +9,7 @@
 #import "UIView+AdCorner.h"
 #import "MCColor.h"
 #import "MCFont.h"
-#import "NSString+Extend.h"
+#import "NSString+MCExtend.h"
 
 
 @implementation MCAdContinuePlayCollectionCell

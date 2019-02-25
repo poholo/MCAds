@@ -3,10 +3,10 @@
 // Copyright (c) 2018 majiancheng. All rights reserved.
 //
 
-#import "NSString+Extend.h"
+#import "NSString+MCExtend.h"
 
 
-@implementation NSString (Extend)
+@implementation NSString (MCExtend)
 
 - (CGSize)size4size:(CGSize)size font:(UIFont *)font {
     CGFloat maxWidth = size.width;

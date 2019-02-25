@@ -11,7 +11,7 @@
 #import <GDTAd/GDTAd.h>
 
 #import "MCInmobiDto.h"
-#import "NSString+Extend.h"
+#import "NSString+MCExtend.h"
 #import "MCAdvertisementDto.h"
 #import "MCFont.h"
 

@@ -6,9 +6,9 @@
 #import "MCDto.h"
 
 
-typedef NS_ENUM(NSInteger, AdvertisementActionType) {
-    AdvertisementActionDown = 1,
-    AdvertisementActionOpenWeb
+typedef NS_ENUM(NSInteger, MCAdvertisementActionType) {
+    MCAdvertisementActionDown = 1,
+    MCAdvertisementActionOpenWeb
 };
 
 @interface MCAdvertisementDto : MCDto
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, AdvertisementActionType) {
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSString *desc;
 @property(nonatomic, strong) NSString *imageUrl;
-@property(nonatomic, assign) AdvertisementActionType action;
+@property(nonatomic, assign) MCAdvertisementActionType action;
 @property(nonatomic, strong) NSString *videoUrl;
 @property(nonatomic, strong) NSString *url; ///< 下载地址
 @property(nonatomic, strong) NSString *source;

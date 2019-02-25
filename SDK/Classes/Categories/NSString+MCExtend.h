@@ -5,7 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSString (Extend)
+@interface NSString (MCExtend)
 
 - (CGSize)size4size:(CGSize)size font:(UIFont *)font;
 

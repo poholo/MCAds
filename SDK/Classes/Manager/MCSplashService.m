@@ -15,7 +15,7 @@
 #import "MCAdvertisementDto.h"
 #import "MCPlayerKit.h"
 
-@interface MCSplashService () <AdSplashViewDelegate>
+@interface MCSplashService () <MCAdSplashViewDelegate>
 
 @property(nonatomic, strong) UIWindow *window;
 @property(nonatomic, strong) MCAdSplashView *adSplashView;
@@ -119,7 +119,7 @@
 }
 
 
-#pragma mark - AdSplashViewDelegate
+#pragma mark - MCAdSplashViewDelegate
 
 - (void)adSplashViewJumpSplash:(MCSplashDto *)dto {
     switch (dto.splashType) {

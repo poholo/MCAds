@@ -31,7 +31,7 @@
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        NSDictionary *dealDict = @{DATA_SUCCESS: @(error ? NO : YES), DATA_DICT: dictionary};
+        NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
         return dealDict;
     };
 
@@ -41,7 +41,7 @@
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        NSDictionary *dealDict = @{DATA_SUCCESS: @(error ? NO : YES), DATA_DICT: dictionary};
+        NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
         return dealDict;
     };
 
@@ -50,7 +50,7 @@
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        NSDictionary *dealDict = @{DATA_SUCCESS: @(error ? NO : YES), DATA_DICT: dictionary};
+        NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
         return dealDict;
     };
 

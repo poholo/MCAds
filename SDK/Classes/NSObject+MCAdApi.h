@@ -9,7 +9,7 @@
 /***
  * 广告接口
  */
-@interface NSObject (AdApi)
+@interface NSObject (MCAdApi)
 
 /**
  * 广告素材接口，用来配置开屏、信息流、播放页前贴广告配置（素材：source-百度、广点通等）

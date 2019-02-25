@@ -7,7 +7,7 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol PlayerPauseViewDelegate <NSObject>
+@protocol MCPlayerPauseViewDelegate <NSObject>
 
 - (void)playerPauseViewPlay;
 
@@ -18,7 +18,7 @@
 @interface MCPlayerPauseView : UIView
 
 
-@property(nonatomic, weak) id <PlayerPauseViewDelegate> delegate;
+@property(nonatomic, weak) id <MCPlayerPauseViewDelegate> delegate;
 
 
 @end

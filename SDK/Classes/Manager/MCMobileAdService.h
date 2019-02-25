@@ -7,7 +7,7 @@
 
 #import "MCAdsManager.h"
 
-@protocol MobileAdServiceDelegate <NSObject>
+@protocol MCMobileAdServiceDelegate <NSObject>
 
 - (void)mobileAdServiceRequestSuccess:(NSArray<MCAdDto *> *)adDtos;
 
@@ -22,16 +22,16 @@
 @interface MCMobileAdService : NSObject
 
 @property(nonatomic, strong) MCAdConfig *adConfig;
-@property(nonatomic, weak) id <MobileAdServiceDelegate> delegate;
+@property(nonatomic, weak) id <MCMobileAdServiceDelegate> delegate;
 @property(nonatomic, readonly) NSMutableArray<MCAdDto *> *adContainers;
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(MCAdCategoryType)adType delegate:(id <MobileAdServiceDelegate>)delegate;
+- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(MCAdCategoryType)adType delegate:(id <MCMobileAdServiceDelegate>)delegate;
 
 - (void)requestNativeAds;
 
-- (void)requestAdsTarget:(id <MobileAdServiceDelegate>)delegate nums:(NSUInteger)nums;
+- (void)requestAdsTarget:(id <MCMobileAdServiceDelegate>)delegate nums:(NSUInteger)nums;
 
 - (MCAdDto *)takeOneAd;
 

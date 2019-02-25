@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     s.dependency 'GDTAd'
     s.dependency 'MCBaiduAds'
     s.dependency 'SDWebImage'
-    s.dependency 'MCPlayerKit', '0.1.1'
+    s.dependency 'MCPlayerKit', '0.1.2'
     s.dependency 'HWWeakTimer'
 
 end

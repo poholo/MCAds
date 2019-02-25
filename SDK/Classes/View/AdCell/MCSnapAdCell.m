@@ -14,7 +14,7 @@
 #import "MCAdDto.h"
 #import "UIView+AdCorner.h"
 #import "MCColor.h"
-#import "NSString+Extend.h"
+#import "NSString+MCExtend.h"
 #import "MCFont.h"
 
 @implementation MCSnapAdCell {

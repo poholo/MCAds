@@ -3,19 +3,19 @@
 // Copyright (c) 2018 majiancheng. All rights reserved.
 //
 
-#import "NSObject+AdApi.h"
+#import "NSObject+MCAdApi.h"
 
 #import "MCAdsManager.h"
 #import "MCApiConfig.h"
 
 
-@implementation NSObject (AdApi)
+@implementation NSObject (MCAdApi)
 
 - (void)apiAdConfigMaterial:(void (^)(BOOL success, NSDictionary *dict))callBack {
     if ([MCAdsManager share].apiConfig.apiAdConfigMaterialCallBack) {
         NSDictionary *dictionary = [MCAdsManager share].apiConfig.apiAdConfigMaterialCallBack();
-        BOOL success = [dictionary[DATA_SUCCESS] boolValue];
-        NSDictionary *dataDict = dictionary[DATA_DICT];
+        BOOL success = [dictionary[MC_DATA_SUCCESS] boolValue];
+        NSDictionary *dataDict = dictionary[MC_DATA_DICT];
         if (callBack) {
             callBack(success, dataDict);
         }
@@ -27,8 +27,8 @@
 - (void)apiAdConfigMaterialSourceType:(MCAdSourceType)sourceType callBack:(void (^)(BOOL success, NSDictionary *dict))callBack {
     if ([MCAdsManager share].apiConfig.apiAdConfigMaterialSourceTypeCallBack) {
         NSDictionary *dictionary = [MCAdsManager share].apiConfig.apiAdConfigMaterialSourceTypeCallBack(sourceType);
-        BOOL success = [dictionary[DATA_SUCCESS] boolValue];
-        NSDictionary *dataDict = dictionary[DATA_DICT];
+        BOOL success = [dictionary[MC_DATA_SUCCESS] boolValue];
+        NSDictionary *dataDict = dictionary[MC_DATA_DICT];
         if (callBack) {
             callBack(success, dataDict);
         }
@@ -40,8 +40,8 @@
 - (void)apiReqCustomAds:(NSInteger)num callBack:(void (^)(BOOL success, NSDictionary *))callBack {
     if ([MCAdsManager share].apiConfig.apiReqCustomAdsCallBack) {
         NSDictionary *dictionary = [MCAdsManager share].apiConfig.apiReqCustomAdsCallBack(num);
-        BOOL success = [dictionary[DATA_SUCCESS] boolValue];
-        NSDictionary *dataDict = dictionary[DATA_DICT];
+        BOOL success = [dictionary[MC_DATA_SUCCESS] boolValue];
+        NSDictionary *dataDict = dictionary[MC_DATA_DICT];
         if (callBack) {
             callBack(success, dataDict);
         }

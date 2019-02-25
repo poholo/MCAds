@@ -11,7 +11,7 @@
 #import "MCAdDto.h"
 #import "MCMobileAdService.h"
 #import "MCAdConfig.h"
-#import "NSObject+AdApi.h"
+#import "NSObject+MCAdApi.h"
 #import "MCSplashService.h"
 #import "MCApiConfig.h"
 #import "MCColorConfig.h"

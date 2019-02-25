@@ -10,7 +10,7 @@
 @class MCAdPlayerView;
 @class GDTSplashAd;
 
-@protocol AdSplashViewDelegate <NSObject>
+@protocol MCAdSplashViewDelegate <NSObject>
 
 - (void)adSplashSuccessPresentScreen:(MCSplashDto *)dto;
 
@@ -35,7 +35,7 @@
 
 @interface MCAdSplashView : UIView
 
-@property(nonatomic, weak) id <AdSplashViewDelegate> delegate;
+@property(nonatomic, weak) id <MCAdSplashViewDelegate> delegate;
 
 @property(nonatomic, readonly) BaiduMobAdSplash *baiduMobAdSplash;
 

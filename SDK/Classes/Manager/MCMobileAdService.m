@@ -12,7 +12,7 @@
 #import "MCAdConfig.h"
 #import "MCMobAdNativeAdView.h"
 #import "MCAdDto.h"
-#import "NSObject+AdApi.h"
+#import "NSObject+MCAdApi.h"
 #import "MCAdvertisementDto.h"
 
 
@@ -39,7 +39,7 @@
     return nil;
 }
 
-- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(MCAdCategoryType)adType delegate:(id <MobileAdServiceDelegate>)delegate {
+- (instancetype)initWithConfig:(MCAdConfig *)adConfig adType:(MCAdCategoryType)adType delegate:(id <MCMobileAdServiceDelegate>)delegate {
     self = [super init];
     if (self) {
         self.adConfig = adConfig;
@@ -56,10 +56,10 @@
     }
 }
 
-- (void)requestAdsTarget:(id <MobileAdServiceDelegate>)delegate nums:(NSUInteger)nums {
+- (void)requestAdsTarget:(id <MCMobileAdServiceDelegate>)delegate nums:(NSUInteger)nums {
     self.delegate = delegate;
     if (self.adConfig == nil || !self.adConfig.entityId) {
-        NSError *error = [NSError errorWithDomain:ERROR_DOMAIM code:-1 userInfo:@{ERROR_MESSAGE: @"广告配置为空"}];
+        NSError *error = [NSError errorWithDomain:MC_ERROR_DOMAIM code:-1 userInfo:@{MC_ERROR_MESSAGE: @"广告配置为空"}];
         [self nativeAdFailedLoadUnion:error];
     } else {
         if (self.adContainers.count < nums) {
@@ -240,7 +240,7 @@
 
 //        [LogService createRequestAD:[[[LogParam createWithRefer:refer] advertisment:self.apId] num:[NSString stringWithFormat:@"%lu", (unsigned long) self.adContainers.count]]];
     } else {
-//        NSError *error = [NSError errorWithDomain:ERROR_DOMAIM code:-1 userInfo:@{ERROR_MESSAGE: @"This is Ads empty"}];
+//        NSError *error = [NSError errorWithDomain:MC_ERROR_DOMAIM code:-1 userInfo:@{MC_ERROR_MESSAGE: @"This is Ads empty"}];
         [self nativeAdFailedLoadUnion:nil];
     }
 }
@@ -295,7 +295,7 @@
 //广告返回失败
 - (void)nativeAdsFailLoad:(BaiduMobFailReason)reason {
     MCLog(@"nativeAdsFailLoad,reason = %d", reason);
-    NSError *error = [NSError errorWithDomain:ERROR_DOMAIM code:-2 userInfo:@{ERROR_MESSAGE: [NSString stringWithFormat:@"This baidu ads request failed %ud", reason]}];
+    NSError *error = [NSError errorWithDomain:MC_ERROR_DOMAIM code:-2 userInfo:@{MC_ERROR_MESSAGE: [NSString stringWithFormat:@"This baidu ads request failed %ud", reason]}];
     [self nativeAdFailedLoadUnion:error];
 }
 
