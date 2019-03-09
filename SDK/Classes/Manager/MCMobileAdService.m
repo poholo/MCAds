@@ -16,12 +16,13 @@
 #import "MCAdvertisementDto.h"
 
 
-@interface MCMobileAdService () <BaiduMobAdNativeAdDelegate, GDTNativeAdDelegate>
+@interface MCMobileAdService () <BaiduMobAdNativeAdDelegate, GDTNativeAdDelegate, GDTNativeExpressAdDelegete>
 
 @property(nonatomic, assign) MCAdCategoryType adType;
 
 @property(nonatomic, strong) BaiduMobAdNative *baiduNativeAd;
-@property(nonatomic, strong) GDTNativeAd *tencentNativeAd;
+@property(nonatomic, strong) GDTNativeAd *tencentNativeAd;               ///< 自渲染广告
+@property(nonatomic, strong) GDTNativeExpressAd *tencentNativeExpressAd; ///<  模板广告
 
 @property(nonatomic, strong) NSMutableArray<MCAdDto *> *adContainers;
 
@@ -88,8 +89,12 @@
         }
             break;
         case MCAdSourceTencent: {
-            self.tencentNativeAd.controller = [self topController];
-            [self.tencentNativeAd loadAd:(int) self.containerLowValve];
+            if (self.adConfig.materialType == MCAdMaterialTemplate) {
+                [self.tencentNativeExpressAd loadAd:(int) self.containerLowValve];
+            } else {
+                self.tencentNativeAd.controller = [self topController];
+                [self.tencentNativeAd loadAd:(int) self.containerLowValve];
+            }
         }
             break;
         case MCAdSourceInmmobi: {
@@ -208,7 +213,7 @@
     [nativeAds enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         MCNativeAdDto *adDto = [MCNativeAdDto creatWithAdNative:obj];
-        MCAdDto *dto = [[MCAdDto alloc] initWithNativeAdDto:adDto styleId:MCAdStyleLittle];
+        MCAdDto *dto = [[MCAdDto alloc] initWithNativeAdDto:adDto styleId:MCAdStyleLittle adConfig:self.adConfig];
         dto.adService = strongSelf;
         [strongSelf.adContainers insertObject:dto atIndex:0];
     }];
@@ -351,6 +356,66 @@
     [self adServiceCloseUnionAdDetail];
 }
 
+#pragma mark  GDTNativeExpressAdDelegete
+
+- (void)nativeExpressAdSuccessToLoad:(GDTNativeExpressAd *)nativeExpressAd views:(NSArray<__kindof GDTNativeExpressAdView *> *)views {
+    MCLog(@"[GDT][Template]nativeAdObjectsSuccessLoad:%lu", (unsigned long) views.count);
+    [self nativeAdSuccessLoad:views];
+}
+
+- (void)nativeExpressAdFailToLoad:(GDTNativeExpressAd *)nativeExpressAd error:(NSError *)error {
+    MCLog(@"[GDT][Template]nativeAdsFailLoad,reason = %@", error);
+    NSError *err = [NSError errorWithDomain:error.domain code:-3 userInfo:error.userInfo];
+    [self nativeAdFailedLoadUnion:err];
+}
+
+- (void)nativeExpressAdViewRenderSuccess:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewRenderSuccess");
+}
+
+- (void)nativeExpressAdViewRenderFail:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewRenderFail");
+}
+
+- (void)nativeExpressAdViewExposure:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewExposure");
+
+}
+
+- (void)nativeExpressAdViewClicked:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewClicked");
+    [self adServiceTapUnionAd];
+}
+
+- (void)nativeExpressAdViewClosed:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewClosed");
+    [self adServiceCloseUnionAdDetail];
+}
+
+- (void)nativeExpressAdViewWillPresentScreen:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressnativeExpressAdViewWillPresentScreenAdViewRenderFail");
+
+}
+
+- (void)nativeExpressAdViewDidPresentScreen:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewDidPresentScreen");
+
+}
+
+- (void)nativeExpressAdViewWillDissmissScreen:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewWillDissmissScreen");
+
+}
+
+- (void)nativeExpressAdViewDidDissmissScreen:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewDidDissmissScreen");
+}
+
+- (void)nativeExpressAdViewApplicationWillEnterBackground:(GDTNativeExpressAdView *)nativeExpressAdView {
+    MCLog(@"[GDT][Template]nativeExpressAdViewApplicationWillEnterBackground");
+}
+
+
 #pragma mark - Custom
 
 - (void)reqCustomAds:(NSInteger)num {
@@ -385,6 +450,14 @@
         _tencentNativeAd.controller = [self topController];
     }
     return _tencentNativeAd;
+}
+
+- (GDTNativeExpressAd *)tencentNativeExpressAd {
+    if (!_tencentNativeExpressAd) {
+        _tencentNativeExpressAd = [[GDTNativeExpressAd alloc] initWithAppkey:self.adConfig.appId placementId:self.adConfig.entityId adSize:self.adConfig.adSize];
+        _tencentNativeExpressAd.delegate = self;
+    }
+    return _tencentNativeExpressAd;
 }
 
 - (NSMutableArray *)adContainers {

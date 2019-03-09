@@ -27,7 +27,7 @@
 
     __weak typeof(self) weakSelf = self;
     [MCAdsManager share].apiConfig.apiAdConfigMaterialCallBack = ^NSDictionary *(void) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_Baidu" ofType:@"json"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_GDT" ofType:@"json"];
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
@@ -36,8 +36,7 @@
     };
 
     [MCAdsManager share].apiConfig.apiAdConfigMaterialSourceTypeCallBack = ^NSDictionary *(MCAdSourceType type) {
-        __strong typeof(weakSelf) strongself = weakSelf;
-        NSString *path = [strongself adSourceFileOfType:type];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_GDT" ofType:@"json"];
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSError *error;
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];

@@ -9,6 +9,7 @@
 #import "MCNativeAdDto.h"
 
 #import <GDTAd/GDTAd.h>
+#import <GDTAd/GDTNativeExpressAdView.h>
 
 #import "MCInmobiDto.h"
 #import "NSString+MCExtend.h"
@@ -18,6 +19,7 @@
 @interface MCNativeAdDto ()
 
 @property(nonatomic, strong) GDTNativeAdData *tencentAdData;
+@property(nonatomic, strong) GDTNativeExpressAdView *tentcentExpressAdView;
 @property(nonatomic, strong) BaiduMobAdNativeAdObject *baiduAdData;
 @property(nonatomic, strong) MCInmobiDto *inmobiDto;
 @property(nonatomic, strong) MCAdvertisementDto *customAdvertisementDto;
@@ -91,6 +93,10 @@
         dto.title = advertisementDto.title;
         dto.mainImageURLString = advertisementDto.imageUrl;
         dto.iconImageURLString = advertisementDto.iconUrl;
+    } else if ([adNatvie isKindOfClass:[GDTNativeExpressAdView class]]) {
+        GDTNativeExpressAdView *gdtNativeExpressAdView = (GDTNativeExpressAdView *) adNatvie;
+        dto.tentcentExpressAdView = gdtNativeExpressAdView;
+
     }
     return dto;
 }
@@ -100,7 +106,6 @@
 }
 
 - (CGSize)waterCellSize:(CGFloat)defaultWidth {
-    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
     if (CGSizeEqualToSize(CGSizeZero, self.cacheSize)) {
         CGSize titleSize = [self.text size4size:CGSizeMake(defaultWidth, 30) font:[MCFont fontIV]];
         if (titleSize.height > 30) {

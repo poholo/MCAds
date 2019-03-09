@@ -35,7 +35,8 @@
             break;
         case MCAdSourceCustom: {
             adrefer = @"_custom";
-        } break;
+        }
+            break;
         default: {
             adrefer = [refer stringByAppendingString:@"gdt"];
         }
@@ -53,12 +54,19 @@
         type = MCAdSourceTencent;
     } else if ([source isEqualToString:@"inmmob"]) {
         type = MCAdSourceInmmobi;
-    } else if([source isEqualToString:@"custom"]) {
+    } else if ([source isEqualToString:@"custom"]) {
         type = MCAdSourceCustom;
     } else {
         type = MCAdSourceTencent;
     }
     return type;
+}
+
+- (CGSize)adSize {
+    if (CGSizeEqualToSize(_adSize, CGSizeZero)) {
+        return [UIScreen mainScreen].bounds.size;
+    }
+    return _adSize;
 }
 
 - (NSString *)appId {

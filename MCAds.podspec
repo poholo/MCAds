@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "MCAds"
-    s.version          = "0.0.3"
+    s.version          = "0.0.4"
     s.summary          = "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。"
     s.description      = "聚合百度广告、广点通以及自定义广告，开屏，信息流，特定位置，简化广告接入复杂度问题。"
     s.license          = 'MIT'

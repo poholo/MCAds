@@ -15,6 +15,7 @@
 @class MCNativeAdDto;
 @class MCInmobiDto;
 @class MCMobileAdService;
+@class MCAdConfig;
 
 
 @interface MCAdDto : MCDto
@@ -25,13 +26,15 @@
 @property(nonatomic, assign) MCAdMaterialType materialType;
 @property(nonatomic, assign) MCAdSourceType adSourceType;
 
+@property(nonatomic, assign) CGSize adSize;
+
 @property(nonatomic, copy) NSString *title;
 
 @property(nonatomic, weak) MCMobileAdService *adService;
 
 @property(nonatomic, assign) NSTimeInterval lastTimeInterval;
 
-- (instancetype)initWithNativeAdDto:(id)dto styleId:(MCAdStyleType)styleId;
+- (instancetype)initWithNativeAdDto:(id)dto styleId:(MCAdStyleType)styleId adConfig:(MCAdConfig *)adConfig;
 
 - (CGSize)waterCellSize:(CGFloat)defaultWidth;
 

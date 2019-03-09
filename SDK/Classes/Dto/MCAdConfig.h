@@ -33,6 +33,8 @@
 @property(nonatomic, assign) NSInteger interval;
 
 @property(nonatomic, readonly) MCAdSourceType adSourceType;
+@property(nonatomic, assign) MCAdMaterialType materialType;
+@property(nonatomic, assign) CGSize adSize;        ///< 广告size default 屏幕大小
 
 @property(nonatomic, strong) MCAdvertisementDto *advertisementDto;
 

@@ -9,6 +9,7 @@
 #import "MCInmobiDto.h"
 #import "MCAdDef.h"
 #import "MCMobileAdService.h"
+#import "MCAdConfig.h"
 
 
 @implementation MCAdDto
@@ -24,12 +25,14 @@
     return _nativeAdDto.title;
 }
 
-- (instancetype)initWithNativeAdDto:(id)dto styleId:(MCAdStyleType)styleId {
+- (instancetype)initWithNativeAdDto:(id)dto styleId:(MCAdStyleType)styleId adConfig:(MCAdConfig *)adConfig {
     self = [super init];
     if (self) {
         if ([dto isKindOfClass:[MCNativeAdDto class]]) {
             self.nativeAdDto = dto;
         }
+        self.adSize = adConfig.adSize;
+        self.materialType = adConfig.materialType;
         self.lastTimeInterval = [[NSDate date] timeIntervalSince1970];
         self.styleType = styleId;
     }

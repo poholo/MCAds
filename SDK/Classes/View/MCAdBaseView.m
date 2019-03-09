@@ -16,6 +16,7 @@
 #import "MCColor.h"
 #import "MCFont.h"
 #import "UIView+AdCorner.h"
+#import "GDTNativeExpressAdView.h"
 
 @interface MCAdBaseView ()
 
@@ -30,6 +31,8 @@
 @property(nonatomic, strong) UILabel *popularizeLabel;
 @property(nonatomic, strong) UIImageView *logoView;
 @property(nonatomic, strong) UIImageView *adImageView;
+
+@property(nonatomic, strong) UITapGestureRecognizer *commenGesture;
 
 @end
 
@@ -78,10 +81,25 @@
 
 }
 
+- (void)configureTencnetAd {
+    [self configureCommenAd];
+    if (self.adDto.materialType == MCAdMaterialTemplate) {
+        GDTNativeExpressAdView *expressAdView = (GDTNativeExpressAdView *) self.adDto.nativeAdDto.tentcentExpressAdView;
+        expressAdView.frame = CGRectMake(0, 0, self.adDto.adSize.width, self.adDto.adSize.height);
+        expressAdView.controller = [self topController];
+        [expressAdView render];
+        [self.picImageView addSubview:expressAdView];
+        self.picImageView.userInteractionEnabled = YES;
+        [self.commenAdView removeGestureRecognizer:self.commenGesture];
+    }
+}
+
 - (void)configureCommenAd {
     [self addSubview:self.commenAdView];
+    [self.commenAdView addGestureRecognizer:self.commenGesture];
 
     [self.commenAdView addSubview:self.picImageView];
+    self.picImageView.userInteractionEnabled = NO;
     [self.commenAdView addSubview:self.popularizeLabel];
     [self.commenAdView addSubview:self.infoLabel];
     [self.commenAdView addSubview:self.titleLabel];
@@ -162,7 +180,7 @@
         }
             break;
         case MCAdSourceTencent: {
-            [self configureCommenAd];
+            [self configureTencnetAd];
         }
             break;
         case MCAdSourceInmmobi : {
@@ -240,6 +258,7 @@
             break;
         case MCAdSourceTencent: {
 //            if ([[NetConfig share] isAdTrackImpression]) {
+
             [self.adDto.adService log2ThridPlatform:self.adDto attachView:self];
 //            }
         }
@@ -268,13 +287,33 @@
     if (!_commenAdView) {
         _commenAdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
         _commenAdView.backgroundColor = [MCColor whiteColor];
-        [_commenAdView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAd)]];
+        [_commenAdView addGestureRecognizer:self.commenGesture];
     }
     return _commenAdView;
 }
 
+- (UITapGestureRecognizer *)commenGesture {
+    if (!_commenGesture) {
+        _commenGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAd)];
+    }
+    return _commenGesture;
+}
+
+
 - (UIView *)videoView {
     return self.adBaiduView.videoView;
+}
+
+
+- (UIViewController *)topController {
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *nav;
+    if ([root isKindOfClass:[UINavigationController class]]) {
+        nav = (UINavigationController *) root;
+    } else {
+        nav = root.navigationController;
+    }
+    return nav.topViewController;
 }
 
 @end
