@@ -64,7 +64,7 @@
 
 - (CGSize)adSize {
     if (CGSizeEqualToSize(_adSize, CGSizeZero)) {
-        return CGSizeMake(200, 150);
+        return [UIScreen mainScreen].bounds.size;
     }
     return _adSize;
 }
