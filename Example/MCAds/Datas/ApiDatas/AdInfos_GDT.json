@@ -2,23 +2,23 @@
   "success": true,
   "adConfig": {
     "splash": {
-      "id": "3070920757333187",
+      "id": "9030551553355391",
       "source": "gdt",
-      "appId": "1106180396",
+      "appId": "1108214520",
       "duration": 5,
       "refer": "launch",
       "loop": false,
       "start": 0,
       "interval": 0,
       "cardBlow": true,
-      "adId": "3070920757333187",
+      "adId": "9030551553355391",
       "skip": false
     },
     "dataFlow": {
-        "id": "3080952622121990",
+      "id": "5090459635225532",
       "source": "gdt",
       "appId": "1108214520",
-      "materialType": 2
+      "materialType": 3
     },
     "dataPre": {
       "id": "2030021727039283",

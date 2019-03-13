@@ -10,6 +10,7 @@
 
 #import <GDTAd/GDTAd.h>
 #import <GDTAd/GDTNativeExpressAdView.h>
+#import <GDTAd/GDTUnifiedNativeAdDataObject.h>
 
 #import "MCInmobiDto.h"
 #import "NSString+MCExtend.h"
@@ -20,6 +21,7 @@
 
 @property(nonatomic, strong) GDTNativeAdData *tencentAdData;
 @property(nonatomic, strong) GDTNativeExpressAdView *tentcentExpressAdView;
+@property(nonatomic, strong) GDTUnifiedNativeAdDataObject *tencentUnifiedNativeAdDataObject;
 @property(nonatomic, strong) BaiduMobAdNativeAdObject *baiduAdData;
 @property(nonatomic, strong) MCInmobiDto *inmobiDto;
 @property(nonatomic, strong) MCAdvertisementDto *customAdvertisementDto;
@@ -96,7 +98,13 @@
     } else if ([adNatvie isKindOfClass:[GDTNativeExpressAdView class]]) {
         GDTNativeExpressAdView *gdtNativeExpressAdView = (GDTNativeExpressAdView *) adNatvie;
         dto.tentcentExpressAdView = gdtNativeExpressAdView;
-
+    } else if ([adNatvie isKindOfClass:[GDTUnifiedNativeAdDataObject class]]) {
+        GDTUnifiedNativeAdDataObject *gdtUnifiedNativeAdDataObject = (GDTUnifiedNativeAdDataObject *) adNatvie;
+        dto.tencentUnifiedNativeAdDataObject = gdtUnifiedNativeAdDataObject;
+        dto.text = gdtUnifiedNativeAdDataObject.desc;
+        dto.title = gdtUnifiedNativeAdDataObject.title;
+        dto.iconImageURLString = gdtUnifiedNativeAdDataObject.iconUrl;
+        dto.mainImageURLString = gdtUnifiedNativeAdDataObject.imageUrl;
     }
     return dto;
 }

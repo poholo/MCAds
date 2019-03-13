@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, MCAdMaterialType) {
     MCAdMaterialTextImage,
     MCAdMaterialVideo,
     MCAdMaterialTemplate,
+    MCAdMaterialTemplate2,
 };
 
 /**

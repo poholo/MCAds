@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'MCAds' do
- pod 'GDTAd'
+ pod 'GDTAd', '4.8.7'
  pod 'MCBaiduAds'
  pod 'SDWebImage'
  pod 'MCPlayerKit'

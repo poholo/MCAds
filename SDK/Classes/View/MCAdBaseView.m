@@ -17,10 +17,13 @@
 #import "MCFont.h"
 #import "UIView+AdCorner.h"
 #import "GDTNativeExpressAdView.h"
+#import "MCAdUtils.h"
+#import "MCGDTUnifiedNativeAdView.h"
 
-@interface MCAdBaseView ()
+@interface MCAdBaseView () <GDTUnifiedNativeAdViewDelegate>
 
 @property(nonatomic, strong) MCMobAdNativeAdView *adBaiduView;
+@property(nonatomic, strong) MCGDTUnifiedNativeAdView *gdtUnifiedNativeAdView;
 @property(nonatomic, strong) UIView *commenAdView;
 
 @property(nonatomic, strong) MCAdDto *adDto;
@@ -86,10 +89,15 @@
     if (self.adDto.materialType == MCAdMaterialTemplate) {
         GDTNativeExpressAdView *expressAdView = (GDTNativeExpressAdView *) self.adDto.nativeAdDto.tentcentExpressAdView;
         expressAdView.frame = CGRectMake(0, 0, self.adDto.adSize.width, self.adDto.adSize.height);
-        expressAdView.controller = [self topController];
+        expressAdView.controller = [MCAdUtils topController];
         [expressAdView render];
         [self.picImageView addSubview:expressAdView];
         self.picImageView.userInteractionEnabled = YES;
+        [self.commenAdView removeGestureRecognizer:self.commenGesture];
+    } else if (self.adDto.materialType == MCAdMaterialTemplate2) {
+        self.gdtUnifiedNativeAdView.frame = CGRectMake(0, 0, self.adDto.adSize.width, self.adDto.adSize.height);
+        [self.commenAdView addSubview:self.gdtUnifiedNativeAdView];
+        [self.gdtUnifiedNativeAdView loadData:self.adDto.nativeAdDto.tencentUnifiedNativeAdDataObject];
         [self.commenAdView removeGestureRecognizer:self.commenGesture];
     }
 }
@@ -166,7 +174,6 @@
 - (void)refreshVideoFrame:(CGRect)frame {
     [self.adBaiduView refreshVideoFrame:frame];
 }
-
 
 - (void)setAdModel:(MCAdDto *)mmAdDto {
     self.adDto = mmAdDto;
@@ -281,6 +288,33 @@
     _commenAdView.frame = self.bounds;
 }
 
+#pragma mark - GDTUnifiedNativeAdViewDelegate
+
+- (void)gdt_unifiedNativeAdViewWillExpose:(GDTUnifiedNativeAdView *)unifiedNativeAdView {
+    MCLog(@"gdt_unifiedNativeAdViewWillExpose");
+}
+
+- (void)gdt_unifiedNativeAdViewDidClick:(GDTUnifiedNativeAdView *)unifiedNativeAdView {
+    MCLog(@"gdt_unifiedNativeAdViewDidClick");
+}
+
+- (void)gdt_unifiedNativeAdDetailViewClosed:(GDTUnifiedNativeAdView *)unifiedNativeAdView {
+    MCLog(@"gdt_unifiedNativeAdDetailViewClosed");
+}
+
+- (void)gdt_unifiedNativeAdViewApplicationWillEnterBackground:(GDTUnifiedNativeAdView *)unifiedNativeAdView {
+    MCLog(@"gdt_unifiedNativeAdViewApplicationWillEnterBackground");
+}
+
+- (void)gdt_unifiedNativeAdDetailViewWillPresentScreen:(GDTUnifiedNativeAdView *)unifiedNativeAdView {
+    MCLog(@"gdt_unifiedNativeAdDetailViewWillPresentScreen");
+}
+
+- (void)gdt_unifiedNativeAdView:(GDTUnifiedNativeAdView *)unifiedNativeAdView playerStatusChanged:(GDTMediaPlayerStatus)status userInfo:(NSDictionary *)userInfo {
+    MCLog(@"gdt_unifiedNativeAdView");
+}
+
+
 #pragma mark - getter
 
 - (UIView *)commenAdView {
@@ -290,6 +324,14 @@
         [_commenAdView addGestureRecognizer:self.commenGesture];
     }
     return _commenAdView;
+}
+
+- (MCGDTUnifiedNativeAdView *)gdtUnifiedNativeAdView {
+    if (!_gdtUnifiedNativeAdView) {
+        _gdtUnifiedNativeAdView = [[MCGDTUnifiedNativeAdView alloc] initWithFrame:CGRectMake(0, 0, self.adDto.adSize.width, self.adDto.adSize.height)];
+        _gdtUnifiedNativeAdView.delegate = self;
+    }
+    return _gdtUnifiedNativeAdView;
 }
 
 - (UITapGestureRecognizer *)commenGesture {
@@ -302,18 +344,6 @@
 
 - (UIView *)videoView {
     return self.adBaiduView.videoView;
-}
-
-
-- (UIViewController *)topController {
-    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UINavigationController *nav;
-    if ([root isKindOfClass:[UINavigationController class]]) {
-        nav = (UINavigationController *) root;
-    } else {
-        nav = root.navigationController;
-    }
-    return nav.topViewController;
 }
 
 @end

@@ -15,11 +15,13 @@
 @class GDTNativeAdData;
 @class MCAdvertisementDto;
 @class GDTNativeExpressAdView;
+@class GDTUnifiedNativeAdDataObject;
 
 @interface MCNativeAdDto : MCDto
 
 @property(nonatomic, readonly) GDTNativeAdData *tencentAdData;
 @property(nonatomic, readonly) GDTNativeExpressAdView *tentcentExpressAdView;
+@property(nonatomic, readonly) GDTUnifiedNativeAdDataObject *tencentUnifiedNativeAdDataObject;
 @property(nonatomic, readonly) BaiduMobAdNativeAdObject *baiduAdData;
 @property(nonatomic, readonly) MCInmobiDto *inmobiDto;
 @property(nonatomic, readonly) MCAdvertisementDto *customAdvertisementDto;

@@ -6,7 +6,7 @@
 
 #import "MCAdsManager.h"
 
-#import <GDTAd/GDTTrack.h>
+//#import <GDTAd/GDTTrack.h>
 
 #import "MCAdDto.h"
 #import "MCMobileAdService.h"
@@ -59,7 +59,7 @@
         }
             break;
         case MCAdSourceTencent: {
-            [GDTTrack activateApp];
+//            [GDTTrack activateApp];
         }
             break;
         default: {

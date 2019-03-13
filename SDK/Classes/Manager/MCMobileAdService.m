@@ -14,15 +14,17 @@
 #import "MCAdDto.h"
 #import "NSObject+MCAdApi.h"
 #import "MCAdvertisementDto.h"
+#import "MCAdUtils.h"
 
 
-@interface MCMobileAdService () <BaiduMobAdNativeAdDelegate, GDTNativeAdDelegate, GDTNativeExpressAdDelegete>
+@interface MCMobileAdService () <BaiduMobAdNativeAdDelegate, GDTNativeAdDelegate, GDTNativeExpressAdDelegete, GDTUnifiedNativeAdDelegate>
 
 @property(nonatomic, assign) MCAdCategoryType adType;
 
 @property(nonatomic, strong) BaiduMobAdNative *baiduNativeAd;
 @property(nonatomic, strong) GDTNativeAd *tencentNativeAd;               ///< 自渲染广告
 @property(nonatomic, strong) GDTNativeExpressAd *tencentNativeExpressAd; ///<  模板广告
+@property(nonatomic, strong) GDTUnifiedNativeAd *tencentUnifiledNativeAd; ///< 自渲染模板2.0
 
 @property(nonatomic, strong) NSMutableArray<MCAdDto *> *adContainers;
 
@@ -91,8 +93,10 @@
         case MCAdSourceTencent: {
             if (self.adConfig.materialType == MCAdMaterialTemplate) {
                 [self.tencentNativeExpressAd loadAd:(int) self.containerLowValve];
+            } else if (self.adConfig.materialType == MCAdMaterialTemplate2) {
+                [self.tencentUnifiledNativeAd loadAdWithAdCount:(int) self.containerLowValve];
             } else {
-                self.tencentNativeAd.controller = [self topController];
+                self.tencentNativeAd.controller = [MCAdUtils topController];
                 [self.tencentNativeAd loadAd:(int) self.containerLowValve];
             }
         }
@@ -162,7 +166,7 @@
         }
             break;
         case MCAdSourceTencent: {
-            self.tencentNativeAd.controller = [self topController];
+            self.tencentNativeAd.controller = [MCAdUtils topController];
             [self.tencentNativeAd clickAd:adDto.nativeAdDto.tencentAdData];
         }
             break;
@@ -335,23 +339,17 @@
     [self nativeAdFailedLoadUnion:err];
 }
 
-/**
- *  原生广告点击之后将要展示内嵌浏览器或应用内AppStore回调
- */
+//  原生广告点击之后将要展示内嵌浏览器或应用内AppStore回调
 - (void)nativeAdWillPresentScreen {
     [self adServiceTapUnionAd];
 }
 
-/**
- *  原生广告点击之后应用进入后台时回调
- */
+// 原生广告点击之后应用进入后台时回调
 - (void)nativeAdApplicationWillEnterBackground {
 
 }
 
-/**
- * 原生广告点击以后，内置AppStore或是内置浏览器被关闭时回调
- */
+// 原生广告点击以后，内置AppStore或是内置浏览器被关闭时回调
 - (void)nativeAdClosed {
     [self adServiceCloseUnionAdDetail];
 }
@@ -415,6 +413,25 @@
     MCLog(@"[GDT][Template]nativeExpressAdViewApplicationWillEnterBackground");
 }
 
+#pragma mark GDTUnifiedNativeAdDelegate
+
+- (void)gdt_unifiedNativeAdLoaded:(NSArray<GDTUnifiedNativeAdDataObject *> *_Nullable)unifiedNativeAdDataObjects error:(NSError *_Nullable)error {
+    MCLog(@"[GDT][Template2.0]nativeAdObjectsSuccessLoad:%lu", (unsigned long) unifiedNativeAdDataObjects.count);
+    if (unifiedNativeAdDataObjects.count > 0) {
+        [self nativeAdSuccessLoad:unifiedNativeAdDataObjects];
+    } else {
+        if (error) {
+            MCLog(@"[GDT][Template2.0]nativeAdsFailLoad,reason = %@", error);
+            NSError *err = [NSError errorWithDomain:error.domain code:-3 userInfo:error.userInfo];
+            [self nativeAdFailedLoadUnion:err];
+        } else {
+            MCLog(@"[GDT][Template2.0]nativeAdsFailLoad,reason = empty");
+            NSError *err = [NSError errorWithDomain:error.domain code:-3 userInfo:@{@"msg": @"[GDT][Template2.0]nativeAdsFailLoad,reason = empt"}];
+            [self nativeAdFailedLoadUnion:err];
+        }
+    }
+}
+
 
 #pragma mark - Custom
 
@@ -445,19 +462,27 @@
 
 - (GDTNativeAd *)tencentNativeAd {
     if (!_tencentNativeAd) {
-        _tencentNativeAd = [[GDTNativeAd alloc] initWithAppkey:self.adConfig.appId placementId:self.adConfig.entityId];
+        _tencentNativeAd = [[GDTNativeAd alloc] initWithAppId:self.adConfig.appId placementId:self.adConfig.entityId];
         _tencentNativeAd.delegate = self;
-        _tencentNativeAd.controller = [self topController];
+        _tencentNativeAd.controller = [MCAdUtils topController];
     }
     return _tencentNativeAd;
 }
 
 - (GDTNativeExpressAd *)tencentNativeExpressAd {
     if (!_tencentNativeExpressAd) {
-        _tencentNativeExpressAd = [[GDTNativeExpressAd alloc] initWithAppkey:self.adConfig.appId placementId:self.adConfig.entityId adSize:self.adConfig.adSize];
+        _tencentNativeExpressAd = [[GDTNativeExpressAd alloc] initWithAppId:self.adConfig.appId placementId:self.adConfig.entityId adSize:self.adConfig.adSize];
         _tencentNativeExpressAd.delegate = self;
     }
     return _tencentNativeExpressAd;
+}
+
+- (GDTUnifiedNativeAd *)tencentUnifiledNativeAd {
+    if (!_tencentUnifiledNativeAd) {
+        _tencentUnifiledNativeAd = [[GDTUnifiedNativeAd alloc] initWithAppId:self.adConfig.appId placementId:self.adConfig.entityId];
+        _tencentUnifiledNativeAd.delegate = self;
+    }
+    return _tencentUnifiledNativeAd;
 }
 
 - (NSMutableArray *)adContainers {
@@ -482,17 +507,5 @@
         });
     }
 }
-
-- (UIViewController *)topController {
-    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UINavigationController *nav;
-    if ([root isKindOfClass:[UINavigationController class]]) {
-        nav = (UINavigationController *) root;
-    } else {
-        nav = root.navigationController;
-    }
-    return nav.topViewController;
-}
-
 
 @end
