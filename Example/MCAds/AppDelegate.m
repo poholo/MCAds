@@ -24,34 +24,44 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     //--------api 数据传输部分必须实现-----------//
+    NSLog(@"AAAAAAAAAAAA");
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [MCAdsManager share].apiConfig.apiAdConfigMaterialCallBack = ^NSDictionary *(void) {
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_GDT" ofType:@"json"];
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            NSError *error;
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
+            NSLog(@"1111111111111");
 
-    __weak typeof(self) weakSelf = self;
-    [MCAdsManager share].apiConfig.apiAdConfigMaterialCallBack = ^NSDictionary *(void) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_GDT" ofType:@"json"];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSError *error;
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
-        return dealDict;
-    };
+            return dealDict;
+        };
 
-    [MCAdsManager share].apiConfig.apiAdConfigMaterialSourceTypeCallBack = ^NSDictionary *(MCAdSourceType type) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_GDT" ofType:@"json"];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSError *error;
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
-        return dealDict;
-    };
+        [MCAdsManager share].apiConfig.apiAdConfigMaterialSourceTypeCallBack = ^NSDictionary *(MCAdSourceType type) {
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"AdInfos_GDT" ofType:@"json"];
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            NSError *error;
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
+            NSLog(@"22222222222222");
+            return dealDict;
+        };
 
-    [MCAdsManager share].apiConfig.apiReqCustomAdsCallBack = ^NSDictionary *(NSInteger num) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"DataFlow_Custom_Ads" ofType:@"json"];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSError *error;
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
-        return dealDict;
-    };
+        [MCAdsManager share].apiConfig.apiReqCustomAdsCallBack = ^NSDictionary *(NSInteger num) {
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"DataFlow_Custom_Ads" ofType:@"json"];
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            NSError *error;
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            NSDictionary *dealDict = @{MC_DATA_SUCCESS: @(error ? NO : YES), MC_DATA_DICT: dictionary};
+            NSLog(@"3333333333333333");
+            return dealDict;
+        };
+        NSLog(@"BBBBBBBBBBBBBBBB");
+        [[MCAdsManager share] loadConfig];
+        [[MCAdsManager share].splashService showSplash];
+    });
+    NSLog(@"CCCCCCCCCCCCCCCCCCC");
+
 
     //----------------Color------------------------------------//
 //    [MCAdsManager share].colorConfig.colorI = ...
@@ -62,8 +72,6 @@
     //------------------Style----------------------------//
 //    [MCAdsManager share].styleConfig.contentInset = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(5, 12, 5, 12)];
 
-    [[MCAdsManager share] loadConfig];
-    [[MCAdsManager share].splashService showSplash];
     return YES;
 }
 

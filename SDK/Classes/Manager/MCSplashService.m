@@ -14,6 +14,7 @@
 #import "MCAdSplashView.h"
 #import "MCAdvertisementDto.h"
 #import "MCPlayerKit.h"
+#import "MCAdUtils.h"
 
 @interface MCSplashService () <MCAdSplashViewDelegate>
 
@@ -50,15 +51,19 @@
 }
 
 - (void)showSplash {
-    MCAdConfig *adconfig = [MCAdsManager share].splashConfig;
-    if (!adconfig.entityId) {
-        return;
-    }
-    [self resetEnv];
-    [self showLoading];
+    __weak typeof(self) weakSelf = self;
+    [MCAdUtils mainExecute:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        MCAdConfig *adconfig = [MCAdsManager share].splashConfig;
+        if (!adconfig.entityId) {
+            return;
+        }
+        [strongSelf resetEnv];
+        [strongSelf showLoading];
 
-    self.currentSplashDto = [MCSplashDto convertByAdConfig:[MCAdsManager share].splashConfig];
-    [self show];
+        strongSelf.currentSplashDto = [MCSplashDto convertByAdConfig:[MCAdsManager share].splashConfig];
+        [strongSelf show];
+    }];
 }
 
 - (void)resetEnv {

@@ -9,4 +9,6 @@
 
 + (UIViewController *)topController;
 
++ (void)mainExecute:(dispatch_block_t)block;
+
 @end

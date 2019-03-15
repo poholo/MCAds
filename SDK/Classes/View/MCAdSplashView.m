@@ -19,6 +19,7 @@
 #import "MCColor.h"
 #import "UIView+AdCorner.h"
 #import "MCFont.h"
+#import "MCAdUtils.h"
 
 @interface MCAdSplashView () <BaiduMobAdSplashDelegate, GDTSplashAdDelegate>
 
@@ -116,7 +117,7 @@
 - (void)splashSuccessPresentScreen:(BaiduMobAdSplash *)splash {
     MCLog(@"splashlFailPresentScreen success");
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashSuccessPresentScreen:)]) {
             [strongSelf.delegate adSplashSuccessPresentScreen:self.dto];
@@ -130,7 +131,7 @@
 - (void)splashlFailPresentScreen:(BaiduMobAdSplash *)splash withError:(BaiduMobFailReason)reason {
     MCLog(@"splashlFailPresentScreen withError:%d", reason);
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewJumpResonError:)]) {
             [strongSelf.delegate adSplashViewJumpResonError:self.dto];
@@ -146,7 +147,7 @@
     MCLog(@"splashDidDismissScreen");
     //自定义开屏移除
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewJumpResonEnd:)]) {
             [strongSelf.delegate adSplashViewJumpResonEnd:self.dto];
@@ -161,7 +162,7 @@
 - (void)splashDidClicked:(BaiduMobAdSplash *)splash {
     MCLog(@"splashDidClicked");
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewJumpContent:)]) {
             [strongSelf.delegate adSplashViewJumpContent:self.dto];
@@ -179,7 +180,7 @@
 - (void)splashAdSuccessPresentScreen:(GDTSplashAd *)splashAd {
     MCLog(@"[TencentAd]splashAdSuccessPresentScreen");
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashSuccessPresentScreen:)]) {
             [strongSelf.delegate adSplashSuccessPresentScreen:self.dto];
@@ -191,7 +192,7 @@
 - (void)splashAdFailToPresent:(GDTSplashAd *)splashAd withError:(NSError *)error {
     MCLog(@"[TencentAd]splashlFailPresentScreen withError:%@", error);
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewJumpResonError:)]) {
             [strongSelf.delegate adSplashViewJumpResonError:self.dto];
@@ -203,7 +204,7 @@
 
 - (void)splashAdApplicationWillEnterBackground:(GDTSplashAd *)splashAd {
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewEnterbackGroundEnd:)]) {
             [strongSelf.delegate adSplashViewEnterbackGroundEnd:self.dto];
@@ -213,7 +214,7 @@
 
 - (void)splashAdClicked:(GDTSplashAd *)splashAd {
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewJumpContent:)]) {
             [strongSelf.delegate adSplashViewJumpContent:self.dto];
@@ -224,7 +225,7 @@
 
 - (void)splashAdWillClosed:(GDTSplashAd *)splashAd {
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewJumpResonEnd:)]) {
             [strongSelf.delegate adSplashViewJumpResonEnd:self.dto];
@@ -250,7 +251,7 @@
 
 - (void)splashAdDidDismissFullScreenModal:(GDTSplashAd *)splashAd {
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf.delegate respondsToSelector:@selector(adSplashViewJumpResonEnd:)]) {
             [strongSelf.delegate adSplashViewJumpResonEnd:self.dto];
@@ -338,20 +339,6 @@
         _tencentMobAdSplash.backgroundColor = [MCColor randomImageColor];
     }
     return _tencentMobAdSplash;
-}
-
-- (void)mainExecute:(dispatch_block_t)block {
-    if ([NSThread isMainThread]) {
-        if (block) {
-            block();
-        }
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (block) {
-                block();
-            }
-        });
-    }
 }
 
 @end

@@ -17,6 +17,7 @@
 #import "MCColorConfig.h"
 #import "MCStyleConfig.h"
 #import "MCFontConfig.h"
+#import "MCAdUtils.h"
 
 
 @interface MCAdsManager ()
@@ -127,86 +128,70 @@
     NSDictionary *result = [NSDictionary dictionaryWithContentsOfFile:fileName];
     NSDictionary *config = result[@"adConfig"];
     if (config) {
-        [self __loadCommenFactory:config];
-        [self requestAllData];
+        __weak typeof(self) weakSelf = self;
+        [MCAdUtils mainExecute:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf __loadCommenFactory:config];
+            [strongSelf requestAllData];
+        }];
     }
     [self loadNextConfig];
 }
 
 - (void)loadNextConfig {
     //获取下一次的配置
-    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *fileName = [path stringByAppendingPathComponent:@"MCAdConfig.json"];
 
     __weak typeof(self) weakSelf = self;
     [self apiAdConfigMaterial:^(BOOL success, NSDictionary *dict) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (success) {
-            NSDictionary *config = dict[@"adConfig"];
-            [strongSelf __loadCommenFactory:config];
-            [dict writeToFile:fileName atomically:YES];
-            [strongSelf requestAllData];
-        } else {
-            if (strongSelf.preConfig == nil) {
-                strongSelf.preConfig = [strongSelf localConfig:MCAdCategoryDataPre];
-            }
-
-            if (strongSelf.splashConfig == nil) {
-                strongSelf.splashConfig = [strongSelf localConfig:MCAdCategorySplash];
-            }
-
-            if (strongSelf.flowAdService == nil || strongSelf.flowAdService.adConfig == nil) {
-                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataFlow]
-                                                                              adType:MCAdCategoryDataFlow delegate:nil];
-            }
-
-            if (strongSelf.playerPauseAdService == nil || strongSelf.playerPauseAdService.adConfig == nil) {
-                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataPause]
-                                                                                     adType:MCAdCategoryDataPause delegate:nil];
-            }
-
-            [strongSelf requestAllData];
-        }
+        [MCAdUtils mainExecute:^{
+            __strong typeof(strongSelf) sstrongSelf = strongSelf;
+            [sstrongSelf wrapData:success dict:dict];
+        }];
     }];
-
 }
 
 - (void)changeConfig:(MCAdSourceType)sourceType {
-    //获取下一次的配置
-    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *fileName = [path stringByAppendingPathComponent:@"MCAdConfig.json"];
-
     __weak typeof(self) weakSelf = self;
     [self apiAdConfigMaterialSourceType:sourceType callBack:^(BOOL success, NSDictionary *dict) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (success) {
-            NSDictionary *config = dict[@"adConfig"];
-            [strongSelf __loadCommenFactory:config];
-            [dict writeToFile:fileName atomically:YES];
-            [strongSelf requestAllData];
-        } else {
-            if (strongSelf.preConfig == nil) {
-                strongSelf.preConfig = [strongSelf localConfig:MCAdCategoryDataPre];
-            }
-
-            if (strongSelf.splashConfig == nil) {
-                strongSelf.splashConfig = [strongSelf localConfig:MCAdCategorySplash];
-            }
-
-            if (strongSelf.flowAdService == nil || strongSelf.flowAdService.adConfig == nil) {
-                strongSelf.flowAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataFlow]
-                                                                              adType:MCAdCategoryDataFlow delegate:nil];
-            }
-
-            if (strongSelf.playerPauseAdService == nil || strongSelf.playerPauseAdService.adConfig == nil) {
-                strongSelf.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[strongSelf localConfig:MCAdCategoryDataPause]
-                                                                                     adType:MCAdCategoryDataPause delegate:nil];
-            }
-
-            [strongSelf requestAllData];
-        }
-        MCLog(@"[MCAdsManager]changeMeterial %d", success);
+        [MCAdUtils mainExecute:^{
+            __strong typeof(strongSelf) sstrongSelf = strongSelf;
+            [sstrongSelf wrapData:success dict:dict];
+        }];
     }];
+}
+
+- (void)wrapData:(BOOL)success dict:(NSDictionary *)dict {
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *fileName = [path stringByAppendingPathComponent:@"MCAdConfig.json"];
+    if (success) {
+        NSDictionary *config = dict[@"adConfig"];
+        [self __loadCommenFactory:config];
+        [dict writeToFile:fileName atomically:YES];
+        [self requestAllData];
+    } else {
+        if (self.preConfig == nil) {
+            self.preConfig = [self localConfig:MCAdCategoryDataPre];
+        }
+
+        if (self.splashConfig == nil) {
+            self.splashConfig = [self localConfig:MCAdCategorySplash];
+        }
+
+        if (self.flowAdService == nil || self.flowAdService.adConfig == nil) {
+            self.flowAdService = [[MCMobileAdService alloc] initWithConfig:[self localConfig:MCAdCategoryDataFlow]
+                                                                    adType:MCAdCategoryDataFlow delegate:nil];
+        }
+
+        if (self.playerPauseAdService == nil || self.playerPauseAdService.adConfig == nil) {
+            self.playerPauseAdService = [[MCMobileAdService alloc] initWithConfig:[self localConfig:MCAdCategoryDataPause]
+                                                                           adType:MCAdCategoryDataPause delegate:nil];
+        }
+
+        [self requestAllData];
+    }
+    MCLog(@"[MCAdsManager]changeMeterial %d", success);
 }
 
 

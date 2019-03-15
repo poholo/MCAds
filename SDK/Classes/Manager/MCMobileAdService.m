@@ -26,7 +26,9 @@
 @property(nonatomic, strong) GDTNativeExpressAd *tencentNativeExpressAd; ///<  模板广告
 @property(nonatomic, strong) GDTUnifiedNativeAd *tencentUnifiledNativeAd; ///< 自渲染模板2.0
 
-@property(nonatomic, strong) NSMutableArray<MCAdDto *> *adContainers;
+@property(nonatomic, strong)
+NSMutableArray<MCAdDto *> *
+adContainers;
 
 @property(nonatomic, assign) NSInteger containerLowValve; ///< 广告最低阀值
 
@@ -71,7 +73,7 @@
         } else {
             NSRange range = NSMakeRange(0, nums);
             __weak typeof(self) weakSelf = self;
-            [self mainExecute:^{
+            [MCAdUtils mainExecute:^{
                 __strong typeof(weakSelf) strongSelf = weakSelf;
 
                 if ([strongSelf.delegate respondsToSelector:@selector(mobileAdServiceRequestSuccess:)]) {
@@ -223,7 +225,7 @@
     }];
 
     if (self.adContainers.count > 0) {
-        [self mainExecute:^{
+        [MCAdUtils mainExecute:^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if ([strongSelf.delegate respondsToSelector:@selector(mobileAdServiceRequestSuccess:)]) {
                 if (strongSelf.adContainers.count < strongSelf.needAdNums) {
@@ -256,7 +258,7 @@
 
 - (void)nativeAdFailedLoadUnion:(NSError *)error {
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
 
         if ([strongSelf.delegate respondsToSelector:@selector(mobileAdServiceRequestFailed)]) {
@@ -267,7 +269,7 @@
 
 - (void)adServiceTapUnionAd {
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
 
         if ([strongSelf.delegate respondsToSelector:@selector(mobileAdServiceTapUnionAd)]) {
@@ -278,7 +280,7 @@
 
 - (void)adServiceCloseUnionAdDetail {
     __weak typeof(self) weakSelf = self;
-    [self mainExecute:^{
+    [MCAdUtils mainExecute:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
 
         if ([strongSelf.delegate respondsToSelector:@selector(mobileAdServiceCloseUnionAdDetail)]) {
@@ -328,7 +330,9 @@
 
 #pragma mark - Ad TencentAdDelegate
 
-- (void)nativeAdSuccessToLoad:(NSArray<GDTNativeAdData *> *)nativeAds {
+- (void)nativeAdSuccessToLoad:(NSArray
+
+<GDTNativeAdData *> *)nativeAds {
     MCLog(@"nativeAdObjectsSuccessLoad:%lu", (unsigned long) nativeAds.count);
     [self nativeAdSuccessLoad:nativeAds];
 }
@@ -415,7 +419,11 @@
 
 #pragma mark GDTUnifiedNativeAdDelegate
 
-- (void)gdt_unifiedNativeAdLoaded:(NSArray<GDTUnifiedNativeAdDataObject *> *_Nullable)unifiedNativeAdDataObjects error:(NSError *_Nullable)error {
+- (void)gdt_unifiedNativeAdLoaded:(NSArray
+
+<GDTUnifiedNativeAdDataObject *> *_Nullable)
+unifiedNativeAdDataObjects error:
+(NSError *_Nullable)error {
     MCLog(@"[GDT][Template2.0]nativeAdObjectsSuccessLoad:%lu", (unsigned long) unifiedNativeAdDataObjects.count);
     if (unifiedNativeAdDataObjects.count > 0) {
         [self nativeAdSuccessLoad:unifiedNativeAdDataObjects];
@@ -490,22 +498,6 @@
         _adContainers = [[NSMutableArray alloc] init];
     }
     return _adContainers;
-}
-
-#pragma mark - util
-
-- (void)mainExecute:(dispatch_block_t)block {
-    if ([NSThread isMainThread]) {
-        if (block) {
-            block();
-        }
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (block) {
-                block();
-            }
-        });
-    }
 }
 
 @end
