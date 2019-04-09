@@ -134,13 +134,13 @@
             [strongSelf __loadCommenFactory:config];
             [strongSelf requestAllData];
         }];
+    } else {
+        [self loadNextConfig];
     }
-    [self loadNextConfig];
 }
 
 - (void)loadNextConfig {
     //获取下一次的配置
-
     __weak typeof(self) weakSelf = self;
     [self apiAdConfigMaterial:^(BOOL success, NSDictionary *dict) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
