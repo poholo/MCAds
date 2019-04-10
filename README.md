@@ -44,6 +44,11 @@ B.信息流
 
 ![ScreenRecord](https://github.com/poholo/MCAds/raw/master/ScreenShots/MCAds.gif)
 
+## 版本
+```text
+0.0.7 更新播放器版本 
+```
+
 ## TODO
 ```text
 1. 瀑布流、collectionview类广告
